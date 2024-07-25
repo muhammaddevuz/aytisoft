@@ -4,9 +4,11 @@ class Textfieldform extends StatelessWidget {
   final Color? filledColor;
   String? labelText;
   int? maxLines;
+  TextEditingController controller;
   final String? Function(String?)? validatorfunc;
   Textfieldform(
       {super.key,
+      required this.controller,
       this.filledColor,
       this.labelText,
       this.validatorfunc,
@@ -15,6 +17,7 @@ class Textfieldform extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: controller,
       validator: validatorfunc,
       maxLines: maxLines,
       decoration: InputDecoration(
