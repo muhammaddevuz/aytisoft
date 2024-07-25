@@ -36,9 +36,7 @@ class _WorkexpScreenState extends State<WorkexpScreen> {
   void submit() {
     if (_formKey.currentState!.validate()) {
       _formKey.currentState!.save();
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Processing Data')),
-      );
+      
     }
   }
 
@@ -250,7 +248,7 @@ class _WorkexpScreenState extends State<WorkexpScreen> {
                         ),
                         ZoomTapAnimation(
                           child: Card(
-                            color: const Color(0xFF130160),
+                            color: Constantcolors.mainColor,
                             child: Container(
                               alignment: Alignment.center,
                               width: 160,
@@ -271,7 +269,7 @@ class _WorkexpScreenState extends State<WorkexpScreen> {
                       child: ZoomTapAnimation(
                         onTap: submit,
                         child: Card(
-                          color: const Color(0xFF130160),
+                          color: Constantcolors.mainColor,
                           child: Container(
                             alignment: Alignment.center,
                             width: 270,
