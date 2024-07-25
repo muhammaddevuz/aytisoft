@@ -1,4 +1,4 @@
-import 'package:aytijobs/ui/screens/testscreen.dart';
+import 'package:aytijobs/ui/screens/auth_screens/login_screen.dart';
 import 'package:flutter/material.dart';
 
 void main(List<String> args) {
@@ -10,9 +10,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Testscreen(),
+      // home: WorkexpScreen(),
+      home: LoginScreen(), // shokh-time screen
     );
   }
 }
