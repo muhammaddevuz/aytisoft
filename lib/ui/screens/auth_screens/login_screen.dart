@@ -19,6 +19,7 @@ class _LoginScreenState extends State<LoginScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text("Forgot Password?"),
               ],
