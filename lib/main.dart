@@ -1,5 +1,6 @@
-import 'package:aytijobs/ui/screens/auth_screens/login_screen.dart';
+import 'package:aytijobs/ui/screens/auth_screens/forgot_password.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main(List<String> args) {
   runApp(const MyApp());
@@ -10,10 +11,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      // home: WorkexpScreen(),
-      home: LoginScreen(), // shokh-time screen
+    return const ScreenUtilInit(
+      designSize: Size(360, 690),
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        // home: WorkexpScreen(),
+        home: ForgotPassword(), // shokh-time screen
+      ),
     );
   }
 }
