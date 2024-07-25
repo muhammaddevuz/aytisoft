@@ -12,13 +12,32 @@ class WorkexpScreen extends StatefulWidget {
 
 class _WorkexpScreenState extends State<WorkexpScreen> {
   final _formKey = GlobalKey<FormState>();
+  final titleController = TextEditingController();
+  final companyController = TextEditingController();
+  final startDateController = TextEditingController();
+  final endDateController = TextEditingController();
+  final descController = TextEditingController();
 
   void submit() {
     if (_formKey.currentState!.validate()) {
-      // Process the data if the form is valid
+      _formKey.currentState!.save();
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text('Processing Data')),
       );
+    }
+  }
+
+  Future<void> _selectDate(BuildContext context, TextEditingController controller) async {
+    final DateTime? picked = await showDatePicker(
+      context: context,
+      initialDate: DateTime.now(),
+      firstDate: DateTime(2000),
+      lastDate: DateTime(2101),
+    );
+    if (picked != null) {
+      setState(() {
+        controller.text = "${picked.toLocal()}".split(' ')[0];
+      });
     }
   }
 
@@ -52,6 +71,7 @@ class _WorkexpScreenState extends State<WorkexpScreen> {
               ),
               const SizedBox(height: 10),
               Textfieldform(
+                controller: titleController,
                 filledColor: Colors.white,
                 validatorfunc: (value) {
                   if (value == null || value.isEmpty) {
@@ -72,6 +92,7 @@ class _WorkexpScreenState extends State<WorkexpScreen> {
               ),
               const SizedBox(height: 10),
               Textfieldform(
+                controller: companyController,
                 filledColor: Colors.white,
                 validatorfunc: (value) {
                   if (value == null || value.isEmpty) {
@@ -98,15 +119,21 @@ class _WorkexpScreenState extends State<WorkexpScreen> {
                           ),
                         ),
                         const SizedBox(height: 10),
-                        Textfieldform(
-                          filledColor: Colors.white,
-                          validatorfunc: (value) {
-                            if (value == null || value.isEmpty) {
-                              return 'Please enter start date';
-                            }
-                            return null;
-                          },
-                          labelText: 'Start Date',
+                        GestureDetector(
+                          onTap: () => _selectDate(context, startDateController),
+                          child: AbsorbPointer(
+                            child: Textfieldform(
+                              controller: startDateController,
+                              filledColor: Colors.white,
+                              validatorfunc: (value) {
+                                if (value == null || value.isEmpty) {
+                                  return 'Please enter start date';
+                                }
+                                return null;
+                              },
+                              labelText: 'Start Date',
+                            ),
+                          ),
                         ),
                       ],
                     ),
@@ -125,15 +152,21 @@ class _WorkexpScreenState extends State<WorkexpScreen> {
                           ),
                         ),
                         const SizedBox(height: 10),
-                        Textfieldform(
-                          filledColor: Colors.white,
-                          validatorfunc: (value) {
-                            if (value == null || value.isEmpty) {
-                              return 'Please enter end date';
-                            }
-                            return null;
-                          },
-                          labelText: 'End Date',
+                        GestureDetector(
+                          onTap: () => _selectDate(context, endDateController),
+                          child: AbsorbPointer(
+                            child: Textfieldform(
+                              controller: endDateController,
+                              filledColor: Colors.white,
+                              validatorfunc: (value) {
+                                if (value == null || value.isEmpty) {
+                                  return 'Please enter end date';
+                                }
+                                return null;
+                              },
+                              labelText: 'End Date',
+                            ),
+                          ),
                         ),
                       ],
                     ),
@@ -146,7 +179,7 @@ class _WorkexpScreenState extends State<WorkexpScreen> {
                     value: false,
                     onChanged: (value) {
                       setState(() {
-                        // Handle checkbox state
+                        value = !value!;
                       });
                     },
                   ),
@@ -165,6 +198,7 @@ class _WorkexpScreenState extends State<WorkexpScreen> {
               ),
               const SizedBox(height: 10),
               Textfieldform(
+                controller: descController,
                 maxLines: 5,
                 filledColor: Colors.white,
                 validatorfunc: (value) {
