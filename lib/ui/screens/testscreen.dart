@@ -1,4 +1,3 @@
-import 'package:aytijobs/data/models/exp.dart';
 import 'package:aytijobs/ui/screens/workExp_screen.dart';
 import 'package:flutter/material.dart';
 
