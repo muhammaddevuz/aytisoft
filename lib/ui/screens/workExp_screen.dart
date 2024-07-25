@@ -1,10 +1,13 @@
 // ignore: file_names
+import 'package:aytijobs/data/models/exp.dart';
 import 'package:aytijobs/ui/widgets/textFieldForm.dart';
+import 'package:aytijobs/utils/constantColors.dart';
 import 'package:flutter/material.dart';
 import 'package:zoom_tap_animation/zoom_tap_animation.dart';
 
 class WorkexpScreen extends StatefulWidget {
-  const WorkexpScreen({super.key});
+  final Exp? exp;
+  const WorkexpScreen({super.key, this.exp});
 
   @override
   State<WorkexpScreen> createState() => _WorkexpScreenState();
@@ -18,6 +21,18 @@ class _WorkexpScreenState extends State<WorkexpScreen> {
   final endDateController = TextEditingController();
   final descController = TextEditingController();
 
+  @override
+  void initState() {
+    super.initState();
+    if (widget.exp != null) {
+      titleController.text = widget.exp!.jobTitle;
+      companyController.text = widget.exp!.companyName;
+      startDateController.text = widget.exp!.startDate.toString();
+      endDateController.text = widget.exp!.endDate.toString();
+      descController.text = widget.exp!.jonDesc;
+    }
+  }
+
   void submit() {
     if (_formKey.currentState!.validate()) {
       _formKey.currentState!.save();
@@ -27,7 +42,8 @@ class _WorkexpScreenState extends State<WorkexpScreen> {
     }
   }
 
-  Future<void> _selectDate(BuildContext context, TextEditingController controller) async {
+  Future<void> _selectDate(
+      BuildContext context, TextEditingController controller) async {
     final DateTime? picked = await showDatePicker(
       context: context,
       initialDate: DateTime.now(),
@@ -52,21 +68,21 @@ class _WorkexpScreenState extends State<WorkexpScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text(
+              Text(
                 'Add work experience',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 20,
-                  color: Color(0xFF150B3D),
+                  color: Constantcolors.mainColor,
                 ),
               ),
               const SizedBox(height: 30),
-              const Text(
+              Text(
                 'Job title',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 16,
-                  color: Color(0xFF150B3D),
+                  color: Constantcolors.mainColor,
                 ),
               ),
               const SizedBox(height: 10),
@@ -82,12 +98,12 @@ class _WorkexpScreenState extends State<WorkexpScreen> {
                 labelText: 'Title',
               ),
               const SizedBox(height: 10),
-              const Text(
+              Text(
                 'Company',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 16,
-                  color: Color(0xFF150B3D),
+                  color: Constantcolors.mainColor,
                 ),
               ),
               const SizedBox(height: 10),
@@ -110,17 +126,18 @@ class _WorkexpScreenState extends State<WorkexpScreen> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const Text(
+                        Text(
                           'Start Date',
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 16,
-                            color: Color(0xFF150B3D),
+                            color: Constantcolors.mainColor,
                           ),
                         ),
                         const SizedBox(height: 10),
                         GestureDetector(
-                          onTap: () => _selectDate(context, startDateController),
+                          onTap: () =>
+                              _selectDate(context, startDateController),
                           child: AbsorbPointer(
                             child: Textfieldform(
                               controller: startDateController,
@@ -143,12 +160,12 @@ class _WorkexpScreenState extends State<WorkexpScreen> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const Text(
+                        Text(
                           'End Date',
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 16,
-                            color: Color(0xFF150B3D),
+                            color: Constantcolors.mainColor,
                           ),
                         ),
                         const SizedBox(height: 10),
@@ -188,12 +205,12 @@ class _WorkexpScreenState extends State<WorkexpScreen> {
                   ),
                 ],
               ),
-              const Text(
+              Text(
                 'Description',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 16,
-                  color: Color(0xFF150B3D),
+                  color: Constantcolors.mainColor,
                 ),
               ),
               const SizedBox(height: 10),
@@ -210,26 +227,66 @@ class _WorkexpScreenState extends State<WorkexpScreen> {
                 labelText: 'Write additional information here',
               ),
               const SizedBox(height: 20),
-              Center(
-                child: ZoomTapAnimation(
-                  onTap: submit,
-                  child: Card(
-                    color: const Color(0xFF130160),
-                    child: Container(
-                      alignment: Alignment.center,
-                      width: 270,
-                      height: 70,
-                      child: const Text(
-                        "Save",
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 20),
+              widget.exp != null
+                  ? Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        ZoomTapAnimation(
+                          child: Card(
+                            color: const Color(0xFFD6CDFE),
+                            child: Container(
+                              alignment: Alignment.center,
+                              width: 160,
+                              height: 50,
+                              child: const Text(
+                                "Remove",
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 20),
+                              ),
+                            ),
+                          ),
+                        ),
+                        ZoomTapAnimation(
+                          child: Card(
+                            color: const Color(0xFF130160),
+                            child: Container(
+                              alignment: Alignment.center,
+                              width: 160,
+                              height: 50,
+                              child: const Text(
+                                "Save",
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 20),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    )
+                  : Center(
+                      child: ZoomTapAnimation(
+                        onTap: submit,
+                        child: Card(
+                          color: const Color(0xFF130160),
+                          child: Container(
+                            alignment: Alignment.center,
+                            width: 270,
+                            height: 50,
+                            child: const Text(
+                              "Save",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20),
+                            ),
+                          ),
+                        ),
                       ),
                     ),
-                  ),
-                ),
-              ),
             ],
           ),
         ),
