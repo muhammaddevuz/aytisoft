@@ -18,6 +18,7 @@ class Textfieldform extends StatelessWidget {
       validator: validatorfunc,
       maxLines: maxLines,
       decoration: InputDecoration(
+        alignLabelWithHint: true,
         filled: true,
         fillColor: filledColor,
         labelText: labelText,
