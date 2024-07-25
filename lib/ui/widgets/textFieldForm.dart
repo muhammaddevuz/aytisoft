@@ -5,12 +5,13 @@ class Textfieldform extends StatelessWidget {
   String? labelText;
   int? maxLines;
   final String? Function(String?)? validatorfunc;
-  Textfieldform(
-      {super.key,
-      this.filledColor,
-      this.labelText,
-      this.validatorfunc,
-      this.maxLines});
+  Textfieldform({
+    super.key,
+    this.filledColor,
+    this.labelText,
+    this.validatorfunc,
+    this.maxLines,
+  });
 
   @override
   Widget build(BuildContext context) {
