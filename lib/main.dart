@@ -1,4 +1,5 @@
 import 'package:aytijobs/ui/screens/auth_screens/login_screen.dart';
+import 'package:aytijobs/ui/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 
 void main(List<String> args) {
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       // home: WorkexpScreen(),
-      home: LoginScreen(), // shokh-time screen
+      home: SplashScreen(), 
     );
   }
 }
