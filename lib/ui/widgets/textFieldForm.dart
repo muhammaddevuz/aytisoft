@@ -26,6 +26,7 @@ class Textfieldform extends StatelessWidget {
         fillColor: filledColor,
         labelText: labelText,
         border: OutlineInputBorder(
+          borderSide: const BorderSide(color: Colors.white),
           borderRadius: BorderRadius.circular(10),
         ),
       ),
