@@ -1,4 +1,4 @@
-import 'package:aytijobs/ui/screens/workExp_screen.dart';
+import 'package:aytijobs/ui/screens/profile_screen/workExp_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:aytijobs/utils/constant_colors.dart';
 
