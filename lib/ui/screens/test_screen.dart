@@ -21,15 +21,15 @@ class _TestScreenState extends State<TestScreen> {
             MaterialPageRoute(
               builder: (context) {
                 return AddJobScreen(
-                  // job: Job(
-                  //     position: 'assitant',
-                  //     id: UniqueKey().toString(),
-                  //     type_workspace: '1qwerty',
-                  //     location: 'Usa,Tashkent',
-                  //     company: 'Olma',
-                  //     type_employment: 'Olmachi',
-                  //     descriprion:
-                  //         'Laboris est veniam qui magna officia aute eu consectetur aute.'),
+                  job: Job(
+                      position: 'assitant',
+                      id: UniqueKey().toString(),
+                      type_workspace: '1qwerty',
+                      location: 'Usa,Tashkent',
+                      company: 'Olma',
+                      type_employment: 'Olmachi',
+                      descriprion:
+                          'Laboris est veniam qui magna officia aute eu consectetur aute.'),
                 );
               },
             ),
