@@ -24,6 +24,7 @@ class Textfieldform extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      textInputAction: TextInputAction.next,
       controller: controller,
       validator: validatorfunc,
       maxLines: maxLines,
