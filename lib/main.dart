@@ -20,23 +20,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ScreenUtilInit(
-      designSize: const Size(360, 690),
-      builder: (context, child) {
-        return MaterialApp(
-          theme: ThemeData(
-            textTheme: GoogleFonts.dmSansTextTheme(
-              Theme.of(context).textTheme.apply(
-                    bodyColor: Constantcolors.mainColor,
-                    displayColor: Constantcolors.mainColor,
-                  ),
-            ),
-          ),
-          debugShowCheckedModeBanner: false,
-          home:
-            EducationScreen(), //my screen not oper's screen not shokh's okay ☻
-        );
-      },
+    return const ScreenUtilInit(
+      designSize: Size(360, 690),
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: ForgotPassword(),
+      ),
     );
   }
 }
