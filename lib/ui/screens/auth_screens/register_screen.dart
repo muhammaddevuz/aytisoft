@@ -106,6 +106,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 ),
                 const Gap(10),
                 TextFormField(
+                  textInputAction: TextInputAction.previous,
                   decoration: InputDecoration(
                     contentPadding: const EdgeInsets.all(10),
                     alignLabelWithHint: true,
@@ -134,6 +135,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       borderSide: const BorderSide(color: Colors.white),
                     ),
                   ),
+                  onFieldSubmitted: (value) {
+                    FocusScope.of(context).unfocus();
+                  },
                 ),
                 const Gap(10),
                 Row(
@@ -237,7 +241,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      "You don't have an account yet?",
+                      "You Already have an account?",
                       style: GoogleFonts.dmSans(
                         color: Colors.black,
                         fontSize: 12,
