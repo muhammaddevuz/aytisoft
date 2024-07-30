@@ -1,4 +1,5 @@
-
+import 'package:aytijobs/ui/screens/appreciation_screen.dart';
+import 'package:aytijobs/ui/screens/language_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         // home: WorkexpScreen(),
-        home: AppreciationScreen(), // shokh-time screen
+        home: LanguageScreen(), // shokh-time screen
       ),
     );
   }
