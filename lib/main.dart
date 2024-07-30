@@ -15,8 +15,7 @@ class MyApp extends StatelessWidget {
       designSize: Size(360, 690),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        // home: WorkexpScreen(),
-        home: ForgotPassword(), // shokh-time screen
+        home: ForgotPassword(),
       ),
     );
   }
