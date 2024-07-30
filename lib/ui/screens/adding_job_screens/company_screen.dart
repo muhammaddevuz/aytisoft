@@ -1,4 +1,4 @@
-import 'package:aytijobs/ui/widgets/all_in_one.dart';
+import 'package:aytijobs/ui/widgets/profile_widgets/all_in_one.dart';
 import 'package:aytijobs/ui/widgets/companys.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';

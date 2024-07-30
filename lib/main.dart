@@ -1,10 +1,11 @@
-
-import 'package:aytijobs/ui/screens/adding_job_screen/add_job_screen.dart';
-import 'package:aytijobs/ui/screens/adding_job_screen/add_post_screen.dart';
+import 'package:aytijobs/ui/screens/adding_job_screens/add_job_screen.dart';
+import 'package:aytijobs/ui/screens/auth_screens/login_screen.dart';
+import 'package:aytijobs/ui/screens/auth_screens/register_screen.dart';
 import 'package:aytijobs/ui/screens/profile_screen/appreciation_screen.dart';
-import 'package:aytijobs/ui/screens/auth_screens/forgot_password.dart';
+import 'package:aytijobs/ui/screens/profile_screen/education_screen.dart';
+import 'package:aytijobs/ui/screens/profile_screen/add_about_me_screen.dart';
 import 'package:aytijobs/ui/screens/profile_screen/workExp_screen.dart';
-import 'package:aytijobs/ui/screens/test_screen.dart';
+import 'package:aytijobs/ui/screens/splash_screen/splash_screen.dart';
 import 'package:aytijobs/utils/constant_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -32,8 +33,8 @@ class MyApp extends StatelessWidget {
             ),
           ),
           debugShowCheckedModeBanner: false,
-          // home: WorkexpScreen(),
-          home: TestScreen(), //oper's screen not shokh's
+          home:
+            EducationScreen(), //my screen not oper's screen not shokh's okay ☻
         );
       },
     );
