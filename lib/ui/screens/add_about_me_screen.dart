@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AddAboutMeScreen extends StatelessWidget {
-  String? aboutMe;
+  final String? aboutMe;
 
-  AddAboutMeScreen([this.aboutMe]);
+  AddAboutMeScreen([this.aboutMe]) : super(key: GlobalKey());
 
   @override
   Widget build(BuildContext context) {
@@ -41,10 +41,14 @@ class AddAboutMeScreen extends StatelessWidget {
                               onPressed: () {
                                 Navigator.pop(context);
                               },
+                              style: ElevatedButton.styleFrom(
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(10)),
+                                  backgroundColor: Colors.deepPurple),
                               child: Container(
-                                padding: EdgeInsets.symmetric(
+                                padding: const EdgeInsets.symmetric(
                                     horizontal: 20, vertical: 15),
-                                child: Text(
+                                child: const Text(
                                   "Continue Filling",
                                   style: TextStyle(
                                       fontSize: 18,
@@ -52,12 +56,8 @@ class AddAboutMeScreen extends StatelessWidget {
                                       color: Colors.white),
                                 ),
                               ),
-                              style: ElevatedButton.styleFrom(
-                                  shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(10)),
-                                  backgroundColor: Colors.deepPurple),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 15,
                             ),
                             ElevatedButton(
@@ -65,10 +65,14 @@ class AddAboutMeScreen extends StatelessWidget {
                                 Navigator.pop(context);
                                 Navigator.pop(context);
                               },
+                              style: ElevatedButton.styleFrom(
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(10)),
+                                  backgroundColor: const Color(0xffD6CDFE)),
                               child: Container(
-                                padding: EdgeInsets.symmetric(
+                                padding: const EdgeInsets.symmetric(
                                     horizontal: 20, vertical: 10),
-                                child: Text(
+                                child: const Text(
                                   "Undo Changes",
                                   style: TextStyle(
                                       fontSize: 18,
@@ -76,10 +80,6 @@ class AddAboutMeScreen extends StatelessWidget {
                                       color: Colors.white),
                                 ),
                               ),
-                              style: ElevatedButton.styleFrom(
-                                  shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(10)),
-                                  backgroundColor: Color(0xffD6CDFE)),
                             ),
                           ],
                         )
@@ -90,7 +90,7 @@ class AddAboutMeScreen extends StatelessWidget {
               Navigator.pop(context);
             }
           },
-          icon: Icon(
+          icon: const Icon(
             Icons.arrow_back,
             color: Colors.black,
           ),
@@ -112,7 +112,7 @@ class AddAboutMeScreen extends StatelessWidget {
                   fontWeight: FontWeight.w600,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
               Container(
@@ -127,13 +127,13 @@ class AddAboutMeScreen extends StatelessWidget {
                   maxLines: null,
                   minLines: null,
                   controller: textController,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                       contentPadding: EdgeInsets.all(16),
                       border: InputBorder.none,
                       hintText: "Tell me about you"),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 150,
               ),
               Row(
@@ -141,10 +141,14 @@ class AddAboutMeScreen extends StatelessWidget {
                 children: [
                   ElevatedButton(
                     onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10)),
+                        backgroundColor: Colors.deepPurple),
                     child: Container(
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 50, vertical: 10),
-                      child: Text(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 50, vertical: 10),
+                      child: const Text(
                         "Save",
                         style: TextStyle(
                             fontSize: 18,
@@ -152,10 +156,6 @@ class AddAboutMeScreen extends StatelessWidget {
                             color: Colors.white),
                       ),
                     ),
-                    style: ElevatedButton.styleFrom(
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10)),
-                        backgroundColor: Colors.deepPurple),
                   ),
                 ],
               )
