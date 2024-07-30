@@ -1,9 +1,9 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:aytijobs/data/models/job.dart';
-import 'package:aytijobs/ui/screens/adding_job_screen/company_screen.dart';
-import 'package:aytijobs/ui/screens/adding_job_screen/location_job_screen.dart';
-import 'package:aytijobs/ui/screens/adding_job_screen/position_screen.dart';
+import 'package:aytijobs/ui/screens/adding_job_screens/company_screen.dart';
+import 'package:aytijobs/ui/screens/adding_job_screens/location_job_screen.dart';
+import 'package:aytijobs/ui/screens/adding_job_screens/position_screen.dart';
 import 'package:aytijobs/ui/widgets/change_bottom.dart';
 import 'package:aytijobs/ui/widgets/edit_job_widget.dart';
 import 'package:aytijobs/ui/widgets/job_widgets.dart';

@@ -1,27 +1,27 @@
-import 'package:aytijobs/ui/widgets/all_in_one.dart';
+import 'package:aytijobs/ui/widgets/profile_widgets/all_in_one.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
-class LocationJobScreen extends StatefulWidget {
-  const LocationJobScreen({super.key});
+class PositionScreen extends StatefulWidget {
+  const PositionScreen({super.key});
 
   @override
-  State<LocationJobScreen> createState() => _LocationJobScreenState();
+  State<PositionScreen> createState() => _PositionScreenState();
 }
 
-class _LocationJobScreenState extends State<LocationJobScreen> {
-  final locationcontroller = TextEditingController();
-  List<String> jobLocations = [
-    'New York, NY',
-    'San Francisco, CA',
-    'Austin, TX',
-    'Seattle, WA',
-    'Chicago, IL',
-    'Boston, MA',
-    'Los Angeles, CA',
-    'Denver, CO',
-    'Atlanta, GA',
-    'Miami, FL',
+class _PositionScreenState extends State<PositionScreen> {
+  final postioncontroller = TextEditingController();
+  final List<String> jobPositions = [
+    'Software Engineer',
+    'Product Manager',
+    'Data Scientist',
+    'UX/UI Designer',
+    'Marketing Specialist',
+    'Sales Manager',
+    'HR Manager',
+    'DevOps Engineer',
+    'Customer Support Specialist',
+    'Business Analyst'
   ];
 
   @override
@@ -33,8 +33,8 @@ class _LocationJobScreenState extends State<LocationJobScreen> {
         child: Column(
           children: [
             AllInOne(
-              controller: locationcontroller,
-              title: 'Location',
+              controller: postioncontroller,
+              title: 'Position',
               filledColor: Colors.white,
               preficon: Icon(Icons.search),
               sufficon: Icon(Icons.remove_circle_outline_sharp),
@@ -46,10 +46,10 @@ class _LocationJobScreenState extends State<LocationJobScreen> {
                 separatorBuilder: (context, index) {
                   return Gap(20);
                 },
-                itemCount: jobLocations.length,
+                itemCount: jobPositions.length,
                 itemBuilder: (context, index) {
                   return Text(
-                    jobLocations[index],
+                    jobPositions[index],
                     style: TextStyle(fontSize: 16),
                   );
                 },
