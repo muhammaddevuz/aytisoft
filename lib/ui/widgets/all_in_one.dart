@@ -5,11 +5,27 @@ import 'package:flutter/material.dart';
 class AllInOne extends StatelessWidget {
   TextEditingController controller;
   String title;
-  AllInOne({super.key, required this.controller, required this.title});
+  final Color? filledColor;
+  String? labelText;
+  int? maxLines;
+  final String? Function(String?)? validatorfunc;
+  Widget? preficon;
+  Widget? sufficon;
+  AllInOne(
+      {super.key,
+      required this.controller,
+      required this.title,
+      this.filledColor,
+      this.labelText,
+      this.maxLines,
+      this.validatorfunc,
+      this.preficon,
+      this.sufficon});
 
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
           title,
@@ -21,15 +37,13 @@ class AllInOne extends StatelessWidget {
         ),
         const SizedBox(height: 10),
         Textfieldform(
+          preficon: preficon,
+          sufficon: sufficon,
+          maxLines: maxLines,
           controller: controller,
-          filledColor: Colors.white,
-          validatorfunc: (value) {
-            if (value == null || value.isEmpty) {
-              return 'Please enter job title';
-            }
-            return null;
-          },
-          labelText: 'Title',
+          filledColor: filledColor,
+          validatorfunc: validatorfunc,
+          labelText: labelText,
         ),
       ],
     );
