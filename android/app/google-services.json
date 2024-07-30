@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "45562303296",
+    "project_id": "ayti-jobs",
+    "storage_bucket": "ayti-jobs.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:45562303296:android:8ad5e898168b5b77c4a0a5",
+        "android_client_info": {
+          "package_name": "com.example"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA3e0iEqSjpv57hIOoP5xJAx4qHz-SsY1E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:45562303296:android:443a7d1d6f5534bbc4a0a5",
+        "android_client_info": {
+          "package_name": "com.example.aytijobs"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA3e0iEqSjpv57hIOoP5xJAx4qHz-SsY1E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
