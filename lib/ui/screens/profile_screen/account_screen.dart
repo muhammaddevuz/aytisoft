@@ -1,4 +1,4 @@
-import 'package:aytijobs/ui/screens/add_about_me_screen.dart';
+import 'package:aytijobs/ui/screens/profile_screen/add_about_me_screen.dart';
 import 'package:flutter/material.dart';
 
 class AccountScreen extends StatelessWidget {
