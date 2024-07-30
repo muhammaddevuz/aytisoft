@@ -1,4 +1,3 @@
-import 'package:aytijobs/data/models/job.dart';
 import 'package:aytijobs/ui/screens/adding_job_screen/add_job_screen.dart';
 import 'package:flutter/material.dart';
 
