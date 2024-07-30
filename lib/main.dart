@@ -1,8 +1,6 @@
-import 'package:aytijobs/ui/screens/profile_screen/education_screen.dart';
-import 'package:aytijobs/utils/constant_colors.dart';
+import 'package:aytijobs/ui/screens/splash_screen/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 void main(List<String> args) async {
   runApp(const MyApp());
@@ -16,18 +14,9 @@ class MyApp extends StatelessWidget {
     return ScreenUtilInit(
       designSize: const Size(360, 690),
       builder: (context, child) {
-        return MaterialApp(
-          theme: ThemeData(
-            textTheme: GoogleFonts.dmSansTextTheme(
-              Theme.of(context).textTheme.apply(
-                    bodyColor: Constantcolors.mainColor,
-                    displayColor: Constantcolors.mainColor,
-                  ),
-            ),
-          ),
+        return const MaterialApp(
           debugShowCheckedModeBanner: false,
-          home:
-              EducationScreen(), //my screen not oper's and not shokh's screen okay ☻
+          home: SplashScreen(),
         );
       },
     );
