@@ -86,6 +86,14 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_gap:
+    dependency: "direct main"
+    description:
+      name: flutter_gap
+      sha256: a9cba8697cc016918e258a9e5373e84a786321dea6febb11f22a47e875f9ae1b
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.0"
   flutter_lints:
     dependency: "direct dev"
     description:
