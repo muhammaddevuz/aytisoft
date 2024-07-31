@@ -1,7 +1,6 @@
 import 'package:aytijobs/blocs/skills_bloc/skills_event.dart';
 import 'package:aytijobs/blocs/skills_bloc/skills_state.dart';
 import 'package:aytijobs/utils/skills_constants.dart';
-import 'package:bloc/bloc.dart';
 
 class SkillsBloc extends Bloc<SkillsEvent, SkillsState> {
   SkillsBloc() : super(SkillsInitialState()) {
