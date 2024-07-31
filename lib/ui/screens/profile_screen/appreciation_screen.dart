@@ -90,7 +90,7 @@ class _AppreciationScreenState extends State<AppreciationScreen> {
                   }
                   return null;
                 },
-                labelText: 'Award name',
+                hintText: 'Award name',
               ),
               const SizedBox(height: 10),
               Text(
@@ -111,7 +111,7 @@ class _AppreciationScreenState extends State<AppreciationScreen> {
                   }
                   return null;
                 },
-                labelText: 'Category',
+                hintText: 'Category',
               ),
               const SizedBox(height: 20),
               Row(
@@ -142,7 +142,7 @@ class _AppreciationScreenState extends State<AppreciationScreen> {
                                 }
                                 return null;
                               },
-                              labelText: 'End Date',
+                              hintText: 'End Date',
                             ),
                           ),
                         ),
@@ -185,7 +185,7 @@ class _AppreciationScreenState extends State<AppreciationScreen> {
                   }
                   return null;
                 },
-                labelText: 'Write additional information here',
+                hintText: 'Write additional information here',
               ),
               const SizedBox(height: 20),
               widget.appretiation != null

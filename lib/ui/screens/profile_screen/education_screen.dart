@@ -118,6 +118,48 @@ class _EducationScreenState extends State<EducationScreen> {
                       },
                       labelText: 'field of study',
                     ),
+
+                  ],
+                ),
+                Text(
+                  'Description',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 16,
+                    color: Constantcolors.mainColor,
+                  ),
+                ),
+                const SizedBox(height: 10),
+                Textfieldform(
+                  controller: studyDescController,
+                  maxLines: 5,
+                  filledColor: Colors.white,
+                  validatorfunc: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter description';
+                    }
+                    return null;
+                  },
+                  hintText: 'Write additional information here',
+                ),
+                const SizedBox(height: 20),
+                widget.education != null
+                    ? Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          ZoomTapAnimation(
+                            child: Card(
+                              color: const Color(0xFFD6CDFE),
+                              child: Container(
+                                alignment: Alignment.center,
+                                width: 160,
+                                height: 50,
+                                child: const Text(
+                                  "Remove",
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 20),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
