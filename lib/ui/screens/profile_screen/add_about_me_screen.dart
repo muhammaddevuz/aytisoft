@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AddAboutMeScreen extends StatelessWidget {
-  String? aboutMe;
+  final String? aboutMe;
 
-  AddAboutMeScreen([this.aboutMe]);
+  AddAboutMeScreen([this.aboutMe]) : super(key: GlobalKey());
 
   @override
   Widget build(BuildContext context) {
