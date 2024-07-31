@@ -1,9 +1,9 @@
-import 'package:aytijobs/ui/screens/appreciation_screen.dart';
-import 'package:aytijobs/ui/screens/language_screen.dart';
+import 'package:aytijobs/ui/screens/profile_screen/main_profile_screen.dart';
+import 'package:aytijobs/ui/screens/splash_screen/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-void main(List<String> args) {
+void main(List<String> args) async {
   runApp(const MyApp());
 }
 
@@ -12,13 +12,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const ScreenUtilInit(
-      designSize: Size(360, 690),
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        // home: WorkexpScreen(),
-        home: LanguageScreen(), // shokh-time screen
-      ),
+    return ScreenUtilInit(
+      designSize: const Size(360, 690),
+      builder: (context, child) {
+        return const MaterialApp(
+          debugShowCheckedModeBanner: false,
+          home: MainProfileScreen(),
+        );
+      },
     );
   }
 }

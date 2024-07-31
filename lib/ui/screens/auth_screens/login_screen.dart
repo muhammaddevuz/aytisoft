@@ -114,6 +114,9 @@ class _LoginScreenState extends State<LoginScreen> {
                       borderSide: const BorderSide(color: Colors.white),
                     ),
                   ),
+                  onFieldSubmitted: (value) {
+                    FocusScope.of(context).unfocus();
+                  },
                 ),
                 const Gap(20),
                 Row(
