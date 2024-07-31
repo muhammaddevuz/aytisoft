@@ -2,16 +2,14 @@ import 'package:aytijobs/bloc/auth/auth_bloc.dart';
 import 'package:aytijobs/data/repositories/auth_user_repository.dart';
 import 'package:aytijobs/data/services/auth_firebase_service.dart';
 import 'package:aytijobs/ui/screens/splash_screen/splash_screen.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main(List<String> args) async {
-
   WidgetsFlutterBinding.ensureInitialized();
 
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -21,7 +19,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return RepositoryProvider(
       create: (context) => AuthUserRepository(authService),
       child: BlocProvider(
@@ -37,18 +34,5 @@ class MyApp extends StatelessWidget {
         ),
       ),
     );
-    return ScreenUtilInit(
-
-        designSize: Size(360, 690),
-        child: MultiBlocProvider(
-          providers: [
-            BlocProvider(create: (context) => SkillsBloc()),
-          ],
-          child: MaterialApp(
-            debugShowCheckedModeBanner: false,
-            // home: WorkexpScreen(),
-            home: AddSkillsScreen(), // shokh-time screen
-          ),
-        ));
   }
 }
