@@ -1,4 +1,4 @@
-import 'package:aytijobs/ui/screens/add_skills_screen.dart';
+import 'package:aytijobs/ui/screens/profile_screen/add_skills_screen.dart';
 import 'package:aytijobs/ui/screens/profile_screen/main_profile_screen.dart';
 import 'package:aytijobs/ui/screens/splash_screen/splash_screen.dart';
 import 'package:flutter/material.dart';
@@ -14,13 +14,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: Size(360, 690),
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        // home: WorkexpScreen(),
-        home: AddSkillsScreen(), // shokh-time screen
-      ));
-   
+        designSize: Size(360, 690),
+        child: MaterialApp(
+          debugShowCheckedModeBanner: false,
+          // home: WorkexpScreen(),
+          home: AddSkillsScreen(), // shokh-time screen
+        ));
   }
 }
-
