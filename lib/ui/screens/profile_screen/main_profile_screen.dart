@@ -9,13 +9,19 @@ class MainProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.red,
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        // mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Container(
             width: double.infinity,
-            height: 220.h,
+            height: 200.h,
             decoration: const BoxDecoration(
+              borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(32),
+                bottomRight: Radius.circular(32),
+              ),
+              color: Colors.yellow,
               image: DecorationImage(
                 image: AssetImage(
                   'assets/images/account_screen_icons/profile_background.png',
@@ -23,70 +29,59 @@ class MainProfileScreen extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
             ),
-            child: Container(
-              height: 220,
+            child: Padding(
               padding: EdgeInsets.symmetric(vertical: 26.h, horizontal: 23.w),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      const SizedBox(),
-                      Wrap(
-                        children: [
-                          GestureDetector(
-                            onTap: () {},
-                            child: Image.asset(
-                              'assets/images/account_screen_icons/share_icon.png',
-                              height: 26,
-                              width: 26,
-                              color: const Color(0xFFFFFFFF),
-                            ),
-                          ),
-                          15.sW(),
-                          GestureDetector(
-                            onTap: () {},
-                            child: Image.asset(
-                              'assets/images/account_screen_icons/edit_icon.png',
-                              height: 26,
-                              width: 26,
-                              color: const Color(0xFFFFFFFF),
-                            ),
-                          ),
-                        ],
+                      GestureDetector(
+                        onTap: () {},
+                        child: Image.asset(
+                          'assets/images/account_screen_icons/share_icon.png',
+                          height: 26,
+                          width: 26,
+                          color: const Color(0xFFFFFFFF),
+                        ),
+                      ),
+                      15.sW(),
+                      GestureDetector(
+                        onTap: () {},
+                        child: Image.asset(
+                          'assets/images/account_screen_icons/edit_icon.png',
+                          height: 26,
+                          width: 26,
+                          color: const Color(0xFFFFFFFF),
+                        ),
                       ),
                     ],
                   ),
                   const SizedBox(height: 10),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      ClipOval(
-                        child: Image.asset(
-                          'assets/images/account_screen_icons/profile_avatar_image.png',
-                          width: 52,
-                          height: 52,
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                      const Text(
-                        'John doe',
-                        style: TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w500,
-                            color: Colors.white),
-                      ),
-                      const Text(
-                        'Tashkent, Uzbekistan',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 12,
-                          fontWeight: FontWeight.w400,
-                        ),
-                      )
-                    ],
+                  ClipOval(
+                    child: Image.asset(
+                      'assets/images/account_screen_icons/profile_avatar_image.png',
+                      width: 52,
+                      height: 52,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  const Text(
+                    'John doe',
+                    style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.white),
+                  ),
+                  const Text(
+                    'Tashkent, Uzbekistan',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 12,
+                      fontWeight: FontWeight.w400,
+                    ),
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -119,7 +114,7 @@ class MainProfileScreen extends StatelessWidget {
                         ),
                       )
                     ],
-                  )
+                  ),
                 ],
               ),
             ),
