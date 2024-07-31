@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class Textfieldform extends StatelessWidget {
   final Color? filledColor;
@@ -10,16 +9,15 @@ class Textfieldform extends StatelessWidget {
   TextEditingController controller;
 
   final String? Function(String?)? validatorfunc;
-  Textfieldform({
-    super.key,
-    required this.controller,
-    this.filledColor,
-    this.hintText,
-    this.validatorfunc,
-    this.maxLines,
-    this.preficon,
-    this.sufficon
-  });
+  Textfieldform(
+      {super.key,
+      required this.controller,
+      this.filledColor,
+      this.hintText,
+      this.validatorfunc,
+      this.maxLines,
+      this.preficon,
+      this.sufficon});
 
   @override
   Widget build(BuildContext context) {
