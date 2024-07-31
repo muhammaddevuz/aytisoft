@@ -1,7 +1,6 @@
-import 'package:aytijobs/ui/screens/profile_screen/account_screen.dart';
-import 'package:aytijobs/ui/screens/profile_screen/main_profile_screen.dart';
-import 'package:aytijobs/ui/screens/splash_screen/splash_screen.dart';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main(List<String> args) async {
@@ -14,13 +13,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: const Size(360, 690),
-      builder: (context, child) {
-        return  MaterialApp(
-          debugShowCheckedModeBanner: false,
-          home: AccountScreen(),
-        );
-      },
-    );
+
+        designSize: Size(360, 690),
+        child: MultiBlocProvider(
+          providers: [
+            BlocProvider(create: (context) => SkillsBloc()),
+          ],
+          child: MaterialApp(
+            debugShowCheckedModeBanner: false,
+            // home: WorkexpScreen(),
+            home: AddSkillsScreen(), // shokh-time screen
+          ),
+        ));
   }
 }
