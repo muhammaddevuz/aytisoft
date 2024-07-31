@@ -61,144 +61,64 @@ class _EducationScreenState extends State<EducationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
       body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(20),
-          child: Form(
-            key: _formKey,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Text(
-                  'Add Education',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20,
-                    color: Constantcolors.mainColor,
-                  ),
-                ),
-                EducationAllInOne(
-                  controller: educationLevelController,
-                  title: 'Level of education',
-                  filledColor: Colors.white,
-                  validatorfunc: (value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Please enter level of education';
-                    }
-                    return null;
-                  },
-                  labelText: 'level of education',
-                ),
-                EducationAllInOne(
-                  controller: institutionNameController,
-                  filledColor: Colors.white,
-                  title: 'Institution name',
-                  validatorfunc: (value) {
-                    if (value == null || value.isEmpty) {
-                      return 'please enter Institution name';
-                    }
-                    return null;
-                  },
-                  labelText: 'institution name',
-                ),
-                EducationAllInOne(
-                  controller: fieldOfStudyController,
-                  filledColor: Colors.white,
-                  title: 'Field of study',
-                  validatorfunc: (value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Please enter field of study';
-                    }
-                    return null;
-                  },
-                  labelText: 'field of study',
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        child: SafeArea(
+          child: Padding(
+            padding: const EdgeInsets.all(20),
+            child: Form(
+              key: _formKey,
+              child: SizedBox(
+                height:
+                    MediaQuery.of(context).size.height - kToolbarHeight - 15,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Start Date',
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 16,
-                              color: Constantcolors.mainColor,
-                            ),
-                          ),
-                          const SizedBox(height: 10),
-                          GestureDetector(
-                            onTap: () =>
-                                _selectDate(context, startDateController),
-                            child: AbsorbPointer(
-                              child: DateForm(
-                                controller: startDateController,
-                                filledColor: Colors.white,
-                                validatorfunc: (value) {
-                                  if (value == null || value.isEmpty) {
-                                    return 'Please enter start date';
-                                  }
-                                  return null;
-                                },
-                                labelText: 'Start Date',
-                              ),
-                            ),
-                          ),
-                        ],
+                    Text(
+                      'Add Education',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20,
+                        color: Constantcolors.mainColor,
                       ),
                     ),
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'End Date',
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 16,
-                              color: Constantcolors.mainColor,
-                            ),
-                          ),
-                          const SizedBox(height: 10),
-                          GestureDetector(
-                            onTap: () =>
-                                _selectDate(context, endDateController),
-                            child: AbsorbPointer(
-                              child: DateForm(
-                                controller: endDateController,
-                                filledColor: Colors.white,
-                                validatorfunc: (value) {
-                                  if (value == null || value.isEmpty) {
-                                    return 'Please enter end date';
-                                  }
-                                  return null;
-                                },
-                                labelText: 'End Date',
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-                Row(
-                  children: [
-                    Checkbox(
-                      value: false,
-                      onChanged: (value) {
-                        setState(() {
-                          value = !value!;
-                        });
+                    EducationAllInOne(
+                      controller: educationLevelController,
+                      title: 'Level of education',
+                      filledColor: Colors.white,
+                      validatorfunc: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Please enter level of education';
+                        }
+                        return null;
                       },
+                      labelText: 'level of education',
                     ),
-                    const Text(
-                      'This is my position now',
+                    EducationAllInOne(
+                      controller: institutionNameController,
+                      filledColor: Colors.white,
+                      title: 'Institution name',
+                      validatorfunc: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'please enter Institution name';
+                        }
+                        return null;
+                      },
+                      labelText: 'institution name',
                     ),
+                    EducationAllInOne(
+                      controller: fieldOfStudyController,
+                      filledColor: Colors.white,
+                      title: 'Field of study',
+                      validatorfunc: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Please enter field of study';
+                        }
+                        return null;
+                      },
+                      labelText: 'field of study',
+                    ),
+
                   ],
                 ),
                 Text(
@@ -240,50 +160,177 @@ class _EducationScreenState extends State<EducationScreen> {
                                       color: Colors.white,
                                       fontWeight: FontWeight.bold,
                                       fontSize: 20),
-                                ),
-                              ),
-                            ),
-                          ),
-                          ZoomTapAnimation(
-                            child: Card(
-                              color: Constantcolors.mainColor,
-                              child: Container(
-                                alignment: Alignment.center,
-                                width: 160,
-                                height: 50,
-                                child: const Text(
-                                  "Save",
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 20),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
-                      )
-                    : Center(
-                        child: ZoomTapAnimation(
-                          onTap: submit,
-                          child: Card(
-                            color: Constantcolors.mainColor,
-                            child: Container(
-                              alignment: Alignment.center,
-                              width: 270,
-                              height: 50,
-                              child: const Text(
-                                "Save",
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Start Date',
                                 style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 20),
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 16,
+                                  color: Constantcolors.mainColor,
+                                ),
                               ),
-                            ),
+                              const SizedBox(height: 10),
+                              GestureDetector(
+                                onTap: () =>
+                                    _selectDate(context, startDateController),
+                                child: AbsorbPointer(
+                                  child: DateForm(
+                                    controller: startDateController,
+                                    filledColor: Colors.white,
+                                    validatorfunc: (value) {
+                                      if (value == null || value.isEmpty) {
+                                        return 'Please enter start date';
+                                      }
+                                      return null;
+                                    },
+                                    labelText: 'Start Date',
+                                  ),
+                                ),
+                              ),
+                            ],
                           ),
                         ),
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'End Date',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 16,
+                                  color: Constantcolors.mainColor,
+                                ),
+                              ),
+                              const SizedBox(height: 10),
+                              GestureDetector(
+                                onTap: () =>
+                                    _selectDate(context, endDateController),
+                                child: AbsorbPointer(
+                                  child: DateForm(
+                                    controller: endDateController,
+                                    filledColor: Colors.white,
+                                    validatorfunc: (value) {
+                                      if (value == null || value.isEmpty) {
+                                        return 'Please enter end date';
+                                      }
+                                      return null;
+                                    },
+                                    labelText: 'End Date',
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Checkbox(
+                          value: false,
+                          onChanged: (value) {
+                            setState(() {
+                              value = !value!;
+                            });
+                          },
+                        ),
+                        const Text(
+                          'This is my position now',
+                        ),
+                      ],
+                    ),
+                    Text(
+                      'Description',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
+                        color: Constantcolors.mainColor,
                       ),
-              ],
+                    ),
+                    const SizedBox(height: 10),
+                    Textfieldform(
+                      controller: studyDescController,
+                      maxLines: 5,
+                      filledColor: Colors.white,
+                      validatorfunc: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Please enter description';
+                        }
+                        return null;
+                      },
+                      labelText: 'Write additional information here',
+                    ),
+                    const SizedBox(height: 20),
+                    widget.education != null
+                        ? Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              ZoomTapAnimation(
+                                child: Card(
+                                  color: const Color(0xFFD6CDFE),
+                                  child: Container(
+                                    alignment: Alignment.center,
+                                    width: 160,
+                                    height: 50,
+                                    child: const Text(
+                                      "Remove",
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 20),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              ZoomTapAnimation(
+                                child: Card(
+                                  color: Constantcolors.mainColor,
+                                  child: Container(
+                                    alignment: Alignment.center,
+                                    width: 160,
+                                    height: 50,
+                                    child: const Text(
+                                      "Save",
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 20),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          )
+                        : Center(
+                            child: ZoomTapAnimation(
+                              onTap: submit,
+                              child: Card(
+                                color: Constantcolors.mainColor,
+                                child: Container(
+                                  alignment: Alignment.center,
+                                  width: 270,
+                                  height: 50,
+                                  child: const Text(
+                                    "Save",
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 20),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                  ],
+                ),
+              ),
             ),
           ),
         ),
