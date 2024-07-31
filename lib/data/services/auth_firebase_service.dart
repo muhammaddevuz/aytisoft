@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 
-class AuthService {
+class AuthFirebaseService {
   final FirebaseAuth auth = FirebaseAuth.instance;
 
   Future<void> register(String email, String password) async {

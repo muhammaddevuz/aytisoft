@@ -29,7 +29,7 @@ class EducationAllInOne extends StatelessWidget {
           controller: controller,
           filledColor: filledColor,
           validatorfunc: validatorfunc,
-          labelText: labelText,
+          hintText: labelText,
         ),
       ],
     );

@@ -220,7 +220,7 @@ class _EducationScreenState extends State<EducationScreen> {
                     }
                     return null;
                   },
-                  labelText: 'Write additional information here',
+                  hintText: 'Write additional information here',
                 ),
                 const SizedBox(height: 20),
                 widget.education != null

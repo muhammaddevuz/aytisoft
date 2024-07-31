@@ -3,7 +3,7 @@ import 'package:flutter/widgets.dart';
 
 class Textfieldform extends StatelessWidget {
   final Color? filledColor;
-  String? labelText;
+  String? hintText;
   int? maxLines;
   Widget? preficon;
   Widget? sufficon;
@@ -14,7 +14,7 @@ class Textfieldform extends StatelessWidget {
     super.key,
     required this.controller,
     this.filledColor,
-    this.labelText,
+    this.hintText,
     this.validatorfunc,
     this.maxLines,
     this.preficon,
@@ -35,7 +35,7 @@ class Textfieldform extends StatelessWidget {
         alignLabelWithHint: true,
         filled: true,
         fillColor: filledColor,
-        labelText: labelText,
+        hintText: hintText,
         border: OutlineInputBorder(
           borderSide: const BorderSide(color: Colors.white),
           borderRadius: BorderRadius.circular(20),
