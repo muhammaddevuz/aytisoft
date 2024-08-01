@@ -1,3 +1,5 @@
+import 'package:aytijobs/blocs/skills_bloc/skills_bloc.dart';
+import 'package:aytijobs/ui/screens/profile_screen/add_skills_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
