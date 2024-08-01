@@ -1,6 +1,6 @@
-import 'package:aytijobs/blocs/auth/auth_bloc.dart';
-import 'package:aytijobs/blocs/auth/auth_event.dart';
-import 'package:aytijobs/blocs/auth/auth_state.dart';
+import 'package:aytijobs/logic/blocs/auth/auth_bloc.dart';
+import 'package:aytijobs/logic/blocs/auth/auth_event.dart';
+import 'package:aytijobs/logic/blocs/auth/auth_state.dart';
 import 'package:aytijobs/ui/screens/auth_screens/forgot_password.dart';
 import 'package:aytijobs/ui/screens/auth_screens/login_screen.dart';
 import 'package:aytijobs/ui/screens/home_screen.dart';
