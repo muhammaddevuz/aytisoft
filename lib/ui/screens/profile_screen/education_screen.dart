@@ -7,8 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:zoom_tap_animation/zoom_tap_animation.dart';
 
 class EducationScreen extends StatefulWidget {
-  Education? education;
-  EducationScreen({super.key, this.education});
+  final Education? education;
+  const EducationScreen({super.key, this.education});
 
   @override
   State<EducationScreen> createState() => _EducationScreenState();
@@ -192,10 +192,10 @@ class _EducationScreenState extends State<EducationScreen> {
                     Row(
                       children: [
                         Checkbox(
-                          value: false,
+                          value: isCurrentlyPosition,
                           onChanged: (value) {
                             setState(() {
-                              value = !value!;
+                              isCurrentlyPosition = value!;
                             });
                           },
                         ),
@@ -223,7 +223,7 @@ class _EducationScreenState extends State<EducationScreen> {
                         }
                         return null;
                       },
-                      labelText: 'Write additional information here',
+                      hintText: 'Write additional information here',
                     ),
                     const SizedBox(height: 20),
                     widget.education != null

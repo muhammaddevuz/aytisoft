@@ -92,7 +92,7 @@ class _WorkexpScreenState extends State<WorkexpScreen> {
                   }
                   return null;
                 },
-                labelText: 'Title',
+                hintText: 'Title',
               ),
               const SizedBox(height: 10),
               Text(
@@ -113,7 +113,7 @@ class _WorkexpScreenState extends State<WorkexpScreen> {
                   }
                   return null;
                 },
-                labelText: 'Company',
+                hintText: 'Company',
               ),
               const SizedBox(height: 20),
               Row(
@@ -145,7 +145,7 @@ class _WorkexpScreenState extends State<WorkexpScreen> {
                                 }
                                 return null;
                               },
-                              labelText: 'Start Date',
+                              hintText: 'Start Date',
                             ),
                           ),
                         ),
@@ -178,7 +178,7 @@ class _WorkexpScreenState extends State<WorkexpScreen> {
                                 }
                                 return null;
                               },
-                              labelText: 'End Date',
+                              hintText: 'End Date',
                             ),
                           ),
                         ),
@@ -221,7 +221,7 @@ class _WorkexpScreenState extends State<WorkexpScreen> {
                   }
                   return null;
                 },
-                labelText: 'Write additional information here',
+                hintText: 'Write additional information here',
               ),
               const SizedBox(height: 20),
               widget.exp != null

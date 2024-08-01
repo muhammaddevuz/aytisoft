@@ -43,7 +43,7 @@ class AllInOne extends StatelessWidget {
           controller: controller,
           filledColor: filledColor,
           validatorfunc: validatorfunc,
-          labelText: labelText,
+          hintText: labelText,
         ),
       ],
     );

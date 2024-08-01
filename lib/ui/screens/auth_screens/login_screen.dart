@@ -68,7 +68,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 Textfieldform(
                   controller: emailController,
                   filledColor: const Color(0xffFFFFFF),
-                  labelText: "Brandonelouis@gmail.com ",
+                  hintText: "Brandonelouis@gmail.com ",
                 ),
                 const Gap(20),
                 Row(

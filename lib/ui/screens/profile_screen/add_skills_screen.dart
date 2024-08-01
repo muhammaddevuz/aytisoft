@@ -1,6 +1,6 @@
-import 'package:aytijobs/bloc/skills_bloc/skills_bloc.dart';
-import 'package:aytijobs/bloc/skills_bloc/skills_event.dart';
-import 'package:aytijobs/bloc/skills_bloc/skills_state.dart';
+import 'package:aytijobs/blocs/skills_bloc/skills_bloc.dart';
+import 'package:aytijobs/blocs/skills_bloc/skills_event.dart';
+import 'package:aytijobs/blocs/skills_bloc/skills_state.dart';
 import 'package:aytijobs/utils/skills_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -202,6 +202,7 @@ class _AddSkillsScreenState extends State<AddSkillsScreen> {
           child: Text('Malimotlar topilmadi'),
         );
       }),
+
 
     );
   }

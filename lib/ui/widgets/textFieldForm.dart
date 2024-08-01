@@ -1,25 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class Textfieldform extends StatelessWidget {
   final Color? filledColor;
-  String? labelText;
+  String? hintText;
   int? maxLines;
   Widget? preficon;
   Widget? sufficon;
   TextEditingController controller;
 
   final String? Function(String?)? validatorfunc;
-  Textfieldform({
-    super.key,
-    required this.controller,
-    this.filledColor,
-    this.labelText,
-    this.validatorfunc,
-    this.maxLines,
-    this.preficon,
-    this.sufficon
-  });
+  Textfieldform(
+      {super.key,
+      required this.controller,
+      this.filledColor,
+      this.hintText,
+      this.validatorfunc,
+      this.maxLines,
+      this.preficon,
+      this.sufficon});
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +33,7 @@ class Textfieldform extends StatelessWidget {
         alignLabelWithHint: true,
         filled: true,
         fillColor: filledColor,
-        labelText: labelText,
+        hintText: hintText,
         border: OutlineInputBorder(
           borderSide: const BorderSide(color: Colors.white),
           borderRadius: BorderRadius.circular(20),
