@@ -1,4 +1,4 @@
-import 'package:aytijobs/data/services/auth_firebase_service.dart';
+import 'package:aytijobs/services/auth_firebase_service.dart';
 
 class AuthUserRepository {
   final AuthFirebaseService authFirebaseService;
