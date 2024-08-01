@@ -1,17 +1,17 @@
-import 'package:aytijobs/bloc/auth/auth_event.dart';
-import 'package:aytijobs/bloc/auth/auth_state.dart';
+import 'package:aytijobs/blocs/auth/auth_event.dart';
+import 'package:aytijobs/blocs/auth/auth_state.dart';
 import 'package:aytijobs/data/repositories/auth_user_repository.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
+  final AuthUserRepository userRepository;
+
   AuthBloc(this.userRepository) : super(InitialAuthState()) {
     on<RegisterAuthEvent>(_register);
     on<LoginAuthEvent>(_login);
     on<ResetPasswordAuthEvent>(_resetPassword);
     on<LogoutAuthEvent>(_logout);
   }
-
-  final AuthUserRepository userRepository;
 
   /// register user bloc
   void _register(RegisterAuthEvent event, Emitter emit) async {
