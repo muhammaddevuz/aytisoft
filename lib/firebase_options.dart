@@ -50,19 +50,20 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyA3e0iEqSjpv57hIOoP5xJAx4qHz-SsY1E',
-    appId: '1:45562303296:android:443a7d1d6f5534bbc4a0a5',
-    messagingSenderId: '45562303296',
-    projectId: 'ayti-jobs',
-    storageBucket: 'ayti-jobs.appspot.com',
+    apiKey: 'AIzaSyBzpH11RHNYNt7wdEW30Cg9vqba9VmnXLw',
+    appId: '1:461707493921:android:8a563fa3348d8ca9bcd960',
+    messagingSenderId: '461707493921',
+    projectId: 'orginal-ayti-jobs',
+    storageBucket: 'orginal-ayti-jobs.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyCkSiRr0zs6T44GFU3J-K_5mEsS1ZngpZc',
-    appId: '1:45562303296:ios:bdb7775283287bdcc4a0a5',
-    messagingSenderId: '45562303296',
-    projectId: 'ayti-jobs',
-    storageBucket: 'ayti-jobs.appspot.com',
+    apiKey: 'AIzaSyBliYSj29G8IwMBAExBzH9I565iBEVclG4',
+    appId: '1:461707493921:ios:ef9a6f21fb1b270fbcd960',
+    messagingSenderId: '461707493921',
+    projectId: 'orginal-ayti-jobs',
+    storageBucket: 'orginal-ayti-jobs.appspot.com',
     iosBundleId: 'com.example.aytijobs',
   );
+
 }
