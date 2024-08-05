@@ -221,6 +221,7 @@ class _EducationScreenState extends State<EducationScreen> {
                                 ),
                               ),
                             ),
+                   
                     ],
                   ),
                 ),
