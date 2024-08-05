@@ -1,3 +1,11 @@
+import '../../../logic/blocs/auth/auth_bloc.dart';
+import '../../../logic/blocs/auth/auth_event.dart';
+import '../../../logic/blocs/auth/auth_state.dart';
+import 'forgot_password.dart';
+import 'login_screen.dart';
+import '../home_screen.dart';
+import '../../widgets/auth_widgets/register_widget.dart';
+import '../../../utils/constant_colors.dart';
 import 'package:aytijobs/logic/blocs/auth/auth_bloc.dart';
 import 'package:aytijobs/logic/blocs/auth/auth_state.dart';
 import 'package:aytijobs/ui/screens/home_screen.dart';
