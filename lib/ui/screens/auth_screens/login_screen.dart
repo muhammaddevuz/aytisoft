@@ -151,6 +151,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     const Gap(10),
                     TextFormField(
                       controller: passwordController,
+                      obscureText: isHide,
                       decoration: InputDecoration(
                         contentPadding: const EdgeInsets.all(10),
                         alignLabelWithHint: true,
@@ -162,8 +163,8 @@ class _LoginScreenState extends State<LoginScreen> {
                             });
                           },
                           child: isHide
-                              ? const Icon(CupertinoIcons.eye_slash)
-                              : const Icon(CupertinoIcons.eye),
+                              ? const Icon(CupertinoIcons.eye)
+                              : const Icon(CupertinoIcons.eye_slash),
                         ),
                         filled: true,
                         fillColor: Colors.white,
@@ -181,6 +182,12 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                       onFieldSubmitted: (value) {
                         FocusScope.of(context).unfocus();
+                      },
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return "please enter your password";
+                        }
+                        return null;
                       },
                     ),
                     const Gap(20),
@@ -239,7 +246,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     const Gap(35),
                     GestureDetector(
-                      onTap: _submit,
+                      onTap: isCheck ? _submit : null,
                       child: Container(
                         width: 266.w,
                         height: 50.h,
