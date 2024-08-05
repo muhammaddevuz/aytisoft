@@ -15,10 +15,11 @@ class SkillsBloc extends Bloc<SkillsEvent, SkillsState> {
     try {
       if (!skills.contains(event.skill)) {
         skills.add(event.skill);
-        controller.clear();
-        emit(SkillsChangeQueryEvent(query: ''));
-        SkillsLoadedState(query: query, skills: skills, controller: controller);
       }
+      controller.clear();
+      add(SkillsChangeQueryEvent(query: ""));
+      emit(SkillsLoadedState(
+          query: query, skills: skills, controller: controller));
     } catch (error) {
       emit(SkillsErrorState(error: error.toString()));
     }
