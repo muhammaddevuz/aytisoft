@@ -1,10 +1,13 @@
 
 import 'package:aytijobs/logic/blocs/auth/auth_bloc.dart';
 import 'package:aytijobs/data/repositories/auth_user_repository.dart';
+import 'package:aytijobs/logic/blocs/skills_bloc/skills_bloc.dart';
 import 'package:aytijobs/logic/cubits/education/education_cubit.dart';
 import 'package:aytijobs/services/auth_firebase_service.dart';
 import 'package:aytijobs/firebase_options.dart';
 import 'package:aytijobs/services/get_it.dart';
+import 'package:aytijobs/ui/screens/profile_screen/education_screen.dart';
+import 'package:aytijobs/ui/screens/profile_screen/main_profile_screen.dart';
 
 import 'package:aytijobs/ui/screens/profiles_screens/profile_screen.dart';
 
@@ -47,7 +50,7 @@ class MyApp extends StatelessWidget {
           builder: (context, child) {
             return const MaterialApp(
               debugShowCheckedModeBanner: false,
-              home: ProfileScreen(),
+              home: EducationScreen(),
             );
           },
         ),
