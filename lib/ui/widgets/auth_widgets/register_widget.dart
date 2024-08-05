@@ -1,5 +1,5 @@
-import 'package:aytijobs/blocs/auth/auth_bloc.dart';
-import 'package:aytijobs/blocs/auth/auth_event.dart';
+import 'package:aytijobs/logic/blocs/auth/auth_bloc.dart';
+import 'package:aytijobs/logic/blocs/auth/auth_event.dart';
 import 'package:aytijobs/ui/screens/auth_screens/forgot_password.dart';
 import 'package:aytijobs/ui/screens/auth_screens/login_screen.dart';
 import 'package:aytijobs/ui/widgets/textFieldForm.dart';
@@ -35,7 +35,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
       context.read<AuthBloc>().add(RegisterAuthEvent(
             email: emailController.text,
             password: passwordController.text,
-          )); 
+          ));
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(

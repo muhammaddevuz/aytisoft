@@ -1,6 +1,7 @@
 
 import 'package:aytijobs/logic/blocs/auth/auth_bloc.dart';
 import 'package:aytijobs/data/repositories/auth_user_repository.dart';
+import 'package:aytijobs/logic/blocs/skills_bloc/skills_bloc.dart';
 import 'package:aytijobs/logic/cubits/education/education_cubit.dart';
 import 'package:aytijobs/services/auth_firebase_service.dart';
 import 'package:aytijobs/firebase_options.dart';
