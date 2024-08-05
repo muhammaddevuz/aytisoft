@@ -1,4 +1,4 @@
-import 'package:aytijobs/data/models/education.dart';
+import '../../../data/models/education.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 part 'education_events.dart';

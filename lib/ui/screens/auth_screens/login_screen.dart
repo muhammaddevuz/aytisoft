@@ -1,7 +1,7 @@
-import 'package:aytijobs/ui/screens/auth_screens/forgot_password.dart';
-import 'package:aytijobs/ui/screens/auth_screens/register_screen.dart';
-import 'package:aytijobs/ui/widgets/textFieldForm.dart';
-import 'package:aytijobs/utils/constant_colors.dart';
+import 'forgot_password.dart';
+import 'register_screen.dart';
+import '../../widgets/textFieldForm.dart';
+import '../../../utils/constant_colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

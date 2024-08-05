@@ -1,4 +1,4 @@
-import 'package:aytijobs/logic/cubits/profile/cubit/profile_state.dart';
+import 'profile_state.dart';
 import 'package:bloc/bloc.dart';
 
 enum GenderEnum { male, female, none }

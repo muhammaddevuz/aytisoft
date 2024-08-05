@@ -1,4 +1,4 @@
-import 'package:aytijobs/logic/cubits/profile/cubit/profile_cubit.dart';
+import 'profile_cubit.dart';
 import 'package:equatable/equatable.dart';
 
 class ProfileState extends Equatable {

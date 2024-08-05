@@ -1,5 +1,5 @@
-import 'package:aytijobs/data/repositories/auth_user_repository.dart';
-import 'package:aytijobs/services/auth_firebase_service.dart';
+import '../data/repositories/auth_user_repository.dart';
+import 'auth_firebase_service.dart';
 import 'package:get_it/get_it.dart';
 
 final getIt = GetIt.instance;

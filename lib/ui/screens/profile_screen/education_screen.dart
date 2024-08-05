@@ -1,10 +1,10 @@
-import 'package:aytijobs/data/models/education.dart';
-import 'package:aytijobs/logic/cubits/education/education_cubit.dart';
-import 'package:aytijobs/ui/widgets/education_widgets/check_box.dart';
-import 'package:aytijobs/ui/widgets/education_widgets/start_end_date_widget.dart';
-import 'package:aytijobs/ui/widgets/profile_widgets/education_all_in_one.dart';
-import 'package:aytijobs/ui/widgets/textFieldForm.dart';
-import 'package:aytijobs/utils/constant_colors.dart';
+import '../../../data/models/education.dart';
+import '../../../logic/cubits/education/education_cubit.dart';
+import '../../widgets/education_widgets/check_box.dart';
+import '../../widgets/education_widgets/start_end_date_widget.dart';
+import '../../widgets/profile_widgets/education_all_in_one.dart';
+import '../../widgets/textFieldForm.dart';
+import '../../../utils/constant_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:zoom_tap_animation/zoom_tap_animation.dart';

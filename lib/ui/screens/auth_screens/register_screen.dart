@@ -1,11 +1,11 @@
-import 'package:aytijobs/logic/blocs/auth/auth_bloc.dart';
-import 'package:aytijobs/logic/blocs/auth/auth_event.dart';
-import 'package:aytijobs/logic/blocs/auth/auth_state.dart';
-import 'package:aytijobs/ui/screens/auth_screens/forgot_password.dart';
-import 'package:aytijobs/ui/screens/auth_screens/login_screen.dart';
-import 'package:aytijobs/ui/screens/home_screen.dart';
-import 'package:aytijobs/ui/widgets/auth_widgets/register_widget.dart';
-import 'package:aytijobs/utils/constant_colors.dart';
+import '../../../logic/blocs/auth/auth_bloc.dart';
+import '../../../logic/blocs/auth/auth_event.dart';
+import '../../../logic/blocs/auth/auth_state.dart';
+import 'forgot_password.dart';
+import 'login_screen.dart';
+import '../home_screen.dart';
+import '../../widgets/auth_widgets/register_widget.dart';
+import '../../../utils/constant_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
