@@ -1,5 +1,4 @@
 
-import 'package:aytijobs/blocs/skills_bloc/skills_bloc.dart';
 import 'package:aytijobs/ui/screens/profile_screen/add_skills_screen.dart';
 import 'package:aytijobs/logic/blocs/auth/auth_bloc.dart';
 import 'package:aytijobs/data/repositories/auth_user_repository.dart';
@@ -45,7 +44,6 @@ class MyApp extends StatelessWidget {
           builder: (context, child) {
             return MaterialApp(
               debugShowCheckedModeBanner: false,
-              home: AddSkillsScreen(),
               home: EducationScreen(),
             );
           },
