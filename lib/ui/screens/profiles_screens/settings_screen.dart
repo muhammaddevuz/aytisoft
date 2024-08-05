@@ -1,7 +1,10 @@
 import 'package:aytijobs/ui/screens/profiles_screens/password_screen.dart';
 import 'package:aytijobs/ui/widgets/change_bottom.dart';
+import 'package:aytijobs/ui/widgets/profile_widgets/notif_widget.dart';
 import 'package:aytijobs/utils/constant_colors.dart';
+import 'package:aytijobs/utils/extension.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:zoom_tap_animation/zoom_tap_animation.dart';
 
 class SettingsScreen extends StatefulWidget {
@@ -12,6 +15,8 @@ class SettingsScreen extends StatefulWidget {
 }
 
 submit() {}
+bool isNotify = false;
+bool isDarkly = false;
 
 class _SettingsScreenState extends State<SettingsScreen> {
   @override
@@ -44,11 +49,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   fontSize: 16,
                 ),
               ),
-              trailing: Switch(
-                activeTrackColor: Colors.green,
-                value: true,
-                onChanged: (value) {},
-              ),
+              trailing: SettingsWidget(isNotify: isNotify),
             ),
             ListTile(
               contentPadding: EdgeInsets.zero,
@@ -64,11 +65,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   fontSize: 16,
                 ),
               ),
-              trailing: Switch(
-                activeTrackColor: Colors.green,
-                value: false,
-                onChanged: (value) {},
-              ),
+              trailing: SettingsWidget(isNotify: isDarkly),
             ),
             ZoomTapAnimation(
               onTap: () {
