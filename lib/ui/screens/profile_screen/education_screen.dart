@@ -2,9 +2,10 @@ import 'package:aytijobs/data/models/education.dart';
 import 'package:aytijobs/logic/cubits/education/education_cubit.dart';
 import 'package:aytijobs/ui/widgets/education_widgets/check_box.dart';
 import 'package:aytijobs/ui/widgets/education_widgets/start_end_date_widget.dart';
-import 'package:aytijobs/ui/widgets/profile_widgets/education_all_in_one.dart';
+import 'package:aytijobs/ui/widgets/education_widgets/education_all_in_one.dart';
 import 'package:aytijobs/ui/widgets/textFieldForm.dart';
 import 'package:aytijobs/utils/constant_colors.dart';
+import 'package:aytijobs/utils/search_queries.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:zoom_tap_animation/zoom_tap_animation.dart';
@@ -26,6 +27,17 @@ class _EducationScreenState extends State<EducationScreen> {
   final endDateController = TextEditingController();
   final studyDescController = TextEditingController();
   bool isCurrentlyPosition = false;
+
+  void onChanged(String? response) {
+    if (response == null) return;
+
+    List<String> educationLevelsUzbekistan = SearchQueries
+        .educationLevelsUzbekistan
+        .where((field) => field.contains(response))
+        .toList();
+
+    print(educationLevelsUzbekistan);
+  }
 
   @override
   void initState() {
@@ -90,6 +102,7 @@ class _EducationScreenState extends State<EducationScreen> {
                           return null;
                         },
                         labelText: 'level of education',
+                        onChanged: onChanged,
                       ),
                       EducationAllInOne(
                         controller: institutionNameController,

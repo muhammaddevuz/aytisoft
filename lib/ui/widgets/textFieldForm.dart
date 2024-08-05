@@ -7,17 +7,20 @@ class Textfieldform extends StatelessWidget {
   Widget? preficon;
   Widget? sufficon;
   TextEditingController controller;
+  final void Function(String?)? onChanged;
 
   final String? Function(String?)? validatorfunc;
-  Textfieldform(
-      {super.key,
-      required this.controller,
-      this.filledColor,
-      this.hintText,
-      this.validatorfunc,
-      this.maxLines,
-      this.preficon,
-      this.sufficon});
+  Textfieldform({
+    super.key,
+    required this.controller,
+    this.filledColor,
+    this.hintText,
+    this.validatorfunc,
+    this.maxLines,
+    this.preficon,
+    this.sufficon,
+    this.onChanged,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -47,6 +50,7 @@ class Textfieldform extends StatelessWidget {
           borderSide: const BorderSide(color: Colors.white),
         ),
       ),
+      onChanged: onChanged,
     );
   }
 }

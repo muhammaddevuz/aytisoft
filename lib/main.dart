@@ -45,7 +45,7 @@ class MyApp extends StatelessWidget {
         child: ScreenUtilInit(
           designSize: const Size(360, 690),
           builder: (context, child) {
-            return MaterialApp(
+            return const MaterialApp(
               debugShowCheckedModeBanner: false,
               home: EducationScreen(),
             );
