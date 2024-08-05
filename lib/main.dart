@@ -1,4 +1,3 @@
-
 import 'package:aytijobs/logic/blocs/auth/auth_bloc.dart';
 import 'package:aytijobs/data/repositories/auth_user_repository.dart';
 import 'package:aytijobs/logic/blocs/skills_bloc/skills_bloc.dart';
@@ -6,8 +5,7 @@ import 'package:aytijobs/logic/cubits/education/education_cubit.dart';
 import 'package:aytijobs/services/auth_firebase_service.dart';
 import 'package:aytijobs/firebase_options.dart';
 import 'package:aytijobs/services/get_it.dart';
-
-import 'package:aytijobs/ui/screens/profiles_screens/profile_screen.dart';
+import 'package:aytijobs/ui/screens/auth_screens/register_screen.dart';
 
 import 'package:firebase_core/firebase_core.dart';
 
@@ -46,9 +44,9 @@ class MyApp extends StatelessWidget {
         child: ScreenUtilInit(
           designSize: const Size(360, 690),
           builder: (context, child) {
-            return MaterialApp(
+            return const MaterialApp(
               debugShowCheckedModeBanner: false,
-              home: ProfileScreen(),
+              home: RegisterScreen(),
             );
           },
         ),
