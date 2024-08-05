@@ -1,4 +1,4 @@
-
+import 'package:aytijobs/logic/blocs/skills_bloc/skills_bloc.dart';
 import 'package:aytijobs/ui/screens/profile_screen/add_skills_screen.dart';
 import 'package:aytijobs/logic/blocs/auth/auth_bloc.dart';
 import 'package:aytijobs/data/repositories/auth_user_repository.dart';
@@ -34,6 +34,9 @@ class MyApp extends StatelessWidget {
       create: (context) => AuthUserRepository(getIt.get<AuthFirebaseService>()),
       child: MultiBlocProvider(
         providers: [
+          BlocProvider(
+            create: (context) => SkillsBloc(),
+          ),
           BlocProvider(
             create: (context) => AuthBloc(getIt.get<AuthUserRepository>()),
           ),
