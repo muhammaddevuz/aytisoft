@@ -1,3 +1,4 @@
+
 import 'package:aytijobs/logic/blocs/skills_bloc/skills_bloc.dart';
 import 'package:aytijobs/logic/blocs/skills_bloc/skills_event.dart';
 import 'package:aytijobs/logic/blocs/skills_bloc/skills_state.dart';
@@ -15,7 +16,7 @@ class _AddSkillsScreenState extends State<AddSkillsScreen> {
   @override
   void initState() {
     super.initState();
-    context.read<SkillsBloc>().add(SkillsChangeQueryEvent(query: query));
+    context.read<SkillsBloc>().add(SkillsChangeQueryEvent(query: ''));
   }
 
   @override
@@ -94,7 +95,7 @@ class _AddSkillsScreenState extends State<AddSkillsScreen> {
                                 ? IconButton(
                                     onPressed: () {
                                       setState(() {
-                                        controller.clear();
+                                        state.controller.clear();
                                       });
                                     },
                                     icon: const Icon(
@@ -107,7 +108,6 @@ class _AddSkillsScreenState extends State<AddSkillsScreen> {
                           onChanged: (value) {
                             context
                                 .read<SkillsBloc>()
-
                                 .add(SkillsChangeQueryEvent(query: value));
                           },
                         ),
@@ -120,7 +120,6 @@ class _AddSkillsScreenState extends State<AddSkillsScreen> {
                 ),
                 state.query.isNotEmpty
                     ? Container(
-                        // color: Colors.white,
                         height: 400,
                         width: double.infinity,
                         child: ListView.builder(
@@ -128,7 +127,7 @@ class _AddSkillsScreenState extends State<AddSkillsScreen> {
                           itemBuilder: (context, index) {
                             if (skillsList[index]
                                 .toLowerCase()
-                                .contains(state.query.toLowerCase())) {
+                                .contains(state.query.toLowerCase()) && !state.skills.contains(skillsList[index])) {
                               return InkWell(
                                 onTap: () {
                                   context.read<SkillsBloc>().add(SkillsAddEvent(skill: skillsList[index]));
@@ -158,7 +157,6 @@ class _AddSkillsScreenState extends State<AddSkillsScreen> {
                         children: [
                           for (var item in state.skills)
                             Container(
-                              // height: 20,
                               clipBehavior: Clip.hardEdge,
                               padding:
                                   const EdgeInsets.symmetric(horizontal: 2),
@@ -179,7 +177,6 @@ class _AddSkillsScreenState extends State<AddSkillsScreen> {
                                     width: 3,
                                   ),
                                   IconButton(
-                                    // padding: EdgeInsets.all(0),
                                     onPressed: () {
                                     context.read<SkillsBloc>().add(SkillsRemoveEvent(skill: item));
                                     },
@@ -199,11 +196,9 @@ class _AddSkillsScreenState extends State<AddSkillsScreen> {
           );
         }
         return Center(
-          child: Text('Malimotlar topilmadi'),
+          child: Text('Malumotlar topilmadi'),
         );
       }),
-
-
     );
   }
 }

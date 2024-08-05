@@ -27,6 +27,9 @@ class AllInOne extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        SizedBox(
+          height: 20,
+        ),
         Text(
           title,
           style: TextStyle(

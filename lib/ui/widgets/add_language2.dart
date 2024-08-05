@@ -20,42 +20,42 @@ class _AddLanguage2State extends State<AddLanguage2> {
             onPressed: () {
               Navigator.pop(context);
             },
-            icon: Icon(
+            icon: const Icon(
               Icons.arrow_back,
               size: 35,
             )),
       ),
       body: Padding(
-        padding: EdgeInsets.all(20),
+        padding: const EdgeInsets.all(20),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
+                const Text(
                   "Language",
                   style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
                       color: Color(0xff150B3D)),
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 Container(
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
                       color: Colors.white,
-                      boxShadow: [
+                      boxShadow: const [
                         BoxShadow(color: Colors.grey),
                       ]),
-                  padding: EdgeInsets.all(20),
+                  padding: const EdgeInsets.all(20),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text(
+                          const Text(
                             "Language",
                             style: TextStyle(
                                 fontSize: 20, fontWeight: FontWeight.bold),
@@ -64,7 +64,7 @@ class _AddLanguage2State extends State<AddLanguage2> {
                             children: [
                               Container(
                                 decoration:
-                                    BoxDecoration(shape: BoxShape.circle),
+                                    const BoxDecoration(shape: BoxShape.circle),
                                 clipBehavior: Clip.hardEdge,
                                 child: Image.asset(
                                   width: 40,
@@ -73,26 +73,26 @@ class _AddLanguage2State extends State<AddLanguage2> {
                                   fit: BoxFit.cover,
                                 ),
                               ),
-                              SizedBox(width: 20),
+                              const SizedBox(width: 20),
                               Text(
                                 widget.language,
-                                style: TextStyle(
+                                style: const TextStyle(
                                     fontSize: 20, fontWeight: FontWeight.bold),
                               ),
                             ],
                           ),
                         ],
                       ),
-                      SizedBox(height: 10),
-                      Divider(),
-                      SizedBox(height: 10),
+                      const SizedBox(height: 10),
+                      const Divider(),
+                      const SizedBox(height: 10),
                       InkWell(
                         onTap: () async {
                           await showDialog(
                             context: context,
                             builder: (context) {
                               return AlertDialog(
-                                title: Text(
+                                title: const Text(
                                   "Select level",
                                   textAlign: TextAlign.center,
                                 ),
@@ -114,15 +114,15 @@ class _AddLanguage2State extends State<AddLanguage2> {
                                                 children: [
                                                   Text(
                                                     "Level: $i",
-                                                    style: TextStyle(
+                                                    style: const TextStyle(
                                                         fontSize: 20,
                                                         fontWeight:
                                                             FontWeight.bold),
                                                   ),
-                                                  SizedBox(height: 20),
+                                                  const SizedBox(height: 20),
                                                 ],
                                               ),
-                                              SizedBox(
+                                              const SizedBox(
                                                 width: 200,
                                               )
                                             ],
@@ -140,7 +140,7 @@ class _AddLanguage2State extends State<AddLanguage2> {
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text(
+                                const Text(
                                   "Oral",
                                   style: TextStyle(
                                       fontSize: 20,
@@ -148,7 +148,7 @@ class _AddLanguage2State extends State<AddLanguage2> {
                                 ),
                                 Text(
                                   "Level $level",
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                       fontSize: 16,
                                       fontWeight: FontWeight.w600,
                                       color: Colors.grey),
@@ -161,8 +161,8 @@ class _AddLanguage2State extends State<AddLanguage2> {
                     ],
                   ),
                 ),
-                SizedBox(height: 10),
-                Row(
+                const SizedBox(height: 10),
+                const Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
@@ -180,8 +180,8 @@ class _AddLanguage2State extends State<AddLanguage2> {
                 style: FilledButton.styleFrom(
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20)),
-                    padding: EdgeInsets.fromLTRB(100, 15, 100, 15)),
-                child: Text(
+                    padding: const EdgeInsets.fromLTRB(100, 15, 100, 15)),
+                child: const Text(
                   "Save",
                   style: TextStyle(fontSize: 25, fontWeight: FontWeight.w600),
                 ),

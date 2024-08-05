@@ -1,5 +1,5 @@
-import 'package:aytijobs/blocs/auth/auth_event.dart';
-import 'package:aytijobs/blocs/auth/auth_state.dart';
+import 'package:aytijobs/logic/blocs/auth/auth_event.dart';
+import 'package:aytijobs/logic/blocs/auth/auth_state.dart';
 import 'package:aytijobs/data/repositories/auth_user_repository.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
