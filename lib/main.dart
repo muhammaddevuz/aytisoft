@@ -1,3 +1,4 @@
+
 import 'package:aytijobs/logic/blocs/auth/auth_bloc.dart';
 import 'package:aytijobs/data/repositories/auth_user_repository.dart';
 import 'package:aytijobs/logic/cubits/education/education_cubit.dart';
@@ -33,6 +34,9 @@ class MyApp extends StatelessWidget {
       create: (context) => AuthUserRepository(getIt.get<AuthFirebaseService>()),
       child: MultiBlocProvider(
         providers: [
+          BlocProvider(
+            create: (context) => SkillsBloc(),
+          ),
           BlocProvider(
             create: (context) => AuthBloc(getIt.get<AuthUserRepository>()),
           ),
