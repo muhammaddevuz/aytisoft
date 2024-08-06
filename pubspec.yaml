@@ -41,6 +41,7 @@ flutter:
     - assets/images/
     - assets/icons/
     - assets/flags/
+    - assets/svg/
     - assets/images/account_screen_icons/
 
   # example:

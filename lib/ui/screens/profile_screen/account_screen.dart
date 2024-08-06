@@ -1,6 +1,6 @@
-import 'package:aytijobs/ui/screens/profile_screen/add_about_me_screen.dart';
-import 'package:aytijobs/ui/widgets/profile_widgets/followers_widget.dart';
-import 'package:aytijobs/utils/extension.dart';
+import 'package:aytijobs/ui/screens/profile_screen/profile_widgets/followers_widget.dart';
+import 'add_about_me_screen.dart';
+import '../../../utils/extension.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

@@ -1,3 +1,7 @@
+import 'forgot_password.dart';
+import 'register_screen.dart';
+import '../../widgets/textFieldForm.dart';
+import '../../../utils/constant_colors.dart';
 import 'package:aytijobs/logic/blocs/auth/auth_bloc.dart';
 import 'package:aytijobs/logic/blocs/auth/auth_event.dart';
 import 'package:aytijobs/logic/blocs/auth/auth_state.dart';

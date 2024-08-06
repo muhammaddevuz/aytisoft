@@ -1,20 +1,31 @@
 import 'package:aytijobs/ui/widgets/textFieldForm.dart';
 import 'package:aytijobs/utils/constant_colors.dart';
-import 'package:aytijobs/utils/extension.dart';
 import 'package:flutter/material.dart';
 
-class EducationAllInOne extends StatelessWidget {
+class AllInOne extends StatelessWidget {
+  TextEditingController controller;
   String title;
   final Color? filledColor;
   String? labelText;
   int? maxLines;
-  TextEditingController controller;
   final String? Function(String?)? validatorfunc;
-  EducationAllInOne({super.key, required this.controller, required this.title, this.filledColor, this.labelText, this.maxLines, this.validatorfunc});
+  Widget? preficon;
+  Widget? sufficon;
+  AllInOne(
+      {super.key,
+      required this.controller,
+      required this.title,
+      this.filledColor,
+      this.labelText,
+      this.maxLines,
+      this.validatorfunc,
+      this.preficon,
+      this.sufficon});
 
   @override
   Widget build(BuildContext context) {
-    return Wrap(
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
           title,
@@ -24,8 +35,11 @@ class EducationAllInOne extends StatelessWidget {
             color: Constantcolors.mainColor,
           ),
         ),
-        30.sH(),
+        const SizedBox(height: 10),
         Textfieldform(
+          preficon: preficon,
+          sufficon: sufficon,
+          maxLines: maxLines,
           controller: controller,
           filledColor: filledColor,
           validatorfunc: validatorfunc,

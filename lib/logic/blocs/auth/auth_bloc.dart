@@ -1,6 +1,6 @@
-import 'package:aytijobs/logic/blocs/auth/auth_event.dart';
-import 'package:aytijobs/logic/blocs/auth/auth_state.dart';
-import 'package:aytijobs/data/repositories/auth_user_repository.dart';
+import 'auth_event.dart';
+import 'auth_state.dart';
+import '../../../data/repositories/auth_user_repository.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AuthBloc extends Bloc<AuthEvent, AuthState> {

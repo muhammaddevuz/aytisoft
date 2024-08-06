@@ -2,7 +2,7 @@ import 'package:bloc/bloc.dart';
 
 import 'language_event.dart';
 import 'language_state.dart';
-import 'package:aytijobs/data/models/language.dart';
+import '../../../data/models/language.dart';
 
 class LanguageBloc extends Bloc<LanguageEvent, LanguageState> {
   LanguageBloc() : super(LanguageInitial()) {

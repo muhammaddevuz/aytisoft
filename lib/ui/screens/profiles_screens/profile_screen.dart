@@ -1,17 +1,18 @@
-import 'package:aytijobs/logic/cubits/profile/cubit/profile_cubit.dart';
-import 'package:aytijobs/logic/cubits/profile/cubit/profile_state.dart';
-import 'package:aytijobs/ui/screens/profiles_screens/settings_screen.dart';
-import 'package:aytijobs/ui/widgets/custom_radiobutotn_gender.dart';
-import 'package:aytijobs/ui/widgets/phone_number_field.dart';
-import 'package:aytijobs/ui/widgets/profile_widgets/all_in_one.dart';
-import 'package:aytijobs/ui/widgets/profile_widgets/profile_date.dart';
-import 'package:aytijobs/utils/constant_colors.dart';
+import '../../../logic/cubits/profile/cubit/profile_cubit.dart';
+import '../../../logic/cubits/profile/cubit/profile_state.dart';
+import 'settings_screen.dart';
+import '../../widgets/custom_radiobutotn_gender.dart';
+import '../../widgets/phone_number_field.dart';
+import '../../widgets/profile_widgets/all_in_one.dart';
+import '../../widgets/profile_widgets/profile_date.dart';
+import '../../../utils/constant_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 import 'package:zoom_tap_animation/zoom_tap_animation.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+// ignore: must_be_immutable
 class ProfileScreen extends StatelessWidget {
   final fullnamecontroller = TextEditingController();
   final datecontroller = TextEditingController();
@@ -19,7 +20,7 @@ class ProfileScreen extends StatelessWidget {
   final phonecontroller = TextEditingController();
   final locationcontroller = TextEditingController();
 
-  ProfileScreen({Key? key}) : super(key: key);
+  ProfileScreen({super.key});
 
   String dropdownValue = '+90';
 
@@ -123,7 +124,7 @@ class ProfileScreen extends StatelessWidget {
                                     context,
                                     MaterialPageRoute(
                                       builder: (context) {
-                                        return SettingsScreen();
+                                        return const SettingsScreen();
                                       },
                                     ),
                                   );
@@ -149,7 +150,7 @@ class ProfileScreen extends StatelessWidget {
                           borderRadius: BorderRadius.circular(5.r),
                           color: Colors.grey.withOpacity(0.3),
                         ),
-                        child: Text(
+                        child: const Text(
                           "Change Image",
                           style: TextStyle(
                             color: Colors.white,
