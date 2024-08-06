@@ -133,6 +133,12 @@ class _LoginScreenState extends State<LoginScreen> {
                       controller: emailController,
                       filledColor: const Color(0xffFFFFFF),
                       hintText: "Brandonelouis@gmail.com ",
+                      validatorfunc: (value) {
+                        if (value == null || value.trim().isEmpty) {
+                          return "please enter your email";
+                        }
+                        return null;
+                      },
                     ),
                     const Gap(20),
                     Row(
@@ -307,7 +313,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         GestureDetector(
                           onTap: () {
                             Navigator.push(context,
-                                MaterialPageRoute(builder: (ctx) {
+                                CupertinoPageRoute(builder: (ctx) {
                               return const RegisterScreen();
                             }));
                           },
