@@ -3,6 +3,7 @@ import 'package:aytijobs/utils/constant_colors.dart';
 import 'package:aytijobs/utils/extension.dart';
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class EducationAllInOne extends StatelessWidget {
   String title;
   final Color? filledColor;
@@ -11,16 +12,15 @@ class EducationAllInOne extends StatelessWidget {
   TextEditingController controller;
   final String? Function(String?)? validatorfunc;
   final void Function(String?)? onChanged;
-  EducationAllInOne({
-    super.key,
-    required this.controller,
-    required this.title,
-    this.filledColor,
-    this.labelText,
-    this.maxLines,
-    this.validatorfunc,
-    this.onChanged
-  });
+  EducationAllInOne(
+      {super.key,
+      required this.controller,
+      required this.title,
+      this.filledColor,
+      this.labelText,
+      this.maxLines,
+      this.validatorfunc,
+      this.onChanged});
 
   @override
   Widget build(BuildContext context) {

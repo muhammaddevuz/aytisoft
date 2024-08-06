@@ -1,6 +1,5 @@
 import 'package:aytijobs/data/models/language.dart';
 import 'package:aytijobs/ui/widgets/add_language.dart';
-import 'package:aytijobs/utils/countrys.dart';
 import 'package:flutter/material.dart';
 
 class LanguageScreen extends StatefulWidget {
@@ -32,13 +31,13 @@ class _LanguageScreenState extends State<LanguageScreen> {
             onPressed: () {
               Navigator.pop(context);
             },
-            icon: Icon(
+            icon: const Icon(
               Icons.arrow_back,
               size: 35,
             )),
       ),
       body: Padding(
-        padding: EdgeInsets.all(20),
+        padding: const EdgeInsets.all(20),
         child: Padding(
           padding: const EdgeInsets.only(bottom: 20),
           child: Column(
@@ -49,7 +48,7 @@ class _LanguageScreenState extends State<LanguageScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
+                      const Text(
                         "Language",
                         style: TextStyle(
                             fontSize: 16,
@@ -67,7 +66,7 @@ class _LanguageScreenState extends State<LanguageScreen> {
                                 ),
                               ));
                         },
-                        child: Row(
+                        child: const Row(
                           children: [
                             Text(
                               "Add",
@@ -87,7 +86,7 @@ class _LanguageScreenState extends State<LanguageScreen> {
                       )
                     ],
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   SingleChildScrollView(
                     child: Column(
                       children: [
@@ -96,15 +95,15 @@ class _LanguageScreenState extends State<LanguageScreen> {
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(20),
                                 color: Colors.white,
-                                boxShadow: [BoxShadow(color: Colors.grey)]),
-                            padding: EdgeInsets.symmetric(vertical: 20),
+                                boxShadow: [const BoxShadow(color: Colors.grey)]),
+                            padding: const EdgeInsets.symmetric(vertical: 20),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 ListTile(
                                   leading: Container(
                                     decoration:
-                                        BoxDecoration(shape: BoxShape.circle),
+                                        const BoxDecoration(shape: BoxShape.circle),
                                     clipBehavior: Clip.hardEdge,
                                     child: Image.asset(
                                       width: 70,
@@ -116,7 +115,7 @@ class _LanguageScreenState extends State<LanguageScreen> {
                                     languages[i].firstLanguage
                                         ? "${languages[i].language}(First language)"
                                         : languages[i].language,
-                                    style: TextStyle(
+                                    style: const TextStyle(
                                         fontSize: 20,
                                         fontWeight: FontWeight.bold),
                                   ),
@@ -136,26 +135,26 @@ class _LanguageScreenState extends State<LanguageScreen> {
                                               child: Column(
                                                 mainAxisSize: MainAxisSize.min,
                                                 children: [
-                                                  SizedBox(height: 50),
+                                                  const SizedBox(height: 50),
                                                   Text(
                                                     "Remove ${languages[i].language} ?",
-                                                    style: TextStyle(
+                                                    style: const TextStyle(
                                                         fontSize: 20,
                                                         color:
                                                             Color(0xff150B3D),
                                                         fontWeight:
                                                             FontWeight.w700),
                                                   ),
-                                                  SizedBox(height: 10),
+                                                  const SizedBox(height: 10),
                                                   Text(
                                                     textAlign: TextAlign.center,
                                                     "Are you sure you want to delete this ${languages[i].language} language?",
-                                                    style: TextStyle(
+                                                    style: const TextStyle(
                                                         fontSize: 16,
                                                         fontWeight:
                                                             FontWeight.w500),
                                                   ),
-                                                  SizedBox(height: 30),
+                                                  const SizedBox(height: 30),
                                                   Padding(
                                                     padding: const EdgeInsets
                                                         .symmetric(
@@ -173,13 +172,13 @@ class _LanguageScreenState extends State<LanguageScreen> {
                                                                     borderRadius:
                                                                         BorderRadius.circular(
                                                                             20)),
-                                                                padding: EdgeInsets
+                                                                padding: const EdgeInsets
                                                                     .fromLTRB(
                                                                         20,
                                                                         15,
                                                                         20,
                                                                         15)),
-                                                            child: Text(
+                                                            child: const Text(
                                                               "Continue Filling",
                                                               style: TextStyle(
                                                                   fontSize: 25,
@@ -192,7 +191,7 @@ class _LanguageScreenState extends State<LanguageScreen> {
                                                       ],
                                                     ),
                                                   ),
-                                                  SizedBox(height: 20),
+                                                  const SizedBox(height: 20),
                                                   Padding(
                                                     padding: const EdgeInsets
                                                         .symmetric(
@@ -215,13 +214,13 @@ class _LanguageScreenState extends State<LanguageScreen> {
                                                                             20)),
                                                                 backgroundColor:
                                                                     Colors.grey,
-                                                                padding: EdgeInsets
+                                                                padding: const EdgeInsets
                                                                     .fromLTRB(
                                                                         20,
                                                                         15,
                                                                         20,
                                                                         15)),
-                                                            child: Text(
+                                                            child: const Text(
                                                               "Undo Changes",
                                                               style: TextStyle(
                                                                   fontSize: 25,
@@ -234,26 +233,26 @@ class _LanguageScreenState extends State<LanguageScreen> {
                                                       ],
                                                     ),
                                                   ),
-                                                  SizedBox(height: 20),
+                                                  const SizedBox(height: 20),
                                                 ],
                                               ),
                                             );
                                           },
                                         );
                                       },
-                                      icon: Icon(
+                                      icon: const Icon(
                                         Icons.delete,
                                         color: Colors.red,
                                         size: 35,
                                       )),
                                 ),
-                                SizedBox(height: 20),
+                                const SizedBox(height: 20),
                                 Padding(
                                   padding: const EdgeInsets.symmetric(
                                       horizontal: 30),
                                   child: Text(
                                     "Oral: Level ${languages[i].oral}",
-                                    style: TextStyle(
+                                    style: const TextStyle(
                                         fontSize: 18,
                                         color: Colors.grey,
                                         fontWeight: FontWeight.w600),
@@ -272,8 +271,8 @@ class _LanguageScreenState extends State<LanguageScreen> {
                 style: FilledButton.styleFrom(
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20)),
-                    padding: EdgeInsets.fromLTRB(100, 15, 100, 15)),
-                child: Text(
+                    padding: const EdgeInsets.fromLTRB(100, 15, 100, 15)),
+                child: const Text(
                   "Save",
                   style: TextStyle(fontSize: 25, fontWeight: FontWeight.w600),
                 ),

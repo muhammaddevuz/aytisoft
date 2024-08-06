@@ -1,6 +1,6 @@
 class SearchQueries {
   static final List<String> educationLevelsUzbekistan = [
-    'Bachelor of Science in Information Technology',
+    'Bachelor of Science in Information Technology'
     'Bachelor of Science in Computer Science',
     'Bachelor of Information Technology',
     'Bachelor of Computer Science',

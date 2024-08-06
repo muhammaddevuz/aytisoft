@@ -7,9 +7,6 @@ import 'package:aytijobs/services/auth_firebase_service.dart';
 import 'package:aytijobs/firebase_options.dart';
 import 'package:aytijobs/services/get_it.dart';
 import 'package:aytijobs/ui/screens/profile_screen/education_screen.dart';
-import 'package:aytijobs/ui/screens/profile_screen/main_profile_screen.dart';
-
-import 'package:aytijobs/ui/screens/profiles_screens/profile_screen.dart';
 
 import 'package:firebase_core/firebase_core.dart';
 
