@@ -1,4 +1,5 @@
-import '../../widgets/profile_widgets/followers_widget.dart';
+import 'package:aytijobs/ui/screens/profile_screen/profile_widgets/followers_widget.dart';
+
 import '../../../utils/extension.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

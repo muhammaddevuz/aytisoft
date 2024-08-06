@@ -1,8 +1,9 @@
+import 'package:aytijobs/ui/widgets/education_widgets/gesture_widget.dart';
+
 import '../../../data/models/education.dart';
 import '../../../logic/cubits/education/education_cubit.dart';
 import '../../widgets/education_widgets/check_box.dart';
 import '../../widgets/education_widgets/start_end_date_widget.dart';
-import '../../widgets/profile_widgets/education_all_in_one.dart';
 import '../../widgets/textFieldForm.dart';
 import '../../../utils/constant_colors.dart';
 import 'package:flutter/material.dart';
