@@ -2,9 +2,7 @@ import 'password_screen.dart';
 import '../../widgets/change_bottom.dart';
 import '../../widgets/profile_widgets/notif_widget.dart';
 import '../../../utils/constant_colors.dart';
-import '../../../utils/extension.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:zoom_tap_animation/zoom_tap_animation.dart';
 
 class SettingsScreen extends StatefulWidget {
@@ -92,7 +90,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     fontSize: 16,
                   ),
                 ),
-                trailing: Icon(Icons.arrow_forward_ios_sharp),
+                trailing: const Icon(Icons.arrow_forward_ios_sharp),
               ),
             ),
             ZoomTapAnimation(
@@ -113,7 +111,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     fontSize: 16,
                   ),
                 ),
-                trailing: Icon(Icons.arrow_forward_ios_sharp),
+                trailing: const Icon(Icons.arrow_forward_ios_sharp),
               ),
             ),
             const SizedBox(

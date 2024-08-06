@@ -12,6 +12,7 @@ import 'package:gap/gap.dart';
 import 'package:zoom_tap_animation/zoom_tap_animation.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+// ignore: must_be_immutable
 class ProfileScreen extends StatelessWidget {
   final fullnamecontroller = TextEditingController();
   final datecontroller = TextEditingController();
@@ -19,7 +20,7 @@ class ProfileScreen extends StatelessWidget {
   final phonecontroller = TextEditingController();
   final locationcontroller = TextEditingController();
 
-  ProfileScreen({Key? key}) : super(key: key);
+  ProfileScreen({super.key});
 
   String dropdownValue = '+90';
 
@@ -123,7 +124,7 @@ class ProfileScreen extends StatelessWidget {
                                     context,
                                     MaterialPageRoute(
                                       builder: (context) {
-                                        return SettingsScreen();
+                                        return const SettingsScreen();
                                       },
                                     ),
                                   );
@@ -149,7 +150,7 @@ class ProfileScreen extends StatelessWidget {
                           borderRadius: BorderRadius.circular(5.r),
                           color: Colors.grey.withOpacity(0.3),
                         ),
-                        child: Text(
+                        child: const Text(
                           "Change Image",
                           style: TextStyle(
                             color: Colors.white,
