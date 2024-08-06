@@ -1,8 +1,9 @@
+import 'package:aytijobs/ui/widgets/education_widgets/gesture_widget.dart';
+
 import '../../../data/models/education.dart';
 import '../../../logic/cubits/education/education_cubit.dart';
 import '../../widgets/education_widgets/check_box.dart';
 import '../../widgets/education_widgets/start_end_date_widget.dart';
-import '../../widgets/profile_widgets/education_all_in_one.dart';
 import '../../widgets/textFieldForm.dart';
 import '../../../utils/constant_colors.dart';
 import 'package:flutter/material.dart';
@@ -26,6 +27,8 @@ class _EducationScreenState extends State<EducationScreen> {
   final endDateController = TextEditingController();
   final studyDescController = TextEditingController();
   bool isCurrentlyPosition = false;
+
+  
 
   @override
   void initState() {
@@ -79,7 +82,7 @@ class _EducationScreenState extends State<EducationScreen> {
                           color: Constantcolors.mainColor,
                         ),
                       ),
-                      EducationAllInOne(
+                      GestureWidget(
                         controller: educationLevelController,
                         title: 'Level of education',
                         filledColor: Colors.white,
@@ -91,7 +94,7 @@ class _EducationScreenState extends State<EducationScreen> {
                         },
                         labelText: 'level of education',
                       ),
-                      EducationAllInOne(
+                      GestureWidget(
                         controller: institutionNameController,
                         filledColor: Colors.white,
                         title: 'Institution name',
@@ -103,7 +106,7 @@ class _EducationScreenState extends State<EducationScreen> {
                         },
                         labelText: 'institution name',
                       ),
-                      EducationAllInOne(
+                      GestureWidget(
                         controller: fieldOfStudyController,
                         filledColor: Colors.white,
                         title: 'Field of study',
@@ -208,7 +211,6 @@ class _EducationScreenState extends State<EducationScreen> {
                                 ),
                               ),
                             ),
-                   
                     ],
                   ),
                 ),
