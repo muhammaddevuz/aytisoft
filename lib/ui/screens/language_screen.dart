@@ -1,5 +1,6 @@
-import 'package:aytijobs/data/models/language.dart';
-import 'package:aytijobs/ui/widgets/add_language.dart';
+import '../../data/models/language.dart';
+import '../widgets/add_language.dart';
+import '../../utils/countrys.dart';
 import 'package:flutter/material.dart';
 
 class LanguageScreen extends StatefulWidget {

@@ -1,6 +1,6 @@
-import 'package:aytijobs/ui/widgets/textFieldForm.dart';
-import 'package:aytijobs/utils/constant_colors.dart';
-import 'package:aytijobs/utils/extension.dart';
+import '../textFieldForm.dart';
+import '../../../utils/constant_colors.dart';
+import '../../../utils/extension.dart';
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable

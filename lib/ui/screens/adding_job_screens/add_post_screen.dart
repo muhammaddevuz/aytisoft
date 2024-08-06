@@ -2,7 +2,6 @@
 
 import 'package:aytijobs/ui/screens/profile_screen/profile_widgets/all_in_one.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class AddPostScreen extends StatefulWidget {
   const AddPostScreen({super.key});

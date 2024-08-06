@@ -1,4 +1,4 @@
-import 'package:aytijobs/data/models/language.dart';
+import '../../../data/models/language.dart';
 
 abstract class LanguageState{
   const LanguageState();

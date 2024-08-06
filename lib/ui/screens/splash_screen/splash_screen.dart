@@ -1,6 +1,6 @@
 
-import 'package:aytijobs/ui/screens/onboarding_screen/onbording_screen.dart';
-import 'package:aytijobs/utils/constant_colors.dart';
+import '../onboarding_screen/onbording_screen.dart';
+import '../../../utils/constant_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:svg_flutter/svg.dart';
