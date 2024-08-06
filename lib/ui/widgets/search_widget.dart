@@ -7,7 +7,7 @@ class SearchWidget extends StatefulWidget {
   final TextEditingController controller;
   final List<String> originalListDatas;
 
-  SearchWidget(
+  const SearchWidget(
       {super.key,
       required this.title,
       required this.controller,
@@ -57,7 +57,8 @@ class _SearchWidgetState extends State<SearchWidget> {
                 itemBuilder: (context, index) {
                   return GestureDetector(
                     onTap: () {
-                      print(assistantOforiginalListDatas[index]);
+                      Navigator.of(context)
+                          .pop(assistantOforiginalListDatas[index]);
                     },
                     child: ListTile(
                       title: Text(

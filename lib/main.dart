@@ -1,3 +1,5 @@
+import 'package:aytijobs/ui/screens/profile_screen/education_screen.dart';
+
 import 'logic/blocs/auth/auth_bloc.dart';
 import 'data/repositories/auth_user_repository.dart';
 import 'logic/blocs/skills_bloc/skills_bloc.dart';
@@ -51,7 +53,7 @@ class MyApp extends StatelessWidget {
           builder: (context, child) {
             return const MaterialApp(
               debugShowCheckedModeBanner: false,
-              home: RegisterScreen(),
+              home: EducationScreen(),
             );
           },
         ),
