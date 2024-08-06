@@ -9,7 +9,6 @@ import 'services/auth_firebase_service.dart';
 import 'firebase_options.dart';
 import 'services/get_it.dart';
 import 'package:aytijobs/ui/screens/auth_screens/register_screen.dart';
-
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

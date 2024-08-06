@@ -304,10 +304,12 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                         }));
                       },
                       child: Text(
-                        "Log In",
+                        "Sign In",
                         style: GoogleFonts.dmSans(
-                          color: Constantcolors.mainColor,
+                          color: Constantcolors.darkOrange,
                           fontSize: 12,
+                          decoration: TextDecoration.underline,
+                          decorationColor: Constantcolors.darkOrange,
                         ),
                       ),
                     ),
