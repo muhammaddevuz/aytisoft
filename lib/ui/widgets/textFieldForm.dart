@@ -47,17 +47,20 @@ class _TextfieldformState extends State<Textfieldform> {
         filled: true,
         fillColor: widget.filledColor,
         hintText: widget.hintText,
-        suffix: IconButton(
-          onPressed: () {
-            widget.controller.clear();
-            setState(() {});
-          },
-          icon: const Icon(
-            CupertinoIcons.xmark,
-            color: Colors.black,
-            size: 20,
-          ),
-        ),
+        suffix: widget.controller.text.isNotEmpty
+            ? IconButton(
+                onPressed: () {
+                  setState(() {
+                    widget.controller.clear();
+                  });
+                },
+                icon: const Icon(
+                  CupertinoIcons.xmark,
+                  color: Colors.black,
+                  size: 20,
+                ),
+              )
+            : const SizedBox(),
         border: OutlineInputBorder(
           borderSide: const BorderSide(color: Colors.white),
           borderRadius: BorderRadius.circular(20),

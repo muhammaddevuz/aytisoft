@@ -6,9 +6,16 @@ import '../dataForm.dart';
 class StartEndDateWidget extends StatefulWidget {
   final TextEditingController startDate;
   final TextEditingController endDate;
+  final Function(DateTime)? onStartDateChanged;
+  final Function(DateTime)? onEndDateChanged;
 
-  const StartEndDateWidget(
-      {super.key, required this.startDate, required this.endDate});
+  const StartEndDateWidget({
+    super.key,
+    required this.startDate,
+    required this.endDate,
+    this.onStartDateChanged,
+    this.onEndDateChanged,
+  });
 
   @override
   State<StartEndDateWidget> createState() => _StartEndDateWidgetState();
@@ -16,7 +23,7 @@ class StartEndDateWidget extends StatefulWidget {
 
 class _StartEndDateWidgetState extends State<StartEndDateWidget> {
   Future<void> _selectDate(
-      BuildContext context, TextEditingController controller) async {
+      BuildContext context, TextEditingController controller, Function(DateTime)? onDateChanged) async {
     final DateTime? picked = await showDatePicker(
       context: context,
       initialDate: DateTime.now(),
@@ -27,6 +34,9 @@ class _StartEndDateWidgetState extends State<StartEndDateWidget> {
       setState(() {
         controller.text = "${picked.toLocal()}".split(' ')[0];
       });
+      if (onDateChanged != null) {
+        onDateChanged(picked);
+      }
     }
   }
 
@@ -35,67 +45,71 @@ class _StartEndDateWidgetState extends State<StartEndDateWidget> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'Start Date',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 16,
-                color: Constantcolors.mainColor,
-              ),
-            ),
-            const SizedBox(height: 10),
-            GestureDetector(
-              onTap: () => _selectDate(context, widget.startDate),
-              child: AbsorbPointer(
-                child: DateForm(
-                  controller: widget.startDate,
-                  filledColor: Colors.white,
-                  validatorfunc: (value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Please enter start date';
-                    }
-                    return null;
-                  },
-                  labelText: 'Start Date',
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Start Date',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16,
+                  color: Constantcolors.mainColor,
                 ),
               ),
-            ),
-          ],
-        ),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'End Date',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 16,
-                color: Constantcolors.mainColor,
-              ),
-            ),
-            const SizedBox(height: 10),
-            GestureDetector(
-              onTap: () => _selectDate(context, widget.endDate),
-              child: AbsorbPointer(
-                child: DateForm(
-                  controller: widget.endDate,
-                  filledColor: Colors.white,
-                  validatorfunc: (value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Please enter end date';
-                    }
-                    return null;
-                  },
-                  labelText: 'End Date',
+              const SizedBox(height: 10),
+              GestureDetector(
+                onTap: () => _selectDate(context, widget.startDate, widget.onStartDateChanged),
+                child: AbsorbPointer(
+                  child: DateForm(
+                    controller: widget.startDate,
+                    filledColor: Colors.white,
+                    validatorfunc: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Please enter start date';
+                      }
+                      return null;
+                    },
+                    labelText: 'Start Date',
+                  ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
-     
+        const SizedBox(width: 20),
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'End Date',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16,
+                  color: Constantcolors.mainColor,
+                ),
+              ),
+              const SizedBox(height: 10),
+              GestureDetector(
+                onTap: () => _selectDate(context, widget.endDate, widget.onEndDateChanged),
+                child: AbsorbPointer(
+                  child: DateForm(
+                    controller: widget.endDate,
+                    filledColor: Colors.white,
+                    validatorfunc: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Please enter end date';
+                      }
+                      return null;
+                    },
+                    labelText: 'End Date',
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
       ],
     );
   }

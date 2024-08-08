@@ -6,4 +6,8 @@ class EducationCubit extends Cubit<bool> {
   void toggleCheck() {
     emit(!super.state);
   }
+
+  void setFalse() {
+    emit(false);
+  }
 }
