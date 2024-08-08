@@ -5,8 +5,10 @@ import '../../utils/countrys.dart';
 import 'package:flutter/material.dart';
 
 class AddLanguage extends StatelessWidget {
+  List<Language> languages;
   final bool firstLanguage;
-  const AddLanguage({super.key, required this.firstLanguage});
+  AddLanguage(
+      {super.key, required this.firstLanguage, required this.languages});
 
   @override
   Widget build(BuildContext context) {
@@ -45,48 +47,60 @@ class AddLanguage extends StatelessWidget {
                           BoxShadow(color: Colors.grey),
                         ]),
                     child: ListTile(
-                      onTap: () {
-                        if (firstLanguage) {
-                          Navigator.pushReplacement(context, MaterialPageRoute(
-                            builder: (context) {
-                              return LanguageScreen(
-                                language: Language(
-                                    firstLanguage: firstLanguage,
-                                    language:
-                                        Countrys.countrys[i].keys.toList()[0],
-                                    flagUrl:
-                                        Countrys.countrys[i].values.toList()[0],
-                                    oral: "10"),
-                              );
-                            },
-                          ));
-                        } else {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => AddLanguage2(
-                                    language:
-                                        Countrys.countrys[i].keys.toList()[0],
-                                    imageUrl: Countrys.countrys[i].values
-                                        .toList()[0]),
-                              ));
-                        }
-                      },
-                      leading: Container(
-                        decoration: BoxDecoration(shape: BoxShape.circle),
-                        clipBehavior: Clip.hardEdge,
-                        child: Image.asset(
-                          width: 70,
-                          "assets/flags/${Countrys.countrys[i].values.toList()[0]}.png",
-                          fit: BoxFit.cover,
+                        onTap: () {
+                          if (firstLanguage) {
+                            Navigator.pushReplacement(context,
+                                MaterialPageRoute(
+                              builder: (context) {
+                                return LanguageScreen(
+                                  language: [
+                                    Language(
+                                        firstLanguage: firstLanguage,
+                                        language: Countrys.countrys[i].keys
+                                            .toList()[0],
+                                        flagUrl: Countrys.countrys[i].values
+                                            .toList()[0],
+                                        oral: "10"),
+                                  ],
+                                );
+                              },
+                            ));
+                          } else if (languages.any((element) =>
+                              element.language ==
+                              Countrys.countrys[i].keys.toList()[0])) {
+                          } else {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => AddLanguage2(
+                                    languages: languages,
+                                      language:
+                                          Countrys.countrys[i].keys.toList()[0],
+                                      imageUrl: Countrys.countrys[i].values
+                                          .toList()[0]),
+                                          
+                                ));
+                          }
+                        },
+                        leading: Container(
+                          decoration: BoxDecoration(shape: BoxShape.circle),
+                          clipBehavior: Clip.hardEdge,
+                          child: Image.asset(
+                            width: 70,
+                            "assets/flags/${Countrys.countrys[i].values.toList()[0]}.png",
+                            fit: BoxFit.cover,
+                          ),
                         ),
-                      ),
-                      title: Text(
-                        Countrys.countrys[i].keys.toList()[0],
-                        style: TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.bold),
-                      ),
-                    ),
+                        title: Text(
+                          Countrys.countrys[i].keys.toList()[0],
+                          style: TextStyle(
+                              fontSize: 20, fontWeight: FontWeight.bold),
+                        ),
+                        trailing: (languages.any((element) =>
+                                element.language ==
+                                Countrys.countrys[i].keys.toList()[0]))
+                            ? Icon(Icons.check)
+                            : null),
                   ),
                   SizedBox(height: 15),
                 ],

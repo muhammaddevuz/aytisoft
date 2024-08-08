@@ -1,3 +1,4 @@
+
 import 'package:aytijobs/logic/cubits/education/education_form_cubit.dart';
 import 'package:aytijobs/ui/screens/profile_screen/account_screen.dart';
 import 'package:aytijobs/ui/screens/profile_screen/education_screen.dart';
@@ -56,8 +57,9 @@ class MyApp extends StatelessWidget {
           builder: (context, child) {
             return MaterialApp(
               debugShowCheckedModeBanner: false,
-              home: AccountScreen(),
-            );
+
+              home: LanguageScreen(language: []),
+
           },
         ),
       ),
