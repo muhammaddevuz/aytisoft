@@ -40,7 +40,16 @@ class _SearchWidgetState extends State<SearchWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: Text(widget.title),
+        leading: IconButton(
+            onPressed: () {
+              widget.controller.text.isNotEmpty
+                  ? Navigator.of(context).pop()
+                  : Navigator.of(context).pop('');
+            },
+            icon: const Icon(Icons.arrow_back)),
+      ),
       body: Padding(
         padding: const EdgeInsets.all(12.0),
         child: Column(
