@@ -1,3 +1,5 @@
+import 'package:aytijobs/ui/screens/language_screen.dart';
+
 import 'logic/blocs/auth/auth_bloc.dart';
 import 'data/repositories/auth_user_repository.dart';
 import 'logic/blocs/skills_bloc/skills_bloc.dart';
@@ -48,9 +50,9 @@ class MyApp extends StatelessWidget {
         child: ScreenUtilInit(
           designSize: const Size(360, 690),
           builder: (context, child) {
-            return const MaterialApp(
+            return MaterialApp(
               debugShowCheckedModeBanner: false,
-              home: RegisterScreen(),
+              home: LanguageScreen(language: []),
             );
           },
         ),

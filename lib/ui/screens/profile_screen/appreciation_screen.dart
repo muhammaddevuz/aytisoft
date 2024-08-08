@@ -1,5 +1,6 @@
 // ignore: file_names
 import 'package:aytijobs/data/models/appretiation.dart';
+import 'package:aytijobs/ui/widgets/date_picker_field.dart';
 import 'package:aytijobs/ui/widgets/textFieldForm.dart';
 import 'package:aytijobs/utils/constant_colors.dart';
 import 'package:flutter/material.dart';
@@ -35,6 +36,10 @@ class _AppreciationScreenState extends State<AppreciationScreen> {
     if (_formKey.currentState!.validate()) {
       _formKey.currentState!.save();
     }
+    print(awardNameController.text);
+    print(categoryController.text);
+    print(endDateController.text);
+    print(descController.text);
   }
 
   Future<void> _selectDate(
@@ -121,48 +126,13 @@ class _AppreciationScreenState extends State<AppreciationScreen> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          'End Date',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16,
-                            color: Constantcolors.mainColor,
-                          ),
-                        ),
-                        const SizedBox(height: 10),
-                        GestureDetector(
-                          onTap: () => _selectDate(context, endDateController),
-                          child: AbsorbPointer(
-                            child: Textfieldform(
-                              controller: endDateController,
-                              filledColor: Colors.white,
-                              validatorfunc: (value) {
-                                if (value == null || value.isEmpty) {
-                                  return 'Please enter end date';
-                                }
-                                return null;
-                              },
-                              hintText: 'End Date',
-                            ),
-                          ),
+                        DatePickerField(
+                          controller: endDateController,
+                          labelText: 'End Date',
+                          hintText: 'End Date',
                         ),
                       ],
                     ),
-                  ),
-                ],
-              ),
-              Row(
-                children: [
-                  Checkbox(
-                    value: false,
-                    onChanged: (value) {
-                      setState(() {
-                        value = !value!;
-                      });
-                    },
-                  ),
-                  const Text(
-                    'This is my position now',
                   ),
                 ],
               ),
