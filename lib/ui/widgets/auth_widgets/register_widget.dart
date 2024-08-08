@@ -2,7 +2,7 @@ import '../../../logic/blocs/auth/auth_bloc.dart';
 import '../../../logic/blocs/auth/auth_event.dart';
 import '../../screens/auth_screens/forgot_password.dart';
 import '../../screens/auth_screens/login_screen.dart';
-import '../textFieldForm.dart';
+import '../other_widgets/textFieldForm.dart';
 import '../../../utils/constant_colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

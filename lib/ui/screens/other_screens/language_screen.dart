@@ -1,5 +1,5 @@
-import '../../data/models/language.dart';
-import '../widgets/add_language.dart';
+import '../../../data/models/language.dart';
+import '../../widgets/other_widgets/add_language.dart';
 import 'package:flutter/material.dart';
 
 class LanguageScreen extends StatefulWidget {

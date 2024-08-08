@@ -1,7 +1,7 @@
-import '../../data/models/language.dart';
-import '../screens/language_screen.dart';
+import '../../../data/models/language.dart';
+import '../../screens/other_screens/language_screen.dart';
 import 'add_language2.dart';
-import '../../utils/countrys.dart';
+import '../../../utils/countrys.dart';
 import 'package:flutter/material.dart';
 
 class AddLanguage extends StatelessWidget {

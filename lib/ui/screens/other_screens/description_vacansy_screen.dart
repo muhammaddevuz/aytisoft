@@ -1,7 +1,14 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:aytijobs/data/models/job.dart';
+import 'package:aytijobs/ui/screens/other_screens/company_description_screen.dart';
+import 'package:aytijobs/ui/widgets/job_widget/facilities.dart';
+import 'package:aytijobs/ui/widgets/job_widget/informations.dart';
+import 'package:aytijobs/ui/widgets/job_widget/requiremets.dart';
 import 'package:aytijobs/utils/constant_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:zoom_tap_animation/zoom_tap_animation.dart';
 
 class DescriptionVacansyScreen extends StatefulWidget {
   final Job job;
@@ -28,8 +35,20 @@ class _DescriptionVacansyScreenState extends State<DescriptionVacansyScreen> {
                 Center(
                   child: Column(
                     children: [
-                      const CircleAvatar(
-                        radius: 85,
+                      ZoomTapAnimation(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) {
+                                return CompanyDescriptionScreen();
+                              },
+                            ),
+                          );
+                        },
+                        child: const CircleAvatar(
+                          radius: 85,
+                        ),
                       ),
                       const Gap(15),
                       Text(
@@ -128,105 +147,51 @@ class _DescriptionVacansyScreenState extends State<DescriptionVacansyScreen> {
                     ),
                   ),
                 const Gap(25),
-                const Text(
-                  'Requiremets',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 14,
+                Requiremets(),
+                if (_isExpanded) ...[
+                  const Gap(25),
+                  const Text(
+                    'Location',
+                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
                   ),
-                ),
-                const Gap(15),
-                const Text(
-                  'º Sed ut perspiciatis unde omnis iste natus error sit.',
-                  style: TextStyle(
-                    fontSize: 12,
+                  const Text(
+                    'Location after choosing',
+                    style: TextStyle(fontSize: 12),
                   ),
-                ),
-                const Gap(15),
-                const Text(
-                  'º Sed ut perspiciatis unde omnis iste natus error sit.',
-                  style: TextStyle(
-                    fontSize: 12,
+                  const Gap(20),
+                  Container(
+                    width: double.infinity,
+                    height: 150,
+                    color: Colors.amber,
                   ),
-                ),
-                const Gap(15),
-                const Text(
-                  'º Sed ut perspiciatis unde omnis iste natus error sit.',
-                  style: TextStyle(
-                    fontSize: 12,
+                  const Gap(20),
+                  const Informations(),
+                  Facilities(),
+                  Gap(30),
+                  ZoomTapAnimation(
+                    child: Card(
+                      child: Container(
+                        alignment: Alignment.center,
+                        width: double.infinity,
+                        height: 60,
+                        decoration: BoxDecoration(
+                          color: Constantcolors.mainColor,
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: const Padding(
+                          padding: EdgeInsets.only(left: 20, right: 20),
+                          child: Text(
+                            'Apply Now',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 14),
+                          ),
+                        ),
+                      ),
+                    ),
                   ),
-                ),
-                const Gap(15),
-                const Text(
-                  'º Sed ut perspiciatis unde omnis iste natus error sit.',
-                  style: TextStyle(
-                    fontSize: 12,
-                  ),
-                ),
-                const Gap(25),
-                const Text(
-                  'Location',
-                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
-                ),
-                const Text(
-                  'Locaton after choosing',
-                  style: TextStyle(fontSize: 12),
-                ),
-                const Gap(20),
-                Container(
-                  width: double.infinity,
-                  height: 150,
-                  color: Colors.amber,
-                ),
-                const Gap(20),
-                const Text(
-                  'Informations',
-                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
-                ),
-                const Gap(20),
-                const Text(
-                  'Positions',
-                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
-                ),
-                const Gap(10),
-                Text(
-                  widget.job.position,
-                  style: const TextStyle(fontSize: 12),
-                ),
-                const Divider(),
-                const Gap(20),
-                const Text(
-                  'Qualifications',
-                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
-                ),
-                const Gap(10),
-                const Text(
-                  'Bachelor`s degree',
-                  style: TextStyle(fontSize: 12),
-                ),
-                const Divider(),
-                const Gap(20),
-                const Text(
-                  'Job Type',
-                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
-                ),
-                const Gap(10),
-                const Text(
-                  'Full-time',
-                  style: TextStyle(fontSize: 12),
-                ),
-                const Divider(),
-                const Gap(20),
-                const Text(
-                  'Specializations',
-                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
-                ),
-                const Gap(10),
-                const Text(
-                  'Desgin',
-                  style: TextStyle(fontSize: 12),
-                ),
-                const Divider(),
+                ],
               ],
             ),
           ),

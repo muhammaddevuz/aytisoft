@@ -1,6 +1,6 @@
 // ignore_for_file: must_be_immutable
 
-import 'package:aytijobs/ui/widgets/dataForm.dart';
+import 'package:aytijobs/ui/widgets/other_widgets/dataForm.dart';
 import 'package:aytijobs/utils/constant_colors.dart';
 import 'package:flutter/material.dart';
 

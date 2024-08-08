@@ -1,10 +1,10 @@
 import '../../../logic/cubits/profile/cubit/profile_cubit.dart';
 import '../../../logic/cubits/profile/cubit/profile_state.dart';
 import 'settings_screen.dart';
-import '../../widgets/custom_radiobutotn_gender.dart';
-import '../../widgets/phone_number_field.dart';
-import '../../widgets/profile_widgets/all_in_one.dart';
-import '../../widgets/profile_widgets/profile_date.dart';
+import '../../widgets/other_widgets/custom_radiobutotn_gender.dart';
+import '../../widgets/other_widgets/phone_number_field.dart';
+import '../../widgets/other_widgets/all_in_one.dart';
+import '../../widgets/other_widgets/profile_date.dart';
 import '../../../utils/constant_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

@@ -1,6 +1,6 @@
 import 'password_screen.dart';
-import '../../widgets/change_bottom.dart';
-import '../../widgets/profile_widgets/notif_widget.dart';
+import '../../widgets/other_widgets/change_bottom.dart';
+import '../../widgets/other_widgets/notif_widget.dart';
 import '../../../utils/constant_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:zoom_tap_animation/zoom_tap_animation.dart';

@@ -1,4 +1,4 @@
-import '../../data/models/job.dart';
+import '../../../data/models/job.dart';
 import 'package:flutter/material.dart';
 
 class JobWidgets extends StatefulWidget {
@@ -63,6 +63,7 @@ class _JobWidgetsState extends State<JobWidgets> {
             ),
           ),
         ),
+     
       ],
     );
   }

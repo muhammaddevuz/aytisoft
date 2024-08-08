@@ -1,4 +1,4 @@
-import 'package:aytijobs/ui/widgets/search_widget.dart';
+import 'package:aytijobs/ui/widgets/other_widgets/search_widget.dart';
 import 'package:aytijobs/utils/extension.dart';
 import 'package:aytijobs/utils/search_queries.dart';
 import 'package:flutter/material.dart';

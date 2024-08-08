@@ -4,7 +4,7 @@ import '../../../data/models/education.dart';
 import '../../../logic/cubits/education/education_cubit.dart';
 import '../../widgets/education_widgets/check_box.dart';
 import '../../widgets/education_widgets/start_end_date_widget.dart';
-import '../../widgets/textFieldForm.dart';
+import '../../widgets/other_widgets/textFieldForm.dart';
 import '../../../utils/constant_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

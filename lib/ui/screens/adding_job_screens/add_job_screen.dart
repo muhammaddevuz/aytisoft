@@ -4,9 +4,9 @@ import 'package:aytijobs/data/models/job.dart';
 import 'package:aytijobs/ui/screens/adding_job_screens/company_screen.dart';
 import 'package:aytijobs/ui/screens/adding_job_screens/location_job_screen.dart';
 import 'package:aytijobs/ui/screens/adding_job_screens/position_screen.dart';
-import 'package:aytijobs/ui/widgets/change_bottom.dart';
-import 'package:aytijobs/ui/widgets/edit_job_widget.dart';
-import 'package:aytijobs/ui/widgets/job_widgets.dart';
+import 'package:aytijobs/ui/widgets/other_widgets/change_bottom.dart';
+import 'package:aytijobs/ui/widgets/other_widgets/edit_job_widget.dart';
+import 'package:aytijobs/ui/widgets/other_widgets/job_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:zoom_tap_animation/zoom_tap_animation.dart';
 
