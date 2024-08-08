@@ -1,3 +1,4 @@
+import 'package:aytijobs/ui/screens/profile_screen/education_screen.dart';
 import 'package:aytijobs/ui/screens/profile_screen/profile_widgets/followers_widget.dart';
 import 'add_about_me_screen.dart';
 import '../../../utils/extension.dart';
@@ -209,39 +210,45 @@ class AccountScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Container(
-                    margin: const EdgeInsets.symmetric(vertical: 10),
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(10)),
-                    padding: const EdgeInsets.all(10),
-                    child: ListTile(
-                      leading: Container(
-                        height: 24,
-                        width: 24,
-                        clipBehavior: Clip.hardEdge,
-                        decoration: const BoxDecoration(),
-                        child: Image.asset(
-                            "assets/images/account_screen_icons/education_icon.png"),
-                      ),
-                      title: const Text(
-                        "Education",
-                        style: TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.bold,
+                  GestureDetector(
+                    onTap: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => EducationScreen())),
+                    child: Container(
+                      margin: const EdgeInsets.symmetric(vertical: 10),
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(10)),
+                      padding: const EdgeInsets.all(10),
+                      child: ListTile(
+                        leading: Container(
+                          height: 24,
+                          width: 24,
+                          clipBehavior: Clip.hardEdge,
+                          decoration: const BoxDecoration(),
+                          child: Image.asset(
+                              "assets/images/account_screen_icons/education_icon.png"),
                         ),
-                      ),
-                      trailing: Container(
-                        height: 24,
-                        width: 24,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: Colors.orange.shade100,
+                        title: const Text(
+                          "Education",
+                          style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
-                        child: const Center(
-                          child: Icon(
-                            Icons.add,
-                            color: Colors.orange,
+                        trailing: Container(
+                          height: 24,
+                          width: 24,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Colors.orange.shade100,
+                          ),
+                          child: const Center(
+                            child: Icon(
+                              Icons.add,
+                              color: Colors.orange,
+                            ),
                           ),
                         ),
                       ),
