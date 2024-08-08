@@ -11,7 +11,6 @@ class LanguageBloc extends Bloc<LanguageEvent, LanguageState> {
   }
 
   void _onLoadLanguages(LoadLanguages event, Emitter<LanguageState> emit) {
-    // Bu yerda boshlang'ich tillarni yuklashni amalga oshirasiz.
     List<Language> languages = []; // Tillarni yuklash
     emit(LanguageLoadSuccess(languages));
   }
