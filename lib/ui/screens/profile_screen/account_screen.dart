@@ -146,7 +146,7 @@ class AccountScreen extends StatelessWidget {
                         clipBehavior: Clip.hardEdge,
                         decoration: const BoxDecoration(),
                         child: Image.asset(
-                            "images/account_screen_icons/about me_icon.png"),
+                            "assets/images/account_screen_icons/about_me_icon.png"),
                       ),
                       title: const Text(
                         "About Me",
@@ -184,7 +184,7 @@ class AccountScreen extends StatelessWidget {
                         clipBehavior: Clip.hardEdge,
                         decoration: const BoxDecoration(),
                         child: Image.asset(
-                            "images/account_screen_icons/work experience_icon.png"),
+                            "assets/images/account_screen_icons/work_experience_icon.png"),
                       ),
                       title: const Text(
                         "Work Experience",
@@ -222,7 +222,7 @@ class AccountScreen extends StatelessWidget {
                         clipBehavior: Clip.hardEdge,
                         decoration: const BoxDecoration(),
                         child: Image.asset(
-                            "images/account_screen_icons/education_icon.png"),
+                            "assets/images/account_screen_icons/education_icon.png"),
                       ),
                       title: const Text(
                         "Education",
@@ -260,7 +260,7 @@ class AccountScreen extends StatelessWidget {
                         clipBehavior: Clip.hardEdge,
                         decoration: const BoxDecoration(),
                         child: Image.asset(
-                            "images/account_screen_icons/skill_icon.png"),
+                            "assets/images/account_screen_icons/skill_icon.png"),
                       ),
                       title: const Text(
                         "Skill",
@@ -298,7 +298,7 @@ class AccountScreen extends StatelessWidget {
                         clipBehavior: Clip.hardEdge,
                         decoration: const BoxDecoration(),
                         child: Image.asset(
-                            "images/account_screen_icons/language_icon.png"),
+                            "assets/images/account_screen_icons/language_icon.png"),
                       ),
                       title: const Text(
                         "Language",
@@ -336,7 +336,7 @@ class AccountScreen extends StatelessWidget {
                         clipBehavior: Clip.hardEdge,
                         decoration: const BoxDecoration(),
                         child: Image.asset(
-                            "images/account_screen_icons/appreciation_icon.png"),
+                            "assets/images/account_screen_icons/appreciation_icon.png"),
                       ),
                       title: const Text(
                         "Appreciation",
@@ -374,7 +374,7 @@ class AccountScreen extends StatelessWidget {
                         clipBehavior: Clip.hardEdge,
                         decoration: const BoxDecoration(),
                         child: Image.asset(
-                            "images/account_screen_icons/resume_icon.png"),
+                            "assets/images/account_screen_icons/resume_icon.png"),
                       ),
                       title: const Text(
                         "Resume",
