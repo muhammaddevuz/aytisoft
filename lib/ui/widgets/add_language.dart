@@ -1,7 +1,7 @@
-import 'package:aytijobs/data/models/language.dart';
-import 'package:aytijobs/ui/screens/language_screen.dart';
-import 'package:aytijobs/ui/widgets/add_language2.dart';
-import 'package:aytijobs/utils/countrys.dart';
+import '../../data/models/language.dart';
+import '../screens/language_screen.dart';
+import 'add_language2.dart';
+import '../../utils/countrys.dart';
 import 'package:flutter/material.dart';
 
 class AddLanguage extends StatelessWidget {

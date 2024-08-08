@@ -1,7 +1,10 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:aytijobs/ui/widgets/textFieldForm.dart';
 import 'package:aytijobs/utils/constant_colors.dart';
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class AllInOne extends StatelessWidget {
   TextEditingController controller;
   String title;
@@ -27,6 +30,9 @@ class AllInOne extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        SizedBox(
+          height: 20,
+        ),
         Text(
           title,
           style: TextStyle(

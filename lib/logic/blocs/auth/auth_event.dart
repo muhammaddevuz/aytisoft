@@ -22,7 +22,7 @@ final class LoginAuthEvent extends AuthEvent {
 /// Reset password help for users
 final class ResetPasswordAuthEvent extends AuthEvent {
   final String email;
-  ResetPasswordAuthEvent(this.email);
+  ResetPasswordAuthEvent({required this.email});
 }
 
 /// logout

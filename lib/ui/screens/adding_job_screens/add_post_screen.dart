@@ -1,8 +1,7 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
-import 'package:aytijobs/ui/widgets/profile_widgets/all_in_one.dart';
+import 'package:aytijobs/ui/screens/profile_screen/profile_widgets/all_in_one.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class AddPostScreen extends StatefulWidget {
   const AddPostScreen({super.key});

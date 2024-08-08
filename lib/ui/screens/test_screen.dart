@@ -1,5 +1,5 @@
-import 'package:aytijobs/data/models/job.dart';
-import 'package:aytijobs/ui/screens/adding_job_screens/add_job_screen.dart';
+import '../../data/models/job.dart';
+import 'adding_job_screens/add_job_screen.dart';
 import 'package:flutter/material.dart';
 
 class TestScreen extends StatefulWidget {

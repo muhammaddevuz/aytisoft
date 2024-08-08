@@ -1,4 +1,4 @@
-import 'package:aytijobs/data/models/job.dart';
+
 import 'package:flutter/material.dart';
 
 class EditJobWidget extends StatefulWidget {

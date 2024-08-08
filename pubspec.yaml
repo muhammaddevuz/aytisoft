@@ -24,6 +24,8 @@ dependencies:
   flutter_bloc: ^8.1.6
   rename: ^3.0.2
   get_it: ^7.7.0
+  equatable: ^2.0.5
+  url_launcher: ^6.3.0
 
 dev_dependencies:
   flutter_test:
@@ -39,6 +41,7 @@ flutter:
     - assets/images/
     - assets/icons/
     - assets/flags/
+    - assets/svg/
     - assets/images/account_screen_icons/
 
   # example:

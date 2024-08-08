@@ -1,10 +1,11 @@
-import 'package:aytijobs/data/models/education.dart';
-import 'package:aytijobs/logic/cubits/education/education_cubit.dart';
-import 'package:aytijobs/ui/widgets/education_widgets/check_box.dart';
-import 'package:aytijobs/ui/widgets/education_widgets/start_end_date_widget.dart';
-import 'package:aytijobs/ui/widgets/profile_widgets/education_all_in_one.dart';
-import 'package:aytijobs/ui/widgets/textFieldForm.dart';
-import 'package:aytijobs/utils/constant_colors.dart';
+import 'package:aytijobs/ui/widgets/education_widgets/gesture_widget.dart';
+
+import '../../../data/models/education.dart';
+import '../../../logic/cubits/education/education_cubit.dart';
+import '../../widgets/education_widgets/check_box.dart';
+import '../../widgets/education_widgets/start_end_date_widget.dart';
+import '../../widgets/textFieldForm.dart';
+import '../../../utils/constant_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:zoom_tap_animation/zoom_tap_animation.dart';
@@ -26,6 +27,8 @@ class _EducationScreenState extends State<EducationScreen> {
   final endDateController = TextEditingController();
   final studyDescController = TextEditingController();
   bool isCurrentlyPosition = false;
+
+  
 
   @override
   void initState() {
@@ -79,7 +82,7 @@ class _EducationScreenState extends State<EducationScreen> {
                           color: Constantcolors.mainColor,
                         ),
                       ),
-                      EducationAllInOne(
+                      GestureWidget(
                         controller: educationLevelController,
                         title: 'Level of education',
                         filledColor: Colors.white,
@@ -91,7 +94,7 @@ class _EducationScreenState extends State<EducationScreen> {
                         },
                         labelText: 'level of education',
                       ),
-                      EducationAllInOne(
+                      GestureWidget(
                         controller: institutionNameController,
                         filledColor: Colors.white,
                         title: 'Institution name',
@@ -103,7 +106,7 @@ class _EducationScreenState extends State<EducationScreen> {
                         },
                         labelText: 'institution name',
                       ),
-                      EducationAllInOne(
+                      GestureWidget(
                         controller: fieldOfStudyController,
                         filledColor: Colors.white,
                         title: 'Field of study',

@@ -1,5 +1,4 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/foundation.dart';
 
 class AuthFirebaseService {
   final FirebaseAuth auth = FirebaseAuth.instance;
@@ -11,19 +10,23 @@ class AuthFirebaseService {
         password: password,
       );
     } on FirebaseAuthException catch (e) {
-      if (e.code == "weak-password") {
-        if (kDebugMode) {
-          print("The password provided is too weak.");
-        }
-      } else if (e.code == "email-already-in-use") {
-        if (kDebugMode) {
-          print("The account exists for that email.");
-        }
-      }
+      throw e;
+      // if (e.code == "weak-password") {
+      //   if (kDebugMode) {
+      //     print("The password provided is too weak.");
+      //   }
+      //   rethrow;
+      // } else if (e.code == "email-already-in-use") {
+      //   if (kDebugMode) {
+      //     print("The account exists for that email.");
+      //   }
+      //   rethrow;
+      // }
     } catch (e) {
-      if (kDebugMode) {
-        print(e);
-      }
+      throw e;
+      // if (kDebugMode) {
+      //   print(e);
+      // }
     }
   }
 
@@ -34,19 +37,21 @@ class AuthFirebaseService {
         password: password,
       );
     } on FirebaseAuthException catch (e) {
-      if (e.code == "user-not-found") {
-        if (kDebugMode) {
-          print("No user found for that email.");
-        }
-      } else if (e.code == "wrong-password") {
-        if (kDebugMode) {
-          print("Wrong password provided for that user.");
-        }
-      }
+      throw e;
+      // if (e.code == "user-not-found") {
+      //   if (kDebugMode) {
+      //     print("No user found for that email.");
+      //   }
+      // } else if (e.code == "wrong-password") {
+      //   if (kDebugMode) {
+      //     print("Wrong password provided for that user.");
+      //   }
+      // }
     } catch (e) {
-      if (kDebugMode) {
-        print(e);
-      }
+      // if (kDebugMode) {
+      //   print(e);
+      // }
+      throw e;
     }
   }
 
@@ -54,9 +59,10 @@ class AuthFirebaseService {
     try {
       await FirebaseAuth.instance.sendPasswordResetEmail(email: email);
     } catch (e) {
-      if (kDebugMode) {
-        print("Error resetting password: $e");
-      }
+      // if (kDebugMode) {
+      //   print("Error resetting password: $e");
+      // }
+      throw e;
     }
   }
 

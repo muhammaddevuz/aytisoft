@@ -1,6 +1,6 @@
-import 'package:aytijobs/ui/screens/profile_screen/workExp_screen.dart';
+import '../profile_screen/workExp_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:aytijobs/utils/constant_colors.dart';
+import '../../../utils/constant_colors.dart';
 
 class Bottomnavbar extends StatefulWidget {
   @override

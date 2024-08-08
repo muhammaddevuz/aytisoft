@@ -1,8 +1,8 @@
 
-import 'package:aytijobs/logic/blocs/skills_bloc/skills_bloc.dart';
-import 'package:aytijobs/logic/blocs/skills_bloc/skills_event.dart';
-import 'package:aytijobs/logic/blocs/skills_bloc/skills_state.dart';
-import 'package:aytijobs/utils/skills_constants.dart';
+import '../../logic/blocs/skills_bloc/skills_bloc.dart';
+import '../../logic/blocs/skills_bloc/skills_event.dart';
+import '../../logic/blocs/skills_bloc/skills_state.dart';
+import '../../utils/skills_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
