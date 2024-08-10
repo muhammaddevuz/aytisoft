@@ -45,6 +45,8 @@ class SkillsBloc extends Bloc<SkillsEvent, SkillsState> {
       skills.removeWhere((element) => element == event.skill);
       emit(SkillsLoadedState(
           query: query, skills: skills, controller: controller));
-    } catch (error) {}
+    } catch (error) {
+      rethrow;
+    }
   }
 }

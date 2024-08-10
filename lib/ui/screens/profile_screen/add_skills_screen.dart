@@ -7,6 +7,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AddSkillsScreen extends StatefulWidget {
+  const AddSkillsScreen({super.key});
+
   @override
   State<AddSkillsScreen> createState() => _AddSkillsScreenState();
 }
@@ -36,7 +38,7 @@ class _AddSkillsScreenState extends State<AddSkillsScreen> {
       ),
       body: BlocBuilder<SkillsBloc, SkillsState>(builder: (context, state) {
         if (state is SkillsLoadingState) {
-          return Center(
+          return const Center(
             child: CircularProgressIndicator(),
           );
         }
@@ -119,7 +121,7 @@ class _AddSkillsScreenState extends State<AddSkillsScreen> {
                   height: state.query.isEmpty ? 15 : 5,
                 ),
                 state.query.isNotEmpty
-                    ? Container(
+                    ? SizedBox(
                         // color: Colors.white,
                         height: 400,
                         width: double.infinity,
@@ -198,7 +200,7 @@ class _AddSkillsScreenState extends State<AddSkillsScreen> {
             ),
           );
         }
-        return Center(
+        return const Center(
           child: Text('Malimotlar topilmadi'),
         );
       }),

@@ -5,13 +5,15 @@ class PhoneNumberField extends StatefulWidget {
   final String? Function(String?)? validatorfunc;
   final void Function(String) onDropdownChanged;
 
-  PhoneNumberField({
+  const PhoneNumberField({
+    super.key,
     required this.controller,
     required this.validatorfunc,
     required this.onDropdownChanged,
   });
 
   @override
+  // ignore: library_private_types_in_public_api
   _PhoneNumberFieldState createState() => _PhoneNumberFieldState();
 }
 
@@ -36,7 +38,7 @@ class _PhoneNumberFieldState extends State<PhoneNumberField> {
             icon: const Icon(Icons.arrow_drop_down),
             iconSize: 24,
             elevation: 16,
-            style: TextStyle(color: Colors.blue),
+            style: const TextStyle(color: Colors.blue),
             underline: Container(
               height: 0,
               color: Colors.green,

@@ -12,7 +12,7 @@ import 'package:zoom_tap_animation/zoom_tap_animation.dart';
 
 class AddJobScreen extends StatefulWidget {
   final Job? job;
-  AddJobScreen({super.key, this.job});
+  const AddJobScreen({super.key, this.job});
 
   @override
   State<AddJobScreen> createState() => _AddJobScreenState();

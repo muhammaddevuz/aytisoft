@@ -1,5 +1,4 @@
-import 'package:aytijobs/ui/screens/other_screens/home_screen.dart';
-
+import 'package:aytijobs/ui/screens/other_screens/bottomNavBar.dart';
 import 'logic/blocs/auth/auth_bloc.dart';
 import 'data/repositories/auth_user_repository.dart';
 import 'logic/blocs/skills_bloc/skills_bloc.dart';
@@ -51,7 +50,7 @@ class MyApp extends StatelessWidget {
           builder: (context, child) {
             return const MaterialApp(
               debugShowCheckedModeBanner: false,
-              home: HomeScreen(),
+              home: Bottomnavbar(),
             );
           },
         ),

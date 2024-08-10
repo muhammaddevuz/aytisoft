@@ -31,11 +31,6 @@ class ProfileScreen extends StatelessWidget {
   void submit() {
     if (_formKey.currentState!.validate()) {
       _formKey.currentState!.save();
-      print(fullnamecontroller.text);
-      print(datecontroller.text);
-      print(emailcontroller.text);
-      print(phonecontroller.text);
-      print(locationcontroller.text);
     }
   }
 

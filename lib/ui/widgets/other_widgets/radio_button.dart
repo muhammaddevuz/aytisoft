@@ -7,12 +7,12 @@ class CustomRadioButton extends StatelessWidget {
   final VoidCallback onTap;
 
   const CustomRadioButton({
-    Key? key,
+    super.key,
     required this.title,
     this.subtitle,
     required this.isSelected,
     required this.onTap,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -28,16 +28,16 @@ class CustomRadioButton extends StatelessWidget {
               children: [
                 Text(
                   title,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
                     color: Colors.black, // Adjust as needed
                   ),
                 ),
-                SizedBox(height: 4),
+                const SizedBox(height: 4),
                 Text(
                   subtitle ?? '',
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 12,
                     color: Colors.grey, // Adjust as needed
                   ),
@@ -61,7 +61,7 @@ class CustomRadioButton extends StatelessWidget {
                       child: Container(
                         width: 12,
                         height: 12,
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           shape: BoxShape.circle,
                           color: Colors.orange, // Adjust fill color as needed
                         ),

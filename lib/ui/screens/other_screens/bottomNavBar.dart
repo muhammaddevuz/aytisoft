@@ -1,8 +1,13 @@
-import '../profile_screen/workExp_screen.dart';
+// ignore_for_file: library_private_types_in_public_api
+
+import 'package:aytijobs/ui/screens/other_screens/connection_screen.dart';
+import 'package:aytijobs/ui/screens/other_screens/home_screen.dart';
 import 'package:flutter/material.dart';
 import '../../../utils/constant_colors.dart';
 
 class Bottomnavbar extends StatefulWidget {
+  const Bottomnavbar({super.key});
+
   @override
   _BottomnavbarState createState() => _BottomnavbarState();
 }
@@ -53,7 +58,7 @@ class _BottomnavbarState extends State<Bottomnavbar> {
           BottomNavigationBarItem(
             icon: CircleAvatar(
               backgroundColor: Constantcolors.mainColor,
-              child: Icon(Icons.add, color: Colors.white),
+              child: const Icon(Icons.add, color: Colors.white),
             ),
             label: '',
           ),
@@ -87,17 +92,17 @@ class _BottomnavbarState extends State<Bottomnavbar> {
   Widget _getSelectedWidget(int index) {
     switch (index) {
       case 0:
-        return WorkexpScreen();
+        return const HomeScreen();
       case 1:
-        return Text('Groups Page');
+        return const ConnectionScreen();
       case 2:
-        return Text('Add Page');
+        return const Text('Add Page');
       case 3:
-        return Text('Chat Page');
+        return const Text('Chat Page');
       case 4:
-        return Text('Bookmarks Page');
+        return const Text('Bookmarks Page');
       default:
-        return Text('Home Page');
+        return const Text('Home Page');
     }
   }
 }

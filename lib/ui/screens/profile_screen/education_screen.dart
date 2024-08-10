@@ -28,8 +28,6 @@ class _EducationScreenState extends State<EducationScreen> {
   final studyDescController = TextEditingController();
   bool isCurrentlyPosition = false;
 
-  
-
   @override
   void initState() {
     super.initState();
@@ -51,13 +49,6 @@ class _EducationScreenState extends State<EducationScreen> {
         void submit() {
           if (_formKey.currentState!.validate()) {
             _formKey.currentState!.save();
-            print(educationLevelController.text);
-            print(institutionNameController.text);
-            print(fieldOfStudyController.text);
-            print(startDateController.text);
-            print(endDateController.text);
-            print(studyDescController.text);
-            print(state);
           }
         }
 

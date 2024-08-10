@@ -9,8 +9,8 @@ class AuthFirebaseService {
         email: email,
         password: password,
       );
-    } on FirebaseAuthException catch (e) {
-      throw e;
+    } on FirebaseAuthException {
+      rethrow;
       // if (e.code == "weak-password") {
       //   if (kDebugMode) {
       //     print("The password provided is too weak.");
@@ -23,7 +23,7 @@ class AuthFirebaseService {
       //   rethrow;
       // }
     } catch (e) {
-      throw e;
+      rethrow;
       // if (kDebugMode) {
       //   print(e);
       // }
@@ -36,8 +36,8 @@ class AuthFirebaseService {
         email: email,
         password: password,
       );
-    } on FirebaseAuthException catch (e) {
-      throw e;
+    } on FirebaseAuthException {
+      rethrow;
       // if (e.code == "user-not-found") {
       //   if (kDebugMode) {
       //     print("No user found for that email.");
@@ -51,7 +51,7 @@ class AuthFirebaseService {
       // if (kDebugMode) {
       //   print(e);
       // }
-      throw e;
+      rethrow;
     }
   }
 
@@ -62,7 +62,7 @@ class AuthFirebaseService {
       // if (kDebugMode) {
       //   print("Error resetting password: $e");
       // }
-      throw e;
+      rethrow;
     }
   }
 

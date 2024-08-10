@@ -25,7 +25,7 @@ class Companys extends StatelessWidget {
             'https://pbs.twimg.com/profile_images/1797665112440045568/305XgPDq_400x400.png'),
       ),
       title: Text(itCompanies[index]),
-      subtitle: Text("Company ~ Internet"),
+      subtitle:  const Text("Company ~ Internet"),
     );
   }
 }

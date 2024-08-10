@@ -24,7 +24,6 @@ class _LanguageScreenState extends State<LanguageScreen> {
 
   @override
   Widget build(BuildContext context) {
-    print(languages);
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -62,7 +61,7 @@ class _LanguageScreenState extends State<LanguageScreen> {
                               MaterialPageRoute(
                                 builder: (context) => AddLanguage(
                                   firstLanguage:
-                                      languages.length == 0 ? true : false,
+                                      languages.isEmpty ? true : false,
                                 ),
                               ));
                         },

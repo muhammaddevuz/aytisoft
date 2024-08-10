@@ -112,17 +112,15 @@ class _DescriptionVacansyScreenState extends State<DescriptionVacansyScreen> {
                     color: Constantcolors.mainColor,
                   ),
                 ),
-                Container(
-                  child: Text(
-                    widget.job.descriprion,
-                    maxLines: _isExpanded ? null : 5,
-                    overflow: _isExpanded
-                        ? TextOverflow.visible
-                        : TextOverflow.ellipsis,
-                    style: TextStyle(
-                      fontSize: 16,
-                      color: Constantcolors.mainColor,
-                    ),
+                Text(
+                  widget.job.descriprion,
+                  maxLines: _isExpanded ? null : 5,
+                  overflow: _isExpanded
+                      ? TextOverflow.visible
+                      : TextOverflow.ellipsis,
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: Constantcolors.mainColor,
                   ),
                 ),
                 if (widget.job.descriprion.length > 100)
@@ -167,31 +165,31 @@ class _DescriptionVacansyScreenState extends State<DescriptionVacansyScreen> {
                   const Gap(20),
                   const Informations(),
                   Facilities(),
-                  Gap(30),
-                  ZoomTapAnimation(
-                    child: Card(
-                      child: Container(
-                        alignment: Alignment.center,
-                        width: double.infinity,
-                        height: 60,
-                        decoration: BoxDecoration(
-                          color: Constantcolors.mainColor,
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        child: const Padding(
-                          padding: EdgeInsets.only(left: 20, right: 20),
-                          child: Text(
-                            'Apply Now',
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 14),
-                          ),
+                ],
+                Gap(30),
+                ZoomTapAnimation(
+                  child: Card(
+                    child: Container(
+                      alignment: Alignment.center,
+                      width: double.infinity,
+                      height: 60,
+                      decoration: BoxDecoration(
+                        color: Constantcolors.mainColor,
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: const Padding(
+                        padding: EdgeInsets.only(left: 20, right: 20),
+                        child: Text(
+                          'Apply Now',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 14),
                         ),
                       ),
                     ),
                   ),
-                ],
+                ),
               ],
             ),
           ),

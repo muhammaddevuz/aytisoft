@@ -36,21 +36,21 @@ class _PositionScreenState extends State<PositionScreen> {
               controller: postioncontroller,
               title: 'Position',
               filledColor: Colors.white,
-              preficon: Icon(Icons.search),
-              sufficon: Icon(Icons.remove_circle_outline_sharp),
+              preficon: const Icon(Icons.search),
+              sufficon: const Icon(Icons.remove_circle_outline_sharp),
               labelText: 'Search',
             ),
-            Gap(20),
+            const Gap(20),
             Expanded(
               child: ListView.separated(
                 separatorBuilder: (context, index) {
-                  return Gap(20);
+                  return const Gap(20);
                 },
                 itemCount: jobPositions.length,
                 itemBuilder: (context, index) {
                   return Text(
                     jobPositions[index],
-                    style: TextStyle(fontSize: 16),
+                    style: const TextStyle(fontSize: 16),
                   );
                 },
               ),

@@ -16,24 +16,24 @@ class AddLanguage extends StatelessWidget {
             onPressed: () {
               Navigator.pop(context);
             },
-            icon: Icon(
+            icon: const Icon(
               Icons.arrow_back,
               size: 35,
             )),
       ),
       body: Padding(
-        padding: EdgeInsets.all(20),
+        padding: const EdgeInsets.all(20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
+            const Text(
               "Language",
               style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
                   color: Color(0xff150B3D)),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             for (var i = 0; i < Countrys.countrys.length; i++)
               Column(
                 children: [
@@ -41,8 +41,8 @@ class AddLanguage extends StatelessWidget {
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
                         color: Colors.white,
-                        boxShadow: [
-                          BoxShadow(color: Colors.grey),
+                        boxShadow: const [
+                           BoxShadow(color: Colors.grey),
                         ]),
                     child: ListTile(
                       onTap: () {
@@ -73,7 +73,7 @@ class AddLanguage extends StatelessWidget {
                         }
                       },
                       leading: Container(
-                        decoration: BoxDecoration(shape: BoxShape.circle),
+                        decoration: const BoxDecoration(shape: BoxShape.circle),
                         clipBehavior: Clip.hardEdge,
                         child: Image.asset(
                           width: 70,
@@ -83,12 +83,12 @@ class AddLanguage extends StatelessWidget {
                       ),
                       title: Text(
                         Countrys.countrys[i].keys.toList()[0],
-                        style: TextStyle(
+                        style: const TextStyle(
                             fontSize: 20, fontWeight: FontWeight.bold),
                       ),
                     ),
                   ),
-                  SizedBox(height: 15),
+                  const SizedBox(height: 15),
                 ],
               )
           ],

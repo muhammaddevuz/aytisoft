@@ -24,15 +24,15 @@ class _CompanyScreenState extends State<CompanyScreen> {
               controller: companycontroller,
               title: 'Comapny',
               filledColor: Colors.white,
-              preficon: Icon(Icons.search),
-              sufficon: Icon(Icons.remove_circle_outline_sharp),
+              preficon: const Icon(Icons.search),
+              sufficon: const Icon(Icons.remove_circle_outline_sharp),
               labelText: 'Search',
             ),
-            Gap(20),
+            const Gap(20),
             Expanded(
               child: ListView.separated(
                 separatorBuilder: (context, index) {
-                  return Gap(20);
+                  return const Gap(20);
                 },
                 itemCount: 10,
                 itemBuilder: (context, index) {

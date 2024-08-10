@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+// ignore: use_key_in_widget_constructors
 class AddSkillsScreen extends StatefulWidget {
   @override
   State<AddSkillsScreen> createState() => _AddSkillsScreenState();
@@ -37,7 +38,7 @@ class _AddSkillsScreenState extends State<AddSkillsScreen> {
       ),
       body: BlocBuilder<SkillsBloc, SkillsState>(builder: (context, state) {
         if (state is SkillsLoadingState) {
-          return Center(
+          return const Center(
             child: CircularProgressIndicator(),
           );
         }
@@ -119,7 +120,7 @@ class _AddSkillsScreenState extends State<AddSkillsScreen> {
                   height: state.query.isEmpty ? 15 : 5,
                 ),
                 state.query.isNotEmpty
-                    ? Container(
+                    ? SizedBox(
                         height: 400,
                         width: double.infinity,
                         child: ListView.builder(
@@ -195,7 +196,7 @@ class _AddSkillsScreenState extends State<AddSkillsScreen> {
             ),
           );
         }
-        return Center(
+        return const Center(
           child: Text('Malumotlar topilmadi'),
         );
       }),

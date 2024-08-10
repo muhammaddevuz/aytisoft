@@ -1,11 +1,6 @@
-// ignore_for_file: prefer_const_constructors
 
-import 'package:aytijobs/data/models/job.dart';
 import 'package:aytijobs/ui/screens/other_screens/about_us_screen.dart';
-import 'package:aytijobs/ui/widgets/job_widget/facilities.dart';
-import 'package:aytijobs/ui/widgets/job_widget/informations.dart';
 import 'package:aytijobs/ui/widgets/job_widget/informations_company.dart';
-import 'package:aytijobs/ui/widgets/job_widget/requiremets.dart';
 import 'package:aytijobs/utils/constant_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -20,8 +15,6 @@ class CompanyDescriptionScreen extends StatefulWidget {
 }
 
 class _CompanyDescriptionScreenState extends State<CompanyDescriptionScreen> {
-  bool _isExpanded = false;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -101,7 +94,7 @@ class _CompanyDescriptionScreenState extends State<CompanyDescriptionScreen> {
                           context,
                           MaterialPageRoute(
                             builder: (context) {
-                              return AboutUsScreen();
+                              return const AboutUsScreen();
                             },
                           ),
                         );
@@ -153,7 +146,7 @@ class _CompanyDescriptionScreenState extends State<CompanyDescriptionScreen> {
                     ),
                   ],
                 ),
-                Gap(20),
+                const Gap(20),
                 Text(
                   ' About Company',
                   style: TextStyle(
@@ -162,12 +155,12 @@ class _CompanyDescriptionScreenState extends State<CompanyDescriptionScreen> {
                     color: Constantcolors.mainColor,
                   ),
                 ),
-                Text(
+                const Text(
                     'Aliqua deserunt dolore aliquip aliqua incididunt Excepteur est eiusmod ipsum officia sint et exercitation dolor dolor voluptate.Dolore nisi aliqua laborum veniam ut voluptate proident sit culpa amet proident ad ad.Eiusmod voluptate sit aliquip commodo fugiat adipisicing laborum minim.Mollit reprehenderit fugiat aliquip nostrud sunt sunt quis ullamco fugiat.Irure veniam irure laborum elit dolor adipisicing commodo nulla officia anim ea aute fugiat tempor.Enim ipsum voluptate irure do nulla fugiat.Enim incididunt commodo consequat est velit cillum laboris sunt commodo do reprehenderit occaecat Lorem est.Amet irure magna ullamco qui cillum sunt magna ea ipsum nisi laboris nostrud.Et consectetur laborum pariatur excepteur elit magna commodo.Aliquip amet sint fugiat non voluptate eiusmod labore in culpa.Pariatur sint occaecat consectetur culpa non amet officia occaecat reprehenderit nisi nostrud ex velit.Labore id laborum fugiat esse enim ex culpa sint eu.Laboris nostrud sit eu sint laboris.Dolor nulla do eiusmod tempor.Non Lorem fugiat commodo ad cillum cillum ullamco exercitation esse.Laborum deserunt id eu duis nostrud occaecat.PExcepteur ullamco eiusmod dolor consequat deserunt Lorem sunt.Sunt magna reprehenderit eiusmod laboris elit duis ea et et ea elit id consequat ut.Consequat fugiat ullamco magna ullamco ea nisi dolore commodo quis ex anim exercitation culpa.pSunt aliqua qui adipisicing irure culpa ea non qui non ullamco commodo.Laborum proident in proident ut mollit deserunt in mollit non fugiat est quis aliquip excepteur.'),
                 const Gap(25),
-                Gap(20),
-                InformationsCompany(),
-                Gap(30),
+                const Gap(20),
+                const InformationsCompany(),
+                const Gap(30),
                 const Text(
                   'Comapny Gallery',
                   style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
@@ -178,7 +171,7 @@ class _CompanyDescriptionScreenState extends State<CompanyDescriptionScreen> {
                   height: 150,
                   color: Colors.amber,
                 ),
-                Gap(20),
+                const Gap(20),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -209,7 +202,7 @@ class _CompanyDescriptionScreenState extends State<CompanyDescriptionScreen> {
                               color: Constantcolors.mainColor,
                               borderRadius: BorderRadius.circular(10),
                             ),
-                            child: Text(
+                            child: const Text(
                               'Apply Now',
                               style: TextStyle(
                                   color: Colors.white,
