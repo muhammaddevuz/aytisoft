@@ -12,7 +12,6 @@ class MainProfileScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.red,
       body: Column(
-        // mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Container(
             width: double.infinity,
