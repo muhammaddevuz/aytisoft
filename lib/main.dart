@@ -1,3 +1,4 @@
+import 'package:aytijobs/logic/cubits/education/education_form_cubit.dart';
 import 'package:aytijobs/ui/screens/other_screens/bottomNavBar.dart';
 import 'logic/blocs/auth/auth_bloc.dart';
 import 'data/repositories/auth_user_repository.dart';

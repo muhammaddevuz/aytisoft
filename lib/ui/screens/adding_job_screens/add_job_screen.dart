@@ -81,7 +81,6 @@ class _AddJobScreenState extends State<AddJobScreen> {
         // );
         break;
       default:
-        // Optional: handle default case
         break;
     }
   }

@@ -7,8 +7,7 @@ class SearchWidget extends StatefulWidget {
   final TextEditingController controller;
   final List<String> originalListDatas;
 
-  const SearchWidget(
-  const SearchWidget(
+  SearchWidget(
       {super.key,
       required this.title,
       required this.controller,

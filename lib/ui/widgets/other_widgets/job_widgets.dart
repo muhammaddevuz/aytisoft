@@ -30,40 +30,38 @@ class _JobWidgetsState extends State<JobWidgets> {
         ),
         Card(
           child: Container(
+            padding: EdgeInsets.all(10),
             width: double.infinity,
             height: 70,
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(10),
             ),
-            child: Padding(
-              padding: const EdgeInsets.only(left: 20, right: 20),
-              child: Row(
-                children: [
-                  Text(
-                    widget.title,
-                    style: const TextStyle(
-                        fontWeight: FontWeight.bold, fontSize: 14),
+            child: Row(
+              children: [
+                Text(
+                  widget.title,
+                  style: const TextStyle(
+                      fontWeight: FontWeight.bold, fontSize: 14),
+                ),
+                const Spacer(),
+                Container(
+                  alignment: Alignment.center,
+                  width: 24,
+                  height: 24,
+                  decoration: const BoxDecoration(
+                    color: Color(0xFFFFD6AD),
+                    shape: BoxShape.circle,
                   ),
-                  const Spacer(),
-                  Container(
-                    alignment: Alignment.center,
-                    width: 24,
-                    height: 24,
-                    decoration: const BoxDecoration(
-                      color: Color(0xFFFFD6AD),
-                      shape: BoxShape.circle,
-                    ),
-                    child: const Icon(
-                      color: Color(0xFFFF9228),
-                      Icons.add,
-                    ),
+                  child: const Icon(
+                    color: Color(0xFFFF9228),
+                    Icons.add,
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
         ),
-     
       ],
     );
   }

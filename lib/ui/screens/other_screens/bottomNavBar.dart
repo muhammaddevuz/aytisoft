@@ -1,9 +1,11 @@
-// ignore_for_file: library_private_types_in_public_api
-
+import 'package:aytijobs/ui/screens/adding_job_screens/add_job_screen.dart';
+import 'package:aytijobs/ui/screens/messages_screen/message_screen.dart';
 import 'package:aytijobs/ui/screens/other_screens/connection_screen.dart';
 import 'package:aytijobs/ui/screens/other_screens/home_screen.dart';
+import 'package:aytijobs/ui/screens/saved_screens/save_job_screen.dart';
+import 'package:aytijobs/ui/widgets/other_widgets/change_bottom.dart';
+import 'package:aytijobs/utils/constant_colors.dart';
 import 'package:flutter/material.dart';
-import '../../../utils/constant_colors.dart';
 
 class Bottomnavbar extends StatefulWidget {
   const Bottomnavbar({super.key});
@@ -17,7 +19,11 @@ class _BottomnavbarState extends State<Bottomnavbar> {
 
   void _onItemTapped(int index) {
     setState(() {
-      _selectedIndex = index;
+      if (index == 2) {
+        _showModal(context); // Open modal on middle button tap
+      } else {
+        _selectedIndex = index;
+      }
     });
   }
 
@@ -96,13 +102,17 @@ class _BottomnavbarState extends State<Bottomnavbar> {
       case 1:
         return const ConnectionScreen();
       case 2:
-        return const Text('Add Page');
+        return Container(); // The modal will open instead
       case 3:
-        return const Text('Chat Page');
+        return MessageScreen();
       case 4:
-        return const Text('Bookmarks Page');
+        return SaveJobScreen();
       default:
         return const Text('Home Page');
     }
+  }
+
+  void _showModal(BuildContext context) {
+    Bottoms.showBottomSheetAdding(context);
   }
 }

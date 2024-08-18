@@ -1,5 +1,5 @@
 import 'package:aytijobs/data/models/language.dart';
-import 'package:aytijobs/ui/screens/language_screen.dart';
+import 'package:aytijobs/ui/screens/other_screens/language_screen.dart';
 import 'package:flutter/material.dart';
 
 class AddLanguage2 extends StatefulWidget {

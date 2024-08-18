@@ -1,3 +1,5 @@
+import 'package:aytijobs/ui/widgets/language_item.dart';
+
 import '../../../data/models/language.dart';
 import '../../widgets/other_widgets/add_language.dart';
 import 'package:flutter/material.dart';
@@ -62,7 +64,7 @@ class _LanguageScreenState extends State<LanguageScreen> {
                               MaterialPageRoute(
                                 builder: (context) => AddLanguage(
                                   firstLanguage:
-                                      languages.isEmpty ? true : false,
+                                      languages.isEmpty ? true : false, languages: [],
                                 ),
                               ),
                             );

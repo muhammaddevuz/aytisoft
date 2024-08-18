@@ -52,13 +52,13 @@ class AddLanguage extends StatelessWidget {
                           Navigator.pushReplacement(context, MaterialPageRoute(
                             builder: (context) {
                               return LanguageScreen(
-                                language: Language(
+                                language: [Language(
                                     firstLanguage: firstLanguage,
                                     language:
                                         Countrys.countrys[i].keys.toList()[0],
                                     flagUrl:
                                         Countrys.countrys[i].values.toList()[0],
-                                    oral: "10"),
+                                    oral: "10"),]
                               );
                             },
                           ));
@@ -67,6 +67,7 @@ class AddLanguage extends StatelessWidget {
                               context,
                               MaterialPageRoute(
                                 builder: (context) => AddLanguage2(
+                                  languages: [],
                                     language:
                                         Countrys.countrys[i].keys.toList()[0],
                                     imageUrl: Countrys.countrys[i].values
