@@ -161,6 +161,7 @@ class Vacansy extends StatelessWidget {
                       ),
                     ],
                   )
+               
                 ],
               ),
             ],

@@ -1,8 +1,10 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:aytijobs/ui/screens/search_screen/search_screen.dart';
 import 'package:aytijobs/utils/constant_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:zoom_tap_animation/zoom_tap_animation.dart';
 
 class TypeOfJob extends StatelessWidget {
   const TypeOfJob({super.key});
@@ -23,33 +25,45 @@ class TypeOfJob extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            Container(
-              padding: EdgeInsets.all(36),
-              alignment: Alignment.center,
-              width: 150,
-              height: 170,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-                color: Constantcolors.blue,
-              ),
-              child: Column(
-                children: [
-                  Image.asset(
-                    'assets/images/remote.png',
-                    width: 34,
-                    height: 34,
+            ZoomTapAnimation(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return SearchScreen();
+                    },
                   ),
-                  Text(
-                    '44.5k',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 16,
+                );
+              },
+              child: Container(
+                padding: EdgeInsets.all(36),
+                alignment: Alignment.center,
+                width: 150,
+                height: 170,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  color: Constantcolors.blue,
+                ),
+                child: Column(
+                  children: [
+                    Image.asset(
+                      'assets/images/remote.png',
+                      width: 34,
+                      height: 34,
                     ),
-                  ),
-                  Text(
-                    'Remote Job',
-                  ),
-                ],
+                    Text(
+                      '44.5k',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
+                      ),
+                    ),
+                    Text(
+                      'Remote Job',
+                    ),
+                  ],
+                ),
               ),
             ),
             Column(

@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, sort_child_properties_last
 
 import 'package:aytijobs/ui/screens/adding_job_screens/add_job_screen.dart';
+import 'package:aytijobs/ui/screens/adding_job_screens/add_post_screen.dart';
 import 'package:aytijobs/ui/widgets/other_widgets/radio_button.dart';
 import 'package:aytijobs/utils/constant_colors.dart';
 import 'package:flutter/cupertino.dart';
@@ -565,7 +566,14 @@ class Bottoms {
               SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () {
-                  Navigator.pop(context);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return AddPostScreen();
+                      },
+                    ),
+                  );
                 },
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,

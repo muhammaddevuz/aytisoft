@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
 import 'package:aytijobs/ui/screens/profile_screen/profile_widgets/all_in_one.dart';
+import 'package:aytijobs/ui/widgets/other_widgets/textFieldForm.dart';
 import 'package:flutter/material.dart';
 
 class AddPostScreen extends StatefulWidget {
@@ -13,6 +14,8 @@ class AddPostScreen extends StatefulWidget {
 class _AddPostScreenState extends State<AddPostScreen> {
   final titlecontorller = TextEditingController();
   final desccontorller = TextEditingController();
+  final hashtagcontorller = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -75,19 +78,11 @@ class _AddPostScreenState extends State<AddPostScreen> {
               maxLines: 5,
             ),
             SizedBox(
-              height: 318,
+              height: 292,
             ),
-            Container(
-              width: double.infinity,
-              height: 70,
-              decoration: BoxDecoration(
-                border: Border.all(color: Colors.black),
-                borderRadius: BorderRadius.only(
-                  topRight: Radius.circular(20),
-                  topLeft: Radius.circular(20),
-                ),
-              ),
-              child: Row(
+            Textfieldform(
+              controller: hashtagcontorller,
+              sufficon: Row(
                 children: [
                   IconButton(
                     onPressed: () {},
@@ -105,18 +100,10 @@ class _AddPostScreenState extends State<AddPostScreen> {
                       height: 24,
                     ),
                   ),
-                  Spacer(),
-                  TextButton(
-                    onPressed: () {},
-                    child: const Text(
-                      "Add hashtag",
-                      style: TextStyle(
-                        color: Color(0xFFFF9228),
-                      ),
-                    ),
-                  )
                 ],
               ),
+              hintText: 'Add hashtag',
+              filledColor: Colors.white,
             ),
           ],
         ),

@@ -190,6 +190,7 @@ class _DescriptionVacansyScreenState extends State<DescriptionVacansyScreen> {
                     ),
                   ),
                 ),
+             
               ],
             ),
           ),
