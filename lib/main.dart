@@ -44,11 +44,14 @@ class MyApp extends StatelessWidget {
           BlocProvider(
             create: (context) => ProfileCubit(),
           ),
+          BlocProvider(
+            create: (context) => EducationFormCubit(),
+          )
         ],
         child: ScreenUtilInit(
           designSize: const Size(360, 690),
           builder: (context, child) {
-            return const MaterialApp(
+            return MaterialApp(
               debugShowCheckedModeBanner: false,
               home: Bottomnavbar(),
             );

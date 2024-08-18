@@ -1,10 +1,16 @@
+import 'package:aytijobs/data/models/language.dart';
+import 'package:aytijobs/ui/screens/language_screen.dart';
 import 'package:flutter/material.dart';
 
 class AddLanguage2 extends StatefulWidget {
   final String language;
   final String imageUrl;
-  const AddLanguage2(
-      {super.key, required this.language, required this.imageUrl});
+  List<Language> languages;
+  AddLanguage2(
+      {super.key,
+      required this.language,
+      required this.imageUrl,
+      required this.languages});
 
   @override
   State<AddLanguage2> createState() => _AddLanguage2State();
@@ -176,7 +182,20 @@ class _AddLanguage2State extends State<AddLanguage2> {
             Padding(
               padding: const EdgeInsets.only(bottom: 30),
               child: FilledButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushReplacement(context, MaterialPageRoute(
+                    builder: (context) {
+                      widget.languages.add(
+                        Language(
+                            firstLanguage: false,
+                            language: widget.language,
+                            flagUrl: widget.imageUrl,
+                            oral: level.toString()),
+                      );
+                      return LanguageScreen(language: widget.languages);
+                    },
+                  ));
+                },
                 style: FilledButton.styleFrom(
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20)),

@@ -5,8 +5,10 @@ import '../../../utils/countrys.dart';
 import 'package:flutter/material.dart';
 
 class AddLanguage extends StatelessWidget {
+  List<Language> languages;
   final bool firstLanguage;
-  const AddLanguage({super.key, required this.firstLanguage});
+  AddLanguage(
+      {super.key, required this.firstLanguage, required this.languages});
 
   @override
   Widget build(BuildContext context) {
