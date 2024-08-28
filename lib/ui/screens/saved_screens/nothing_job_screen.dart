@@ -12,7 +12,7 @@ class NothingJobScreen extends StatelessWidget {
           padding: const EdgeInsets.all(20),
           child: Column(
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 150,
               ),
               Text(

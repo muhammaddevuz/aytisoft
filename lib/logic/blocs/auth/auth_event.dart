@@ -25,5 +25,10 @@ final class ResetPasswordAuthEvent extends AuthEvent {
   ResetPasswordAuthEvent({required this.email});
 }
 
+
+
 /// logout
 final class LogoutAuthEvent extends AuthEvent {}
+
+final class ChechStateAuthEvent extends AuthEvent {}
+

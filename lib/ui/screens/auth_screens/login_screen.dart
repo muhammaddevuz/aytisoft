@@ -1,3 +1,5 @@
+import 'package:aytijobs/ui/screens/other_screens/bottomNavBar.dart';
+
 import 'forgot_password.dart';
 import 'register_screen.dart';
 import '../../widgets/other_widgets/textFieldForm.dart';
@@ -5,7 +7,6 @@ import '../../../utils/constant_colors.dart';
 import 'package:aytijobs/logic/blocs/auth/auth_bloc.dart';
 import 'package:aytijobs/logic/blocs/auth/auth_event.dart';
 import 'package:aytijobs/logic/blocs/auth/auth_state.dart';
-import 'package:aytijobs/ui/screens/other_screens/home_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -56,7 +57,7 @@ class _LoginScreenState extends State<LoginScreen> {
         if (state is SuccessAuthState) {
           Navigator.pushAndRemoveUntil(
             context,
-            MaterialPageRoute(builder: (ctx) => const HomeScreen()),
+            MaterialPageRoute(builder: (ctx) => const Bottomnavbar()),
             (route) => false,
           );
         } else if (state is ErrorAuthState) {

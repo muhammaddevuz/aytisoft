@@ -68,28 +68,31 @@ class TypeOfJob extends StatelessWidget {
             ),
             Column(
               children: [
-                Container(
-                  padding: EdgeInsets.all(15),
-                  alignment: Alignment.center,
-                  width: 150,
-                  height: 75,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: Constantcolors.purpleColor,
-                  ),
-                  child: Column(
-                    children: const [
-                      Text(
-                        '66.8k',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16,
+                ZoomTapAnimation(
+                  onTap: () {},
+                  child: Container(
+                    padding: EdgeInsets.all(15),
+                    alignment: Alignment.center,
+                    width: 150,
+                    height: 75,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Constantcolors.purpleColor,
+                    ),
+                    child: Column(
+                      children: const [
+                        Text(
+                          '66.8k',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                          ),
                         ),
-                      ),
-                      Text(
-                        'Full Time',
-                      ),
-                    ],
+                        Text(
+                          'Full Time',
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 SizedBox(

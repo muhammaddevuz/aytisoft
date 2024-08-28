@@ -1,11 +1,14 @@
 // ignore_for_file: prefer_const_constructors, sort_child_properties_last
 
+import 'package:aytijobs/logic/blocs/auth/auth_bloc.dart';
+import 'package:aytijobs/logic/blocs/auth/auth_event.dart';
 import 'package:aytijobs/ui/screens/adding_job_screens/add_job_screen.dart';
 import 'package:aytijobs/ui/screens/adding_job_screens/add_post_screen.dart';
+import 'package:aytijobs/ui/screens/auth_screens/login_screen.dart';
 import 'package:aytijobs/ui/widgets/other_widgets/radio_button.dart';
 import 'package:aytijobs/utils/constant_colors.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:zoom_tap_animation/zoom_tap_animation.dart';
 
 class Bottoms {
@@ -455,7 +458,15 @@ class Bottoms {
               SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () {
-                  Navigator.pop(context);
+                  context.read<AuthBloc>().add(LogoutAuthEvent());
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return LoginScreen();
+                      },
+                    ),
+                  );
                 },
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,

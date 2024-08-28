@@ -1,11 +1,8 @@
 import 'package:aytijobs/data/models/job.dart';
 import 'package:aytijobs/ui/screens/saved_screens/nothing_job_screen.dart';
-import 'package:aytijobs/ui/widgets/job_widget/vacansy.dart';
 import 'package:aytijobs/ui/widgets/profile_widgets/saved_jobs.dart';
 import 'package:aytijobs/utils/constant_colors.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:zoom_tap_animation/zoom_tap_animation.dart';
 
 class SaveJobScreen extends StatelessWidget {
   const SaveJobScreen({super.key});
@@ -15,7 +12,7 @@ class SaveJobScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text('Save Job'),
+        title: const Text('Save Job'),
         actions: [
           TextButton(
             onPressed: () {
@@ -23,7 +20,7 @@ class SaveJobScreen extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) {
-                    return NothingJobScreen();
+                    return  const NothingJobScreen();
                   },
                 ),
               );

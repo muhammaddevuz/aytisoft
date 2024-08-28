@@ -1,6 +1,3 @@
-import 'package:aytijobs/ui/widgets/other_widgets/search_widget.dart';
-import 'package:aytijobs/utils/extension.dart';
-import 'package:aytijobs/utils/search_queries.dart';
 import 'package:flutter/material.dart';
 
 class GestureWidget extends StatelessWidget {
@@ -12,6 +9,7 @@ class GestureWidget extends StatelessWidget {
   final String? Function(String?)? validatorfunc;
   final Future<void> Function()? onTap;
 
+  // ignore: prefer_const_constructors_in_immutables
   GestureWidget({
     super.key,
     required this.controller,

@@ -2,6 +2,7 @@
 
 import 'package:aytijobs/ui/widgets/other_widgets/textFieldForm.dart';
 import 'package:aytijobs/utils/constant_colors.dart';
+import 'package:aytijobs/utils/theme_manager.dart';
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
@@ -27,6 +28,7 @@ class AllInOne extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final textColor = ThemeManager.getTextColor(context);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -38,7 +40,7 @@ class AllInOne extends StatelessWidget {
           style: TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 16,
-            color: Constantcolors.mainColor,
+            color: textColor,
           ),
         ),
         const SizedBox(height: 10),

@@ -17,6 +17,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
       value: widget.isNotify,
       onChanged: (value) {
         widget.isNotify = value;
+
         setState(() {});
       },
     );

@@ -36,26 +36,22 @@ class _AppreciationScreenState extends State<AppreciationScreen> {
     if (_formKey.currentState!.validate()) {
       _formKey.currentState!.save();
     }
-    print(awardNameController.text);
-    print(categoryController.text);
-    print(endDateController.text);
-    print(descController.text);
   }
 
-  Future<void> _selectDate(
-      BuildContext context, TextEditingController controller) async {
-    final DateTime? picked = await showDatePicker(
-      context: context,
-      initialDate: DateTime.now(),
-      firstDate: DateTime(2000),
-      lastDate: DateTime(2101),
-    );
-    if (picked != null) {
-      setState(() {
-        controller.text = "${picked.toLocal()}".split(' ')[0];
-      });
-    }
-  }
+  // Future<void> _selectDate(
+  //     BuildContext context, TextEditingController controller) async {
+  //   final DateTime? picked = await showDatePicker(
+  //     context: context,
+  //     initialDate: DateTime.now(),
+  //     firstDate: DateTime(2000),
+  //     lastDate: DateTime(2101),
+  //   );
+  //   if (picked != null) {
+  //     setState(() {
+  //       controller.text = "${picked.toLocal()}".split(' ')[0];
+  //     });
+  //   }
+  // }
 
   @override
   Widget build(BuildContext context) {

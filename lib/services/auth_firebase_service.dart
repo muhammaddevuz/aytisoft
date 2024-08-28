@@ -69,4 +69,9 @@ class AuthFirebaseService {
   Future<void> logout() async {
     await auth.signOut();
   }
+
+  Future<bool> isUserAuthenticated() async {
+    final currentUser = auth.currentUser;
+    return currentUser != null;
+  }
 }

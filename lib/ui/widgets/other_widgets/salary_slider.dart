@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
 class SalarySlider extends StatefulWidget {
+  const SalarySlider({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _SalarySliderState createState() => _SalarySliderState();
 }
 
@@ -13,14 +16,14 @@ class _SalarySliderState extends State<SalarySlider> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
+        const Text(
           'Salary',
           style: TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.bold,
           ),
         ),
-        SizedBox(height: 16),
+        const SizedBox(height: 16),
         RangeSlider(
           values: _currentRangeValues,
           min: 10000,
@@ -43,11 +46,11 @@ class _SalarySliderState extends State<SalarySlider> {
           children: [
             Text(
               '\$${_currentRangeValues.start.round()}k',
-              style: TextStyle(fontSize: 16),
+              style: const TextStyle(fontSize: 16),
             ),
             Text(
               '\$${_currentRangeValues.end.round()}k',
-              style: TextStyle(fontSize: 16),
+              style: const TextStyle(fontSize: 16),
             ),
           ],
         ),

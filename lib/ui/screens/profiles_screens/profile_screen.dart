@@ -135,7 +135,6 @@ class ProfileScreen extends StatelessWidget {
                           ),
                         ],
                       ),
-                      const SizedBox(height: 10),
                       SizedBox(height: 20.h),
                       Container(
                         width: 120.w,
@@ -266,6 +265,7 @@ class ProfileScreen extends StatelessWidget {
                         ),
                       ),
                     ),
+                 
                   ],
                 ),
               ),

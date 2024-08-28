@@ -26,7 +26,7 @@ class SearchScreen extends StatelessWidget {
               },
               icon: const Icon(
                 Icons.arrow_back,
-                color: Colors.white, // Set the back button color to white
+                color: Colors.white,
               ),
             ),
             flexibleSpace: FlexibleSpaceBar(
@@ -49,7 +49,7 @@ class SearchScreen extends StatelessWidget {
                   Container(
                     padding: const EdgeInsets.all(20),
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.only(
+                      borderRadius: const BorderRadius.only(
                         bottomRight: Radius.circular(20),
                         bottomLeft: Radius.circular(20),
                       ),
@@ -116,7 +116,6 @@ class SearchScreen extends StatelessWidget {
                           color: Colors.white,
                         ),
                       ),
-                   
                     ),
                     const SizedBox(width: 10),
                     Wrap(
@@ -135,7 +134,6 @@ class SearchScreen extends StatelessWidget {
                           label: const Text('UI/UX Designer'),
                           backgroundColor: Colors.grey[200],
                         ),
-                        // Add more chips as needed
                       ],
                     ),
                   ],

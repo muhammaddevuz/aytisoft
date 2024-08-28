@@ -1,7 +1,8 @@
 import 'package:aytijobs/data/models/language.dart';
-import 'package:aytijobs/ui/screens/other_screens/language_screen.dart';
+import 'package:aytijobs/ui/screens/profile_screen/language_screen.dart';
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class AddLanguage2 extends StatefulWidget {
   final String language;
   final String imageUrl;

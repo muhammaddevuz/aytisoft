@@ -1,8 +1,10 @@
 import 'package:aytijobs/data/models/job.dart';
+import 'package:aytijobs/ui/screens/profile_screen/account_screen.dart';
 import 'package:aytijobs/ui/widgets/job_widget/ad_job.dart';
 import 'package:aytijobs/ui/widgets/job_widget/type_of_job.dart';
 import 'package:aytijobs/ui/widgets/job_widget/vacansy.dart';
 import 'package:flutter/material.dart';
+import 'package:zoom_tap_animation/zoom_tap_animation.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -37,10 +39,22 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
         actions: [
-          Container(
-            margin: const EdgeInsets.only(right: 20),
-            child: const CircleAvatar(
-              radius: 36,
+          ZoomTapAnimation(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return const AccountScreen();
+                  },
+                ),
+              );
+            },
+            child: Container(
+              margin: const EdgeInsets.only(right: 20),
+              child: const CircleAvatar(
+                radius: 36,
+              ),
             ),
           ),
         ],
@@ -70,7 +84,7 @@ class HomeScreen extends StatelessWidget {
             delegate: SliverChildBuilderDelegate(
               (context, index) {
                 final job = Job(
-                  position: 'Somsachi',
+                  position: 'Flutter developer',
                   id: UniqueKey().toString(),
                   type_workspace: 'type_workspace',
                   location: 'Tashkent',

@@ -20,4 +20,8 @@ class AuthUserRepository {
   Future<void> logout() async {
     await authFirebaseService.logout();
   }
+   Future<bool> isUserAuthenticated() async {
+    return await authFirebaseService.isUserAuthenticated();
+  }
+  
 }

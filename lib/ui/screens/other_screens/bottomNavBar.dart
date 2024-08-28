@@ -1,4 +1,5 @@
-import 'package:aytijobs/ui/screens/adding_job_screens/add_job_screen.dart';
+// ignore_for_file: library_private_types_in_public_api
+
 import 'package:aytijobs/ui/screens/messages_screen/message_screen.dart';
 import 'package:aytijobs/ui/screens/other_screens/connection_screen.dart';
 import 'package:aytijobs/ui/screens/other_screens/home_screen.dart';
@@ -106,7 +107,7 @@ class _BottomnavbarState extends State<Bottomnavbar> {
       case 3:
         return MessageScreen();
       case 4:
-        return SaveJobScreen();
+        return const SaveJobScreen();
       default:
         return const Text('Home Page');
     }

@@ -1,9 +1,11 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
+import 'package:aytijobs/utils/theme_manager.dart';
+import 'package:flutter/material.dart';
+import 'package:zoom_tap_animation/zoom_tap_animation.dart';
 import 'password_screen.dart';
 import '../../widgets/other_widgets/change_bottom.dart';
 import '../../widgets/other_widgets/notif_widget.dart';
 import '../../../utils/constant_colors.dart';
-import 'package:flutter/material.dart';
-import 'package:zoom_tap_animation/zoom_tap_animation.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
@@ -12,13 +14,25 @@ class SettingsScreen extends StatefulWidget {
   State<SettingsScreen> createState() => _SettingsScreenState();
 }
 
-submit() {}
-bool isNotify = false;
-bool isDarkly = false;
-
 class _SettingsScreenState extends State<SettingsScreen> {
+  bool isNotify = false;
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  void _toggleNotification(bool value) {
+    setState(() {
+      isNotify = value;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
+    final primaryColor = ThemeManager.getPrimaryColor(context);
+    final textColor = ThemeManager.getTextColor(context);
+
     return Scaffold(
       appBar: AppBar(),
       body: Padding(
@@ -29,7 +43,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
             Text(
               'Settings',
               style: TextStyle(
-                color: Constantcolors.mainColor,
+                color: primaryColor,
                 fontSize: 16,
               ),
             ),
@@ -43,11 +57,15 @@ class _SettingsScreenState extends State<SettingsScreen> {
               title: Text(
                 "Notifications",
                 style: TextStyle(
-                  color: Constantcolors.mainColor,
+                  color: textColor,
                   fontSize: 16,
                 ),
               ),
-              trailing: SettingsWidget(isNotify: isNotify),
+              trailing: Switch(
+                value: isNotify,
+                onChanged: _toggleNotification,
+                activeColor: Colors.green,
+              ),
             ),
             ListTile(
               contentPadding: EdgeInsets.zero,
@@ -59,11 +77,19 @@ class _SettingsScreenState extends State<SettingsScreen> {
               title: Text(
                 "Dark mode",
                 style: TextStyle(
-                  color: Constantcolors.mainColor,
+                  color: textColor,
                   fontSize: 16,
                 ),
               ),
-              trailing: SettingsWidget(isNotify: isDarkly),
+              trailing: Switch(
+                value: AdaptiveTheme.of(context).mode == AdaptiveThemeMode.dark,
+                onChanged: (value) {
+                  final newMode =
+                      value ? AdaptiveThemeMode.dark : AdaptiveThemeMode.light;
+                  AdaptiveTheme.of(context).setThemeMode(newMode);
+                },
+                activeColor: Colors.green,
+              ),
             ),
             ZoomTapAnimation(
               onTap: () {
@@ -86,7 +112,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 title: Text(
                   "Passwords",
                   style: TextStyle(
-                    color: Constantcolors.mainColor,
+                    color: textColor,
                     fontSize: 16,
                   ),
                 ),
@@ -107,7 +133,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 title: Text(
                   "Logout",
                   style: TextStyle(
-                    color: Constantcolors.mainColor,
+                    color: textColor,
                     fontSize: 16,
                   ),
                 ),
@@ -116,26 +142,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
             ),
             const SizedBox(
               height: 400,
-            ),
-            Center(
-              child: ZoomTapAnimation(
-                onTap: submit,
-                child: Card(
-                  color: Constantcolors.mainColor,
-                  child: Container(
-                    alignment: Alignment.center,
-                    width: 270,
-                    height: 50,
-                    child: const Text(
-                      "Save",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20),
-                    ),
-                  ),
-                ),
-              ),
             ),
           ],
         ),

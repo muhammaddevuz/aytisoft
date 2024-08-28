@@ -1,6 +1,5 @@
 import 'package:aytijobs/ui/screens/messages_screen/nothing_message_screen.dart';
 import 'package:aytijobs/ui/widgets/other_widgets/textFieldForm.dart';
-import 'package:aytijobs/utils/constant_colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -69,7 +68,7 @@ class DialogScreen extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                         builder: (context) {
-                          return NothingMessageScreen();
+                          return const NothingMessageScreen();
                         },
                       ),
                     );

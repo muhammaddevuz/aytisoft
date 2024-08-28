@@ -1,7 +1,6 @@
 import 'package:aytijobs/ui/screens/search_screen/nothing_filter_screen.dart';
 import 'package:aytijobs/ui/widgets/other_widgets/all_in_one.dart';
 import 'package:aytijobs/ui/widgets/other_widgets/salary_slider.dart';
-import 'package:aytijobs/ui/widgets/other_widgets/textFieldForm.dart';
 import 'package:aytijobs/utils/constant_colors.dart';
 import 'package:aytijobs/utils/extension.dart';
 import 'package:flutter/material.dart';
@@ -23,7 +22,7 @@ class FilterScreen extends StatelessWidget {
         ),
       ),
       body: Padding(
-        padding: EdgeInsets.all(20),
+        padding: const EdgeInsets.all(20),
         child: Column(
           children: [
             AllInOne(
@@ -45,9 +44,9 @@ class FilterScreen extends StatelessWidget {
               filledColor: Colors.white,
             ),
             20.sH(),
-            SalarySlider(),
+            const SalarySlider(),
             20.sH(),
-            Divider(),
+            const Divider(),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -62,7 +61,7 @@ class FilterScreen extends StatelessWidget {
                         border: Border.all(color: Colors.grey.shade300),
                         borderRadius: BorderRadius.circular(10),
                       ),
-                      child: Text('Full time'),
+                      child: const Text('Full time'),
                     ),
                   ),
                 ),
@@ -78,7 +77,7 @@ class FilterScreen extends StatelessWidget {
                         border: Border.all(color: Colors.grey.shade300),
                         borderRadius: BorderRadius.circular(10),
                       ),
-                      child: Text('Part time'),
+                      child: const Text('Part time'),
                     ),
                   ),
                 ),
@@ -108,7 +107,7 @@ class FilterScreen extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) {
-                      return NothingFilterScreen();
+                      return const NothingFilterScreen();
                     },
                   ),
                 );

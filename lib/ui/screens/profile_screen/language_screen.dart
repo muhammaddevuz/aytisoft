@@ -10,6 +10,7 @@ class LanguageScreen extends StatefulWidget {
       : language = language ?? [];
 
   @override
+  // ignore: no_logic_in_create_state
   State<LanguageScreen> createState() => _LanguageScreenState(language);
 }
 
@@ -64,7 +65,7 @@ class _LanguageScreenState extends State<LanguageScreen> {
                               MaterialPageRoute(
                                 builder: (context) => AddLanguage(
                                   firstLanguage:
-                                      languages.isEmpty ? true : false, languages: [],
+                                      languages.isEmpty ? true : false, languages: const [],
                                 ),
                               ),
                             );

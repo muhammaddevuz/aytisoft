@@ -11,6 +11,21 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     on<LoginAuthEvent>(_login);
     on<ResetPasswordAuthEvent>(_resetPassword);
     on<LogoutAuthEvent>(_logout);
+    on<ChechStateAuthEvent>(_check);
+  }
+
+  void _check(ChechStateAuthEvent event, Emitter<AuthState> emit) async {
+    try {
+      final isAuthenticated = await userRepository.isUserAuthenticated();
+
+      if (isAuthenticated) {
+        emit(SuccessAuthState());
+      } else {
+        emit(SuccessLogoutAuthState());
+      }
+    } catch (e) {
+      emit(ErrorAuthState('Failed to check authentication state: $e'));
+    }
   }
 
   /// register user bloc
@@ -46,12 +61,12 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     }
   }
 
-  /// logout user bloc
   void _logout(LogoutAuthEvent event, Emitter emit) async {
-    emit(SuccessAuthState());
+    emit(LoadingAuthState());
+    print('object');
     try {
       await userRepository.logout();
-      emit(SuccessAuthState());
+      emit(SuccessLogoutAuthState());
     } catch (e) {
       emit(ErrorAuthState(e.toString()));
     }

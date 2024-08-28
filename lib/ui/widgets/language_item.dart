@@ -157,7 +157,7 @@ class _LanguageListItemState extends State<LanguageListItem> {
             ],
           ),
         ),
-        SizedBox(height: 20),
+        const SizedBox(height: 20),
       ],
     );
   }

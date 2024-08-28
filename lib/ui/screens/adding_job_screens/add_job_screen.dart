@@ -48,10 +48,10 @@ class _AddJobScreenState extends State<AddJobScreen> {
     }
   }
 
-  void _navigateToScreen(String title) {
+  void _navigateToScreen(String title) async {
     switch (title) {
       case 'Job position*':
-        Navigator.push(
+         await Navigator.push(
           context,
           MaterialPageRoute(builder: (context) => PositionScreen()),
         );

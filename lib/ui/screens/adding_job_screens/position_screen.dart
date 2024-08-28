@@ -1,3 +1,5 @@
+import 'package:zoom_tap_animation/zoom_tap_animation.dart';
+
 import '../../widgets/other_widgets/all_in_one.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -48,9 +50,17 @@ class _PositionScreenState extends State<PositionScreen> {
                 },
                 itemCount: jobPositions.length,
                 itemBuilder: (context, index) {
-                  return Text(
-                    jobPositions[index],
-                    style: const TextStyle(fontSize: 16),
+                  return ZoomTapAnimation(
+                    onTap: () {
+                      Navigator.pop(
+                        context,
+                        jobPositions[index],
+                      );
+                    },
+                    child: Text(
+                      jobPositions[index],
+                      style: const TextStyle(fontSize: 16),
+                    ),
                   );
                 },
               ),
