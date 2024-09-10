@@ -1,8 +1,5 @@
-
 import 'package:aytijobs/logic/cubits/education/education_form_cubit.dart';
 import 'package:aytijobs/ui/screens/profile_screen/account_screen.dart';
-import 'package:aytijobs/ui/screens/profile_screen/education_screen.dart';
-import 'package:aytijobs/ui/screens/profile_screen/main_profile_screen.dart';
 import 'logic/blocs/auth/auth_bloc.dart';
 import 'data/repositories/auth_user_repository.dart';
 import 'logic/blocs/skills_bloc/skills_bloc.dart';
@@ -57,9 +54,8 @@ class MyApp extends StatelessWidget {
           builder: (context, child) {
             return MaterialApp(
               debugShowCheckedModeBanner: false,
-
-              home: LanguageScreen(language: []),
-
+              home: AccountScreen(),
+            );
           },
         ),
       ),

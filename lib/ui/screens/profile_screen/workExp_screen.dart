@@ -1,5 +1,6 @@
 // ignore: file_names
 import 'package:aytijobs/data/models/exp.dart';
+import 'package:aytijobs/ui/screens/profiles_screens/settings_screen.dart';
 import 'package:aytijobs/ui/widgets/textFieldForm.dart';
 import 'package:aytijobs/utils/constant_colors.dart';
 import 'package:flutter/material.dart';
@@ -36,6 +37,7 @@ class _WorkexpScreenState extends State<WorkexpScreen> {
   void submit() {
     if (_formKey.currentState!.validate()) {
       _formKey.currentState!.save();
+      
     }
   }
 
@@ -246,6 +248,7 @@ class _WorkexpScreenState extends State<WorkexpScreen> {
                           ),
                         ),
                         ZoomTapAnimation(
+                          onTap: submit,
                           child: Card(
                             color: Constantcolors.mainColor,
                             child: Container(

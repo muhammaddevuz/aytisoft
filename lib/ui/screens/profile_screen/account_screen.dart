@@ -1,4 +1,10 @@
+import 'package:aytijobs/data/models/education.dart';
+import 'package:aytijobs/data/models/exp.dart';
+import 'package:aytijobs/ui/screens/profile_screen/add_skills_screen.dart';
+import 'package:aytijobs/ui/screens/profile_screen/education_screen.dart';
 import 'package:aytijobs/ui/screens/profile_screen/profile_widgets/followers_widget.dart';
+import 'package:aytijobs/ui/screens/profile_screen/workExp_screen.dart';
+import 'package:aytijobs/ui/widgets/add_language.dart';
 import 'add_about_me_screen.dart';
 import '../../../utils/extension.dart';
 import 'package:flutter/material.dart';
@@ -130,8 +136,8 @@ class AccountScreen extends StatelessWidget {
                         borderRadius: BorderRadius.circular(10)),
                     padding: const EdgeInsets.all(10),
                     child: ListTile(
-                      onTap: () {
-                        Navigator.push(
+                      onTap: () async {
+                        String aboutMe = await Navigator.push(
                           context,
                           MaterialPageRoute(
                             builder: (context) {
@@ -171,153 +177,195 @@ class AccountScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Container(
-                    margin: const EdgeInsets.symmetric(vertical: 10),
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(10)),
-                    padding: const EdgeInsets.all(10),
-                    child: ListTile(
-                      leading: Container(
-                        height: 24,
-                        width: 24,
-                        clipBehavior: Clip.hardEdge,
-                        decoration: const BoxDecoration(),
-                        child: Image.asset(
-                            "assets/images/account_screen_icons/work_experience_icon.png"),
-                      ),
-                      title: const Text(
-                        "Work Experience",
-                        style: TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.bold,
+                  GestureDetector(
+                    onTap: () async {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => WorkexpScreen(
+                            exp: Exp(
+                                jobTitle: 'jobTitle',
+                                companyName: 'companyName',
+                                startDate: DateTime.now(),
+                                endDate: DateTime.now(),
+                                currentlyWorking: true,
+                                jonDesc:
+                                    'qwrghjytrfghbgfdfvbvcdxcfvbnvcdxvbvfdcfgbhgfdfghfdfg'),
+                          ),
                         ),
-                      ),
-                      trailing: Container(
-                        height: 24,
-                        width: 24,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: Colors.orange.shade100,
+                      );
+                    },
+                    child: Container(
+                      margin: const EdgeInsets.symmetric(vertical: 10),
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(10)),
+                      padding: const EdgeInsets.all(10),
+                      child: ListTile(
+                        leading: Container(
+                          height: 24,
+                          width: 24,
+                          clipBehavior: Clip.hardEdge,
+                          decoration: const BoxDecoration(),
+                          child: Image.asset(
+                              "assets/images/account_screen_icons/work_experience_icon.png"),
                         ),
-                        child: const Center(
-                          child: Icon(
-                            Icons.add,
-                            color: Colors.orange,
+                        title: const Text(
+                          "Work Experience",
+                          style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        trailing: Container(
+                          height: 24,
+                          width: 24,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Colors.orange.shade100,
+                          ),
+                          child: const Center(
+                            child: Icon(
+                              Icons.add,
+                              color: Colors.orange,
+                            ),
                           ),
                         ),
                       ),
                     ),
                   ),
-                  Container(
-                    margin: const EdgeInsets.symmetric(vertical: 10),
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(10)),
-                    padding: const EdgeInsets.all(10),
-                    child: ListTile(
-                      leading: Container(
-                        height: 24,
-                        width: 24,
-                        clipBehavior: Clip.hardEdge,
-                        decoration: const BoxDecoration(),
-                        child: Image.asset(
-                            "assets/images/account_screen_icons/education_icon.png"),
-                      ),
-                      title: const Text(
-                        "Education",
-                        style: TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.bold,
+                  GestureDetector(
+                    onTap: () async {
+                      Education education = await Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => EducationScreen(),
                         ),
-                      ),
-                      trailing: Container(
-                        height: 24,
-                        width: 24,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: Colors.orange.shade100,
+                      );
+                    },
+                    child: Container(
+                      margin: const EdgeInsets.symmetric(vertical: 10),
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(10)),
+                      padding: const EdgeInsets.all(10),
+                      child: ListTile(
+                        leading: Container(
+                          height: 24,
+                          width: 24,
+                          clipBehavior: Clip.hardEdge,
+                          decoration: const BoxDecoration(),
+                          child: Image.asset(
+                              "assets/images/account_screen_icons/education_icon.png"),
                         ),
-                        child: const Center(
-                          child: Icon(
-                            Icons.add,
-                            color: Colors.orange,
+                        title: const Text(
+                          "Education",
+                          style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        trailing: Container(
+                          height: 24,
+                          width: 24,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Colors.orange.shade100,
+                          ),
+                          child: const Center(
+                            child: Icon(
+                              Icons.add,
+                              color: Colors.orange,
+                            ),
                           ),
                         ),
                       ),
                     ),
                   ),
-                  Container(
-                    margin: const EdgeInsets.symmetric(vertical: 10),
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(10)),
-                    padding: const EdgeInsets.all(10),
-                    child: ListTile(
-                      leading: Container(
-                        height: 24,
-                        width: 24,
-                        clipBehavior: Clip.hardEdge,
-                        decoration: const BoxDecoration(),
-                        child: Image.asset(
-                            "assets/images/account_screen_icons/skill_icon.png"),
-                      ),
-                      title: const Text(
-                        "Skill",
-                        style: TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.bold,
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => AddSkillsScreen()));
+                    },
+                    child: Container(
+                      margin: const EdgeInsets.symmetric(vertical: 10),
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(10)),
+                      padding: const EdgeInsets.all(10),
+                      child: ListTile(
+                        leading: Container(
+                          height: 24,
+                          width: 24,
+                          clipBehavior: Clip.hardEdge,
+                          decoration: const BoxDecoration(),
+                          child: Image.asset(
+                              "assets/images/account_screen_icons/skill_icon.png"),
                         ),
-                      ),
-                      trailing: Container(
-                        height: 24,
-                        width: 24,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: Colors.orange.shade100,
+                        title: const Text(
+                          "Skill",
+                          style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
-                        child: const Center(
-                          child: Icon(
-                            Icons.add,
-                            color: Colors.orange,
+                        trailing: Container(
+                          height: 24,
+                          width: 24,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Colors.orange.shade100,
+                          ),
+                          child: const Center(
+                            child: Icon(
+                              Icons.add,
+                              color: Colors.orange,
+                            ),
                           ),
                         ),
                       ),
                     ),
                   ),
-                  Container(
-                    margin: const EdgeInsets.symmetric(vertical: 10),
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(10)),
-                    padding: const EdgeInsets.all(10),
-                    child: ListTile(
-                      leading: Container(
-                        height: 24,
-                        width: 24,
-                        clipBehavior: Clip.hardEdge,
-                        decoration: const BoxDecoration(),
-                        child: Image.asset(
-                            "assets/images/account_screen_icons/language_icon.png"),
-                      ),
-                      title: const Text(
-                        "Language",
-                        style: TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.bold,
+                  GestureDetector(
+                    onTap: () async {
+                      // Navigator.push(context, MaterialPageRoute(builder: (context) => AddLanguage(firstLanguage: firstLanguage, languages: languages)));
+                    },
+                    child: Container(
+                      margin: const EdgeInsets.symmetric(vertical: 10),
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(10)),
+                      padding: const EdgeInsets.all(10),
+                      child: ListTile(
+                        leading: Container(
+                          height: 24,
+                          width: 24,
+                          clipBehavior: Clip.hardEdge,
+                          decoration: const BoxDecoration(),
+                          child: Image.asset(
+                              "assets/images/account_screen_icons/language_icon.png"),
                         ),
-                      ),
-                      trailing: Container(
-                        height: 24,
-                        width: 24,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: Colors.orange.shade100,
+                        title: const Text(
+                          "Language",
+                          style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
-                        child: const Center(
-                          child: Icon(
-                            Icons.add,
-                            color: Colors.orange,
+                        trailing: Container(
+                          height: 24,
+                          width: 24,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Colors.orange.shade100,
+                          ),
+                          child: const Center(
+                            child: Icon(
+                              Icons.add,
+                              color: Colors.orange,
+                            ),
                           ),
                         ),
                       ),

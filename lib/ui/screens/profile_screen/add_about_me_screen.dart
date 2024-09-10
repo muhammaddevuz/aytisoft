@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AddAboutMeScreen extends StatelessWidget {
   final String? aboutMe;
+  final _formKey = GlobalKey<FormState>();
 
   AddAboutMeScreen([this.aboutMe]) : super(key: GlobalKey());
 
@@ -14,8 +15,10 @@ class AddAboutMeScreen extends StatelessWidget {
         backgroundColor: Colors.grey.shade200,
         leading: IconButton(
           onPressed: () {
-            if (textController.text != aboutMe) {
+            if (textController.text != aboutMe &&
+                textController.text.isNotEmpty) {
               showDialog(
+                  barrierDismissible: false,
                   context: context,
                   builder: (context) {
                     return AlertDialog(
@@ -101,65 +104,81 @@ class AddAboutMeScreen extends StatelessWidget {
         padding:
             const EdgeInsets.only(top: 70, left: 16, right: 16, bottom: 16),
         child: SingleChildScrollView(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                "About Me",
-                style: TextStyle(
-                  fontSize: 16.h,
-                  fontWeight: FontWeight.w600,
+          child: Form(
+            key: _formKey,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "About Me",
+                  style: TextStyle(
+                    fontSize: 16.h,
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
-              ),
-              const SizedBox(
-                height: 15,
-              ),
-              Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
-                  color: Colors.white,
+                const SizedBox(
+                  height: 15,
                 ),
-                height: 250,
-                width: double.infinity,
-                child: TextFormField(
-                  expands: true,
-                  maxLines: null,
-                  minLines: null,
-                  controller: textController,
-                  decoration: const InputDecoration(
+                Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15),
+                    color: Colors.white,
+                  ),
+                  height: 250,
+                  width: double.infinity,
+                  child: TextFormField(
+                    expands: true,
+                    maxLines: null,
+                    minLines: null,
+                    controller: textController,
+                    decoration: const InputDecoration(
                       contentPadding: EdgeInsets.all(16),
                       border: InputBorder.none,
-                      hintText: "Tell me about you"),
+                      hintText: "Tell me about you",
+                    ),
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Please enter something about yourself';
+                      } else if (value.length < 10) {
+                        return 'Please enter at least 10 characters';
+                      }
+                      return null;
+                    },
+                  ),
                 ),
-              ),
-              const SizedBox(
-                height: 150,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  ElevatedButton(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10)),
-                        backgroundColor: Colors.deepPurple),
-                    child: Container(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 50, vertical: 10),
-                      child: const Text(
-                        "Save",
-                        style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white),
+                const SizedBox(
+                  height: 150,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    ElevatedButton(
+                      onPressed: () {
+                        if (_formKey.currentState!.validate()) {
+                          Navigator.of(context).pop(textController.text);
+                        }
+                      },
+                      style: ElevatedButton.styleFrom(
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10)),
+                          backgroundColor: Colors.deepPurple),
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 50, vertical: 10),
+                        child: const Text(
+                          "Save",
+                          style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white),
+                        ),
                       ),
                     ),
-                  ),
-                ],
-              )
-            ],
+                  ],
+                )
+              ],
+            ),
           ),
         ),
       ),

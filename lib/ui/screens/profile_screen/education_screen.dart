@@ -1,6 +1,8 @@
 import 'package:aytijobs/logic/blocs/education/education_bloc.dart';
+import 'package:aytijobs/ui/widgets/change_bottom.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:zoom_tap_animation/zoom_tap_animation.dart';
 
 import 'package:aytijobs/logic/cubits/education/education_cubit.dart';
@@ -36,14 +38,14 @@ class _EducationScreenState extends State<EducationScreen> {
   @override
   void initState() {
     super.initState();
-    if (widget.education != null) {
-      educationLevelController.text = widget.education!.levelOfEducation;
-      institutionNameController.text = widget.education!.institutionName;
-      fieldOfStudyController.text = widget.education!.fieldOfStudy;
-      startDateController.text = widget.education!.startDate.toString();
-      endDateController.text = widget.education!.endDate.toString();
-      studyDescController.text = widget.education!.studyDesc;
-    }
+    // if (widget.education != null) {
+    //   educationLevelController.text = widget.education!.levelOfEducation;
+    //   institutionNameController.text = widget.education!.institutionName;
+    //   fieldOfStudyController.text = widget.education!.fieldOfStudy;
+    //   startDateController.text = widget.education!.startDate.toString();
+    //   endDateController.text = widget.education!.endDate.toString();
+    //   studyDescController.text = widget.education!.studyDesc;
+    // }
   }
 
   Future<void> _selectFromSearchWidget(
@@ -74,188 +76,307 @@ class _EducationScreenState extends State<EducationScreen> {
   Widget build(BuildContext context) {
     final educationFormCubit = context.read<EducationFormCubit>();
     return Scaffold(
+        appBar: AppBar(
+          leading: GestureDetector(
+            onTap: () {
+              if (educationFormCubit.state.description.isNotEmpty ||
+                  educationFormCubit.state.educationResult != null ||
+                  educationFormCubit.state.endDate.isNotEmpty ||
+                  educationFormCubit.state.fieldOfStudy.isNotEmpty ||
+                  educationFormCubit.state.institutionName.isNotEmpty ||
+                  educationFormCubit.state.levelOfEducation.isNotEmpty ||
+                  educationFormCubit.state.startDate.isNotEmpty) {
+                Bottoms.showBottomSheetChange(context);
+                // showDialog(
+                //     barrierDismissible: false,
+                //     context: context,
+                //     builder: (context) {
+                //       return AlertDialog(
+                //         actionsAlignment: MainAxisAlignment.center,
+                //         title: Text(
+                //           "Undo Changes?",
+                //           style: TextStyle(
+                //             fontSize: 16.h,
+                //             fontWeight: FontWeight.bold,
+                //           ),
+                //         ),
+                //         content: Text(
+                //           "Are you sure you want to change what you entered?",
+                //           style: TextStyle(
+                //             fontSize: 12.h,
+                //             fontWeight: FontWeight.w400,
+                //           ),
+                //         ),
+                //         actions: [
+                //           Column(
+                //             children: [
+                //               ElevatedButton(
+                //                 onPressed: () {
+                //                   Navigator.pop(context);
+                //                 },
+                //                 style: ElevatedButton.styleFrom(
+                //                     shape: RoundedRectangleBorder(
+                //                         borderRadius:
+                //                             BorderRadius.circular(10)),
+                //                     backgroundColor: Colors.deepPurple),
+                //                 child: Container(
+                //                   padding: const EdgeInsets.symmetric(
+                //                       horizontal: 20, vertical: 15),
+                //                   child: const Text(
+                //                     "Continue Filling",
+                //                     style: TextStyle(
+                //                         fontSize: 18,
+                //                         fontWeight: FontWeight.bold,
+                //                         color: Colors.white),
+                //                   ),
+                //                 ),
+                //               ),
+                //               const SizedBox(
+                //                 height: 15,
+                //               ),
+                //               ElevatedButton(
+                //                 onPressed: () {
+                //                   Navigator.pop(context);
+                //                   Navigator.pop(context);
+                //                 },
+                //                 style: ElevatedButton.styleFrom(
+                //                     shape: RoundedRectangleBorder(
+                //                         borderRadius:
+                //                             BorderRadius.circular(10)),
+                //                     backgroundColor: const Color(0xffD6CDFE)),
+                //                 child: Container(
+                //                   padding: const EdgeInsets.symmetric(
+                //                       horizontal: 20, vertical: 10),
+                //                   child: const Text(
+                //                     "Undo Changes",
+                //                     style: TextStyle(
+                //                         fontSize: 18,
+                //                         fontWeight: FontWeight.bold,
+                //                         color: Colors.white),
+                //                   ),
+                //                 ),
+                //               ),
+                //             ],
+                //           )
+                //         ],
+                //       );
+                //     });
+              } else {
+                Navigator.of(context).pop();
+              }
+            },
+            child: const Icon(Icons.arrow_back),
+          ),
+        ),
         body: BlocListener<EducationFormCubit, EducationFormState>(
-      listener: (context, state) {
-        educationLevelController.text = state.levelOfEducation;
-        institutionNameController.text = state.institutionName;
-        fieldOfStudyController.text = state.fieldOfStudy;
-      },
-      child: BlocBuilder<EducationFormCubit, EducationFormState>(
-        builder: (context, state) {
-          void submit() {
-            bool check = educationFormCubit.state.levelOfEducation.isNotEmpty &&
-                educationFormCubit.state.institutionName.isNotEmpty &&
-                educationFormCubit.state.fieldOfStudy.isNotEmpty &&
-                startDateController.text.isNotEmpty &&
-                endDateController.text.isNotEmpty &&
-                educationFormCubit.state.description.isNotEmpty;
-            educationFormCubit.updateDesciptionResult(studyDescController.text);
-            if (_formKey.currentState!.validate() && check) {
-              _formKey.currentState!.save();
+          listener: (context, state) {
+            educationLevelController.text = state.levelOfEducation;
+            institutionNameController.text = state.institutionName;
+            fieldOfStudyController.text = state.fieldOfStudy;
+          },
+          child: BlocBuilder<EducationFormCubit, EducationFormState>(
+            builder: (context, state) {
+              void submit() {
+                bool check =
+                    educationFormCubit.state.levelOfEducation.isNotEmpty &&
+                        educationFormCubit.state.institutionName.isNotEmpty &&
+                        educationFormCubit.state.fieldOfStudy.isNotEmpty &&
+                        startDateController.text.isNotEmpty &&
+                        endDateController.text.isNotEmpty &&
+                        educationFormCubit.state.description.isNotEmpty;
+                educationFormCubit
+                    .updateDesciptionResult(studyDescController.text);
+                if (_formKey.currentState!.validate() && check) {
+                  _formKey.currentState!.save();
 
-              Education education = Education(
-                levelOfEducation: educationFormCubit.state.levelOfEducation,
-                institutionName: educationFormCubit.state.institutionName,
-                fieldOfStudy: educationFormCubit.state.fieldOfStudy,
-                startDate: DateTime.parse(startDateController.text),
-                endDate: DateTime.parse(endDateController.text),
-                currentlyStudying: context.read<EducationCubit>().state,
-                studyDesc: studyDescController.text,
-              );
-              educationFormCubit.updateEducationResult(education);
-              
-              //!--------------
-            }
-          }
+                  Education education = Education(
+                    levelOfEducation: educationFormCubit.state.levelOfEducation,
+                    institutionName: educationFormCubit.state.institutionName,
+                    fieldOfStudy: educationFormCubit.state.fieldOfStudy,
+                    startDate: DateTime.parse(startDateController.text),
+                    endDate: DateTime.parse(endDateController.text),
+                    currentlyStudying: context.read<EducationCubit>().state,
+                    studyDesc: studyDescController.text,
+                  );
+                  educationFormCubit.updateEducationResult(education);
+                  Navigator.of(context).pop(education);
 
-          return SingleChildScrollView(
-            child: SafeArea(
-              child: Padding(
-                padding: const EdgeInsets.all(20),
-                child: Form(
-                  key: _formKey,
-                  child: SizedBox(
-                    height: MediaQuery.of(context).size.height -
-                        kToolbarHeight -
-                        15,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        Text(
-                          'Add Education',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 20,
-                            color: Constantcolors.mainColor,
-                          ),
-                        ),
-                        GestureWidget(
-                          controller: educationLevelController,
-                          title: 'Level of education',
-                          filledColor: Colors.white,
-                          validatorfunc: (value) {
-                            if (value == null || value.isEmpty) {
-                              return 'Please enter level of education';
-                            }
-                            return null;
-                          },
-                          labelText: state.levelOfEducation.isEmpty
-                              ? 'level of education'
-                              : state.levelOfEducation,
-                          onTap: () => _selectFromSearchWidget(
-                              'Level of Education', educationLevelController),
-                        ),
-                        GestureWidget(
-                          controller: institutionNameController,
-                          filledColor: Colors.white,
-                          title: 'Institution name',
-                          validatorfunc: (value) {
-                            if (value == null || value.isEmpty) {
-                              return 'please enter Institution name';
-                            }
-                            return null;
-                          },
-                          labelText: state.institutionName.isEmpty
-                              ? 'institution name'
-                              : state.institutionName,
-                          onTap: () => _selectFromSearchWidget(
-                              'Institution Name', institutionNameController),
-                        ),
-                        GestureWidget(
-                          controller: fieldOfStudyController,
-                          filledColor: Colors.white,
-                          title: 'Field of study',
-                          validatorfunc: (value) {
-                            if (value == null || value.isEmpty) {
-                              return 'Please enter field of study';
-                            }
-                            return null;
-                          },
-                          labelText: state.fieldOfStudy.isEmpty
-                              ? 'field of study'
-                              : state.fieldOfStudy,
-                          onTap: () => _selectFromSearchWidget(
-                              'Field of Study', fieldOfStudyController),
-                        ),
-                        StartEndDateWidget(
-                            startDate: startDateController,
-                            endDate: endDateController),
-                        Row(
+                  //!--------------
+                }
+              }
+
+              return SingleChildScrollView(
+                child: SafeArea(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    child: Form(
+                      key: _formKey,
+                      child: SizedBox(
+                        height: MediaQuery.of(context).size.height -
+                            kToolbarHeight -
+                            20,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
-                            CheckBoxWidget(),
-                            const Text(
-                              'This is my position now',
+                            Text(
+                              'Add Education',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20,
+                                color: Constantcolors.mainColor,
+                              ),
                             ),
-                          ],
-                        ),
-                        Text(
-                          'Description',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16,
-                            color: Constantcolors.mainColor,
-                          ),
-                        ),
-                        const SizedBox(height: 10),
-                        Textfieldform(
-                          controller: studyDescController,
-                          maxLines: 5,
-                          filledColor: Colors.white,
-                          validatorfunc: (value) {
-                            if (value == null || value.isEmpty) {
-                              return 'Please enter description';
-                            }
-                            return null;
-                          },
-                          hintText: 'Write additional information here',
-                        ),
-                        const SizedBox(height: 20),
-                        (widget.education != null)
-                            ? Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
-                                children: [
-                                  ZoomTapAnimation(
-                                    child: GestureDetector(
-                                      onTap: () {
-                                        context
-                                            .read<EducationCubit>()
-                                            .setFalse();
-                                        educationFormCubit
-                                            .updateFieldOfStudy('');
-                                        educationFormCubit
-                                            .updateInstitutionName('');
-                                        educationFormCubit
-                                            .updateLevelOfEducation('');
-                                        educationFormCubit
-                                            .updateDesciptionResult('');
-                                      },
-                                      child: Card(
-                                        color: const Color(0xFFD6CDFE),
-                                        child: Container(
-                                          alignment: Alignment.center,
-                                          width: 160,
-                                          height: 50,
-                                          child: const Text(
-                                            "Remove",
-                                            style: TextStyle(
-                                                color: Colors.white,
-                                                fontWeight: FontWeight.bold,
-                                                fontSize: 20),
+                            GestureWidget(
+                              controller: educationLevelController,
+                              title: 'Level of education',
+                              filledColor: Colors.white,
+                              validatorfunc: (value) {
+                                if (value == null || value.isEmpty) {
+                                  return 'Please enter level of education';
+                                }
+                                return null;
+                              },
+                              labelText: state.levelOfEducation.isEmpty
+                                  ? 'level of education'
+                                  : state.levelOfEducation,
+                              onTap: () => _selectFromSearchWidget(
+                                  'Level of Education',
+                                  educationLevelController),
+                            ),
+                            GestureWidget(
+                              controller: institutionNameController,
+                              filledColor: Colors.white,
+                              title: 'Institution name',
+                              validatorfunc: (value) {
+                                if (value == null || value.isEmpty) {
+                                  return 'please enter Institution name';
+                                }
+                                return null;
+                              },
+                              labelText: state.institutionName.isEmpty
+                                  ? 'institution name'
+                                  : state.institutionName,
+                              onTap: () => _selectFromSearchWidget(
+                                  'Institution Name',
+                                  institutionNameController),
+                            ),
+                            GestureWidget(
+                              controller: fieldOfStudyController,
+                              filledColor: Colors.white,
+                              title: 'Field of study',
+                              validatorfunc: (value) {
+                                if (value == null || value.isEmpty) {
+                                  return 'Please enter field of study';
+                                }
+                                return null;
+                              },
+                              labelText: state.fieldOfStudy.isEmpty
+                                  ? 'field of study'
+                                  : state.fieldOfStudy,
+                              onTap: () => _selectFromSearchWidget(
+                                  'Field of Study', fieldOfStudyController),
+                            ),
+                            StartEndDateWidget(
+                                startDate: startDateController,
+                                endDate: endDateController),
+                            Row(
+                              children: [
+                                CheckBoxWidget(),
+                                const Text(
+                                  'This is my position now',
+                                ),
+                              ],
+                            ),
+                            Text(
+                              'Description',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16,
+                                color: Constantcolors.mainColor,
+                              ),
+                            ),
+                            const SizedBox(height: 10),
+                            Textfieldform(
+                              controller: studyDescController,
+                              maxLines: 5,
+                              filledColor: Colors.white,
+                              validatorfunc: (value) {
+                                if (value == null || value.isEmpty) {
+                                  return 'Please enter description';
+                                }
+                                return null;
+                              },
+                              hintText: 'Write additional information here',
+                            ),
+                            const SizedBox(height: 20),
+                            (widget.education != null)
+                                ? Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceEvenly,
+                                    children: [
+                                      ZoomTapAnimation(
+                                        child: GestureDetector(
+                                          onTap: () {
+                                            context
+                                                .read<EducationCubit>()
+                                                .setFalse();
+                                            educationFormCubit
+                                                .updateFieldOfStudy('');
+                                            educationFormCubit
+                                                .updateInstitutionName('');
+                                            educationFormCubit
+                                                .updateLevelOfEducation('');
+                                            educationFormCubit
+                                                .updateDesciptionResult('');
+                                          },
+                                          child: Card(
+                                            color: const Color(0xFFD6CDFE),
+                                            child: Container(
+                                              alignment: Alignment.center,
+                                              width: 160,
+                                              height: 50,
+                                              child: const Text(
+                                                "Remove",
+                                                style: TextStyle(
+                                                    color: Colors.white,
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 20),
+                                              ),
+                                            ),
                                           ),
                                         ),
                                       ),
-                                    ),
-                                  ),
-                                  ZoomTapAnimation(
-                                    child: GestureDetector(
+                                      ZoomTapAnimation(
+                                        child: GestureDetector(
+                                          onTap: submit,
+                                          child: Card(
+                                            color: Constantcolors.mainColor,
+                                            child: Container(
+                                              alignment: Alignment.center,
+                                              width: 160,
+                                              height: 50,
+                                              child: const Text(
+                                                "Save",
+                                                style: TextStyle(
+                                                    color: Colors.white,
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 20),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  )
+                                : Center(
+                                    child: ZoomTapAnimation(
                                       onTap: submit,
                                       child: Card(
                                         color: Constantcolors.mainColor,
                                         child: Container(
                                           alignment: Alignment.center,
-                                          width: 160,
+                                          width: 270,
                                           height: 50,
                                           child: const Text(
                                             "Save",
@@ -268,37 +389,15 @@ class _EducationScreenState extends State<EducationScreen> {
                                       ),
                                     ),
                                   ),
-                                ],
-                              )
-                            : Center(
-                                child: ZoomTapAnimation(
-                                  onTap: submit,
-                                  child: Card(
-                                    color: Constantcolors.mainColor,
-                                    child: Container(
-                                      alignment: Alignment.center,
-                                      width: 270,
-                                      height: 50,
-                                      child: const Text(
-                                        "Save",
-                                        style: TextStyle(
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 20),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                      ],
+                          ],
+                        ),
+                      ),
                     ),
                   ),
                 ),
-              ),
-            ),
-          );
-        },
-      ),
-    ));
+              );
+            },
+          ),
+        ));
   }
 }
